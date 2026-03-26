@@ -13,7 +13,6 @@
             --bg-gray: #f8f9fa;
             --text-dark: #202124;
             --text-gray: #5f6368;
-            --success-green: #34a853;
             --warning-orange: #fbbc04;
         }
         body {
@@ -23,10 +22,8 @@
             background-color: var(--bg-gray);
             margin: 0;
             padding: 10px;
-            -webkit-text-size-adjust: 100%;
         }
         .container { max-width: 600px; margin: 0 auto; }
-        
         header {
             background: white;
             padding: 15px;
@@ -35,111 +32,21 @@
             border-top: 6px solid var(--main-blue);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        .back-link { 
-            text-decoration: none; 
-            color: var(--main-blue); 
-            font-size: 0.85rem; 
-            font-weight: bold; 
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-        .page-title { 
-            font-size: 1.25rem; 
-            font-weight: bold; 
-            line-height: 1.4;
-            margin-top: 5px; 
-        }
-
-        section {
-            background: white;
-            padding: 20px 15px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        h2 {
-            font-size: 1.15rem;
-            color: var(--main-blue);
-            border-bottom: 2px solid var(--main-blue);
-            padding-bottom: 8px;
-            margin: 0 0 15px 0;
-        }
-        h3 {
-            font-size: 1.05rem;
-            margin: 20px 0 10px 0;
-            color: var(--text-dark);
-            display: flex;
-            align-items: flex-start;
-        }
-        h3::before {
-            content: "▼";
-            font-size: 0.7rem;
-            margin-right: 6px;
-            margin-top: 4px;
-            color: var(--main-blue);
-            flex-shrink: 0;
-        }
-
-        .info-box {
-            background: #f1f3f4;
-            border-left: 4px solid #dadce0;
-            padding: 12px;
-            margin: 15px 0;
-            font-size: 0.9rem;
-            border-radius: 0 4px 4px 0;
-        }
-        .important-card {
-            background: #fff4f4;
-            border: 1px solid #fadad7;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            font-size: 0.95rem;
-        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.85rem; font-weight: bold; }
+        .page-title { font-size: 1.25rem; font-weight: bold; margin-top: 5px; }
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.15rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 8px; margin-top: 0; }
+        h3 { font-size: 1.05rem; margin-top: 20px; color: var(--text-dark); display: flex; align-items: flex-start; }
+        h3::before { content: "▼"; font-size: 0.7rem; margin-right: 6px; margin-top: 4px; color: var(--main-blue); }
+        .important-card { background: #fff4f4; border: 1px solid #fadad7; padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 0.95rem; }
+        .info-box { background: #f1f3f4; border-left: 4px solid #dadce0; padding: 12px; margin: 15px 0; font-size: 0.9rem; border-radius: 0 4px 4px 0; }
         .alert-red { color: var(--alert-red); font-weight: bold; }
-        
-        /* Marker UI */
-        .marker-tool {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 12px;
-            border: 1px solid #eee;
-        }
-        .marker-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            flex-shrink: 0;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin: 15px 0;
-        }
-        .stat-card {
-            background: #e8f0fe;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-        .stat-value {
-            display: block;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: var(--main-blue);
-        }
+        .marker-tool { display: flex; gap: 12px; padding: 12px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 12px; }
+        .marker-icon { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold; flex-shrink: 0; }
+        .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 15px 0; }
+        .stat-card { background: #e8f0fe; padding: 15px; border-radius: 8px; text-align: center; }
+        .stat-value { display: block; font-size: 1.2rem; font-weight: bold; color: var(--main-blue); }
         .stat-label { font-size: 0.75rem; color: var(--text-gray); }
-
     </style>
 </head>
 <body>
@@ -156,7 +63,6 @@
             <b>勤務時間（8時間）＝ プラン内での稼働時間（昼休憩時間を除く）</b><br>
             <span class="alert-red">※駐車場を出発〜帰着までの時間ではないため注意してください。</span>
         </div>
-
         <h3>通勤時間が1時間（片道）を超える場合</h3>
         <p>事前にOpsLへ相談してください。超過分を勤務時間として扱い、現地撮影時間を調整します。</p>
         <div class="info-box">
@@ -172,13 +78,10 @@
             <b>【厳守】10分以上 〜 90分未満</b><br>
             短すぎても長すぎてもデータ加工ができず撮影した映像がボツになる可能性があります。
         </div>
-
         <h3>90分以上の連続撮影はNG</h3>
         <p>携帯電話のタイマーを<b>「85分」</b>等に設定し、90分を超えないよう細心の注意を払ってください。</p>
-
         <h3>10分未満の短時間撮影はNG</h3>
         <p>録画開始から停止までが1つの記録です。やむを得ない理由（急な雨、対人対応等）を除き、10分以内の停止は厳禁です。</p>
-        
         <div class="info-box" style="border-left-color: var(--warning-orange);">
             <b>急な雨やトラブルで10分未満で止めた場合</b><br>
             速やかにOpsLに報告し、その後の指示を仰いでください。
@@ -187,34 +90,30 @@
 
     <section>
         <h2>撮影対象の道（GAP）</h2>
-        
-        <div style="background-color: #f9f9f9; border-radius: 8px; padding: 15px; margin-bottom: 20px; border: 1px solid #e0e0e0; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
-            <p style="margin: 0; font-weight: bold; font-size: 1.1rem; color: #000; line-height: 1.5;">
+        <div style="background-color: #f9f9f9; border-radius: 8px; padding: 15px; margin-bottom: 20px; border: 1px solid #e0e0e0;">
+            <p style="margin: 0; font-weight: bold; font-size: 1.1rem; color: #000;">
                 車載モニターの地図上に撮影すべきGAPは<span style="color: #FF0000;">赤く</span>表示され、そこを走ると<span style="color: #00008B;">青く</span>なります。
             </p>
         </div>
-
         <p style="margin-bottom: 20px; font-size: 0.95rem;">
             ドライバーの主要な仕事は<b>「GAPを撮影すること」</b>と、映像にできない箇所への<b>「マーキング」</b>です。
         </p>
 
         <div style="text-align: center; margin-bottom: 20px;">
-            <img src="https://r.jina.ai/i/e00129c9df484f00958744040a45e45c" alt="GAP撮影イメージ：撮影したGAPは青くなる" style="width: 100%; max-width: 500px; height: auto; border-radius: 12px; border: 1px solid #ddd; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+            <img src="gap_image.png" alt="GAP撮影イメージ：撮影したGAPは青くなる" style="width: 100%; max-width: 500px; height: auto; border-radius: 12px; border: 1px solid #ddd;">
         </div>
         
         <div style="display: flex; flex-direction: column; gap: 12px;">
             <div style="display: flex; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 6px;">
-                <div style="width: 45px; height: 12px; background: #FF0000; border-radius: 10px; margin-right: 15px; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+                <div style="width: 45px; height: 12px; background: #FF0000; border-radius: 10px; margin-right: 15px;"></div>
                 <span style="font-size: 0.95rem;"><b>赤色：</b>未撮影のGAP<br><small style="color: #666;">（撮影すべき道）</small></span>
             </div>
-
             <div style="display: flex; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 6px;">
-                <div style="width: 45px; height: 12px; background: #00008B; border-radius: 10px; margin-right: 15px; flex-shrink: 0;"></div>
+                <div style="width: 45px; height: 12px; background: #00008B; border-radius: 10px; margin-right: 15px;"></div>
                 <span style="font-size: 0.95rem;"><b>濃い青色：</b>当日撮影済み<br><small style="color: #666;">（走行直後のGAP）</small></span>
             </div>
-
             <div style="display: flex; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 6px;">
-                <div style="width: 45px; height: 12px; background: #87CEEB; border-radius: 10px; margin-right: 15px; flex-shrink: 0;"></div>
+                <div style="width: 45px; height: 12px; background: #87CEEB; border-radius: 10px; margin-right: 15px;"></div>
                 <span style="font-size: 0.95rem;"><b>薄い青色：</b>翌日以降のGAP<br><small style="color: #666;">（2週間残ります）</small></span>
             </div>
         </div>
@@ -223,7 +122,6 @@
     <section>
         <h2>撮影できない場所へのマーキング</h2>
         <p>GAPの約10％は撮影に適さない道です。その場合、以下の<b>2種類のみ</b>を使用して記録を残します。</p>
-
         <div class="marker-tool">
             <div class="marker-icon" style="background: var(--marker-red);">🚩</div>
             <div>
@@ -232,7 +130,6 @@
                 <span style="font-size: 0.85rem;">例：事故、死骸、火事、露出、私有地等</span>
             </div>
         </div>
-
         <div class="marker-tool">
             <div class="marker-icon" style="background: var(--marker-blue);">🚩</div>
             <div>
@@ -241,7 +138,6 @@
                 <span style="font-size: 0.85rem;">例：狭小、私道、未舗装路、歩行者専用等</span>
             </div>
         </div>
-
         <h3>マーキングの落とし方</h3>
         <p>対象の道の上で車載モニターのタッチパネルを押してマーキングします。ピンポイントが理想ですが、安全上難しい場合は<b>半径5m以内</b>を目安に落としてください。</p>
         <div class="info-box">
@@ -263,7 +159,6 @@
                 <span class="stat-label">(平均値)</span>
             </div>
         </div>
-
         <div class="important-card">
             <span class="alert-red">▼ 継続不適格の基準</span><br>
             ・効率（GAP距離 ÷ 総距離）が30％を切る<br>
