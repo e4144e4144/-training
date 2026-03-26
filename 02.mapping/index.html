@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>02. マッピング・撮影ルール | SV Driver 2026</title>
+    <title>02. マッピング・撮影マニュアル | SV Driver 2026</title>
     <style>
         :root {
             --main-blue: #4285F4;
@@ -17,170 +16,177 @@
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--bg-gray);
             margin: 0;
-            padding: 12px;
+            padding: 10px;
         }
         .container { max-width: 600px; margin: 0 auto; }
+        
         header {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin-bottom: 15px;
-            border-top: 6px solid var(--main-blue);
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border-top: 5px solid var(--main-blue);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.9rem; font-weight: bold; }
-        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.85rem; font-weight: bold; }
+        .page-title { font-size: 1.3rem; font-weight: bold; margin-top: 5px; }
 
         section {
             background: white;
-            padding: 25px;
-            border-radius: 12px;
-            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         h2 {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: white;
             background: var(--main-blue);
-            padding: 10px 15px;
-            border-radius: 6px;
+            padding: 8px 12px;
+            border-radius: 5px;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
         h3 {
-            font-size: 1.1rem;
-            margin: 25px 0 10px 0;
+            font-size: 1.05rem;
             color: var(--text-dark);
-            border-left: 5px solid var(--main-blue);
+            border-left: 4px solid #dadce0;
             padding-left: 10px;
+            margin-bottom: 12px;
         }
 
         .info-box {
             background: #f8f9fa;
             border-left: 4px solid #dadce0;
-            padding: 15px;
-            margin: 15px 0;
+            padding: 12px;
+            margin: 12px 0;
             font-size: 0.95rem;
         }
         .important-card {
             background: #fff4f4;
             border: 1px solid #fadad7;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
+            padding: 12px;
+            border-radius: 6px;
+            margin: 12px 0;
         }
-        .marker-card {
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
+        .important-card b, .red-bold { color: var(--alert-red); font-weight: bold; }
+
+        /* マーカー解説スタイル */
+        .marker-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 4px;
         }
-        .btn-sunset {
-            display: block;
-            text-align: center;
-            padding: 15px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            color: white;
-            background: linear-gradient(135deg, #ff9800, #f44336);
-            margin: 20px 0;
+        .marker-icon {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
         }
+        .marker-text { font-size: 0.95rem; flex: 1; }
+
+        .back-top-link { text-align: center; margin: 30px 0; border-top: 1px solid #ddd; padding-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <a href="../" class="back-link">← メインメニューへ戻る</a>
-        <div class="page-title">02. マッピング・撮影ルール</div>
+        <a href="../" class="back-link">← メインへ戻る</a>
+        <div class="page-title">02. マッピング・撮影マニュアル</div>
     </header>
 
     <section>
-        <h2>＜勤務時間の考え方＞</h2>
-        <p>▼ 勤務時間（休憩を除いた8時間）とは担当する撮影プラン内での稼働時間を指します。駐車場を出てから駐車場に帰るまでの時間ではないので注意をお願いします。</p>
-        
-        <p>▼ 通勤（片道）が1時間を超えそうな場合は事前にOpsLに相談してください。通勤（片道）が1時間を超えた時間は勤務時間として扱い、その分、撮影エリア内での撮影時間を調整します。</p>
-        <div class="info-box">
-            → 例えば片道90分通勤にかかる場合は、超過した30分＋30分は勤務時間として扱いみますので、撮影地内での撮影時間は7時間でOKということになります。
-        </div>
-
-        <p>▼ 日の出時間、日の入り時間については以下のサイトで確認できます。</p>
-        <a href="https://www.motohasi.net/SunriseSunset/JapanSunMap.php?" target="_blank" class="btn-sunset">☀️ 日本各地の日の出・日の入りを確認</a>
-        <div class="info-box">
-            → 毎日数分単位で日の入り時間、日の出時間は変化しますので日々のチェックを怠らないようにしてください。
+        <h2>日の出・日の入りの確認</h2>
+        <p>毎日数分単位で時刻が変化するため、日々のチェックを怠らないでください。</p>
+        <div style="text-align: center; margin: 15px 0;">
+            <a href="https://www.motohasi.net/SunriseSunset/JapanSunMap.php?" target="_blank" style="color: var(--main-blue); text-decoration: none; font-size: 1.1rem; border-bottom: 1px solid var(--main-blue); padding-bottom: 3px;">☀️ 日本各地の日の出・日の入りを確認する</a>
         </div>
     </section>
 
     <section>
-        <h2>＜連続撮影時間の遵守＞</h2>
-        <p>▼ 撮影時間は短すぎても（10分未満）、長すぎても（90分以上）データ加工に問題を引き起こすことがあるので厳禁です。</p>
+        <h2>勤務時間の考え方</h2>
         <div class="important-card">
-            → 10分未満の撮影映像（ショートラン）は画像処理のための必要な情報が不足するのでボツになる可能性があります。<br>
-            → 携帯電話のタイマーなどを用い、90分を超える連続撮影時間にならないように細心の注意を払ってください。（例：85分くらいに設定）
+            <b>▼ 駐車場を出てから帰るまでの時間ではありません。</b>
         </div>
-
-        <p>▼ 連続撮影時間は、カメラを回し出し（録画を開始する）てからカメラを停止する（録画を中止する）までが一つの記録としてカウントされます。</p>
+        <p>勤務時間（8時間）とは、担当する<b>撮影プラン内での稼働時間</b>を指します。通勤時間は含みません。</p>
+        
+        <h3>通勤時間の調整ルール</h3>
+        <p>片道1時間を超える場合は、超過した時間を勤務時間として扱い、撮影時間を短縮します。</p>
         <div class="info-box">
-            → やむを得ない状況（急に雨が降ってきた、一般の方に声をかけられた等）を除き、撮影開始（録画ボタンを押す）から10分以内に一旦停止（録画停止ボタンを押す）をするのはNGです。
+            <b>例：片道90分通勤の場合</b><br>
+            超过した30分＋30分は勤務時間扱いとなるため、撮影エリア内での撮影時間は7時間でOKです。<br>
+            ※この場合は、必ず事前にOpsLに相談してください。
+        </div>
+    </section>
+
+    <section>
+        <h2>連続撮影時間の遵守</h2>
+        <p>撮影時間は、カメラの録画開始から停止までを一カウントします。データ加工に問題が出るため、時間は厳守してください。</p>
+        <div class="important-card">
+            <b>【重要】10分未満、90分以上は厳禁</b><br>
+            携帯のタイマー等を使い、85分程度に設定して連続撮影時間を管理してください。
         </div>
 
-        <p>▼ 急に雨が降ってきた、一般ユーザーに声をかけられた、車両転回のために私有地に入る必要があったなどの理由で10分未満で止むを得ずカメラを止める必要があるケースも少なくありません。</p>
+        <h3>やむを得ない途中停止の対応</h3>
+        <p>雨、一般の方の声かけ、私有地進入（転回）などで、10分未満で止むを得ず停止する場合は：</p>
         <div class="important-card" style="background-color: #e8f0fe; border-color: #c2d7fa;">
-            → 止むを得ない場合は10分未満でもカメラを止めてもOKですが、必ずOpsLに報告し、指示を仰いでください。
+            <b>【やむを得ない停止はOK】</b><br>
+            停止後に必ずOpsLに報告し、指示を仰いでください。
         </div>
     </section>
 
     <section>
-        <h2>＜撮影対象の道（GAP）＞</h2>
-        <p>▼ ドライバーさんの主なお仕事は二つです。「GAPを撮影すること」「撮影できないGAPがあった場合は撮影できないというマーキングをすること」です。</p>
+        <h2>撮影対象（GAP）とマーキング</h2>
+        <p>ドライバーの仕事は<b>「GAPを撮影すること」</b>と、撮影できない場合に<b>「マーキングをすること」</b>です。</p>
         <div class="info-box">
-            → GAPとは、GoogleがGoogleMap更新のために撮影を依頼している道に引かれた道路のことです。（車載モニター上では赤色に表示されています）<br>
-            → 赤色のGAPの上を走行すると濃い青色が変わります。<br>
-            → 濃い青色は翌日には薄い青色に変わり、2週間モニター上に残ります。（二週間経過後は消えるのでそれを意識して撮影してください）
+            <b>▼ GAPとは</b><br>
+            撮影対象道路（車載モニターでは赤色）。走行すると濃い青色に変わり、2週間薄い青色で残ります。
         </div>
 
-        <h3>＜撮影対象の道（GAP）だけど何らかの理由で撮影できない場合＞</h3>
-        <p>▼ GAP全体の10％ほどは狭小路、私道、未舗装道路などが理由で撮影には適しません。その場合、この道は「撮影できません」というマーキングをしてもらいます。</p>
-        <p>▼ 車載モニターの左下部分に4種類のマーキングマーカーがありますが、使用するのは以下の2つ（赤と青）のみです。（他のマーカーは絶対に使用しないでください）</p>
+        <h3>撮影できない場合の対応</h3>
+        <p>GAPの10％は狭小路、私道、未舗装道路などが理由で撮影に適しません。その場合は<b>「通行不可マーキング」</b>をします。</p>
+        
+        <div class="weekly-header" style="background: white; border-color: #eee;">🚨 マーカーは赤と青の2つのみ使用</div>
 
-        <div class="marker-card" style="border-left: 8px solid var(--gap-red);">
-            <b>① 問題のある画像（赤色）</b><br>
-            → 一般公開に適さない映像を撮影してしまった場合、その場所に赤色アイコンを押します。モニター上に赤い旗が表示されます。<br>
-            <small>例）事故現場、動物の死骸、火事現場、立ち小便、私有地などを撮影してしまった時</small>
+        <div class="marker-item" style="border-left: 8px solid var(--gap-red);">
+            <span class="marker-icon" style="background: var(--gap-red);"></span>
+            <div class="marker-text">
+                <b>問題のある画像（赤色）</b>：事故、動物死骸、火事、立ち小便、私有地撮影など。
+            </div>
+        </div>
+        <div class="marker-item" style="border-left: 8px solid var(--gap-blue);">
+            <span class="marker-icon" style="background: var(--gap-blue);"></span>
+            <div class="marker-text">
+                <b>通行不可（青色）</b>：私有地、私道、狭小、悪路（鋭利石・ぬかるみ・高さ制限）、歩行者専用。
+            </div>
         </div>
 
-        <div class="marker-card" style="border-left: 8px solid var(--gap-blue);">
-            <b>② SV通行不可（青色）</b><br>
-            → 撮影できないGAPを見つけた場合は、その場所に青色のアイコンを押します。モニター上に青い旗が表示されます。<br>
-            <small>例）私有地、私道、狭小道路、鋭利な石が多い未舗装道路、ぬかるんだ道、高さ制限がある道、歩行者専用道路など</small>
-        </div>
-
-        <h3>＜マーキングの落とし方＞</h3>
-        <p>▼ マーキングは対象の道の上で、赤か青のボタンを落とします。</p>
+        <h3>マーキングの落とし方</h3>
+        <p>対象の道の上で、ピンポイントで落とします。 safetyを優先し、停車困難な場合はマーキングしなくて大丈夫です。</p>
         <div class="info-box">
-            → 可能な限りピンポイントで落とす必要がありますが、安全上の理由などどうしてもずれてしまう場合は半径5mくらいの範囲で落とせるなら落としてください。<br>
-            → 国道沿いや幹線道路など減速したり停車することが難しいこともあります。その場合は安全を第一に考えマーキングはしなくて大丈夫です。
+            → 停車困難でずれてしまう場合は、半径5mくらいの範囲内（GAPの上に1箇所）に落としてください。複数箇所に落とさなければならない場合もあります。
         </div>
-        <p>▼ ピンポイントで落とすか、落とせない場合でも半径GAPの上に1箇所落とすだけでなく、複数箇所に落とさなくてはいけないこともあります。<br>→以下、参考例</p>
     </section>
 
     <section>
-        <h2>＜撮影距離の目安について＞</h2>
-        <p>▼ 終日天気が良い場合、プラン内での走行距離の平均は120km以上です。</p>
-        <p>▼ 過去データから、日本人ドライバーの効率（プラン内での総走行距離 ÷ GAP撮影距離）は50％なので、1日あたり平均60kmのGAPを撮影していることになります。</p>
+        <h2>撮影距離の目安</h2>
+        <p>終日天気が良い場合の走行距離は、プラン内平均<b>120km以上</b>です。GAP撮影距離の目安は1日平均<b>60km</b>です。</p>
         
         <div class="important-card">
-            <span style="color: var(--alert-red); font-weight: bold;">※重要</span><br>
-            効率が30％を切る、1日のGAP撮影距離が30kmに満たない場合、継続不適格と判断される場合があります。
+            <span class="red-bold">※継続不適格の基準</span><br>
+            プラン内での総走行距離÷GAP撮影距離（効率）が30％を切る、またはGAP撮影距離が30kmに満たない場合は、継続不適格と判断される場合があります。
         </div>
     </section>
 
-    <div style="text-align: center; padding: 20px 0;">
+    <div class="back-top-link">
         <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">← マニュアル TOP へ戻る</a>
     </div>
 </div>
