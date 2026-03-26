@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01. タイヤ点検ガイド | SV Driver 2026</title>
+    <title>01. 移動・点検ガイド | SV Driver 2026</title>
     <style>
         :root {
             --main-blue: #4285F4;
-            --sub-blue: #e8f0fe;
             --alert-red: #d93025;
             --bg-gray: #f8f9fa;
             --text-dark: #202124;
@@ -19,7 +18,7 @@
             color: var(--text-dark);
             background-color: var(--bg-gray);
             margin: 0;
-            padding: 10px;
+            padding: 12px;
         }
         .container { max-width: 600px; margin: 0 auto; }
         
@@ -32,7 +31,7 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.9rem; font-weight: bold; }
-        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 5px; }
+        .page-title { font-size: 1.3rem; font-weight: bold; margin-top: 5px; }
 
         section {
             background: white;
@@ -48,36 +47,48 @@
             padding: 8px 15px;
             border-radius: 6px;
             margin-top: 0;
+            margin-bottom: 15px;
         }
 
-        .gauge-card {
+        /* 判定基準カード */
+        .standard-card {
+            background: #fff4f4;
+            border: 1px solid #fadad7;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .standard-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        .standard-table td { padding: 8px 0; border-bottom: 1px solid #eee; }
+        .alert-text { color: var(--alert-red); font-weight: bold; }
+
+        /* ゲージ解説用 */
+        .gauge-box {
             border: 1px solid #eee;
             border-radius: 10px;
             padding: 15px;
-            margin-bottom: 20px;
-            background: #fff;
+            margin-bottom: 25px;
         }
         .gauge-img {
             width: 100%;
-            max-width: 300px;
+            max-width: 280px;
             height: auto;
             border-radius: 8px;
             display: block;
             margin: 0 auto 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
-        .gauge-name {
+        .gauge-label {
+            display: block;
+            text-align: center;
             font-weight: bold;
             font-size: 1.1rem;
             color: var(--main-blue);
-            display: block;
-            text-align: center;
-            margin-bottom: 10px;
-            border-bottom: 2px solid var(--sub-blue);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e8f0fe;
         }
 
-        .step-list { padding-left: 0; list-style: none; }
-        .step-item { display: flex; margin-bottom: 10px; font-size: 0.95rem; }
+        .step-list { padding-left: 0; list-style: none; margin: 0; }
+        .step-item { display: flex; margin-bottom: 12px; font-size: 0.95rem; align-items: flex-start; }
         .step-num {
             background: var(--main-blue);
             color: white;
@@ -87,79 +98,72 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.75rem;
+            font-size: 0.8rem;
             flex-shrink: 0;
             margin-right: 10px;
             margin-top: 2px;
         }
 
-        .important-card {
-            background: #fff4f4;
-            border: 1px solid #fadad7;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .standard-table { width: 100%; font-size: 0.9rem; border-collapse: collapse; }
-        .standard-table td { padding: 5px 0; border-bottom: 1px solid #eee; }
-        .red-bold { color: var(--alert-red); font-weight: bold; }
+        .footer-nav { text-align: center; margin: 30px 0; border-top: 1px solid #ddd; padding-top: 20px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <a href="index.html" class="back-link">← メインメニューに戻る</a>
-        <div class="page-title">タイヤ溝の測定方法</div>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">01. 自宅から撮影エリアへの移動</div>
     </header>
 
     <section>
-        <div class="important-card">
-            <b style="color:var(--alert-red);">【判定基準】</b>
+        <h2>タイヤ溝の判定基準</h2>
+        <div class="standard-card">
             <table class="standard-table">
-                <tr><td>新品時</td><td>約 8.0mm</td></tr>
-                <tr><td>注意（雨の日の性能低下）</td><td>4.0mm 以下</td></tr>
-                <tr><td class="red-bold">SV交換基準（即報告！）</td><td class="red-bold">2.5mm 未満</td></tr>
-                <tr><td>車検NG（スリップサイン）</td><td>1.6mm 未満</td></tr>
+                <tr><td>新品時の目安</td><td>約 8.0mm</td></tr>
+                <tr><td>注意（雨天滑りやすい）</td><td>4.0mm 以下</td></tr>
+                <tr class="alert-text"><td>SV交換基準（要報告）</td><td>2.5mm 未満</td></tr>
+                <tr><td>車検NG（使用限界）</td><td>1.6mm 未満</td></tr>
             </table>
         </div>
     </section>
 
-    <h2>支給タイプ別・使い方の説明</h2>
+    <section>
+        <h2>タイプ別：ゲージの使い方</h2>
 
-    <div class="gauge-card">
-        <span class="gauge-name">A：デジタル型（高精度）</span>
-        <img src="digital_gauge.png" alt="デジタルタイヤゲージ" class="gauge-img">
-        <div class="step-list">
-            <div class="step-item"><div class="step-num">1</div><div><b>電源ON:</b> 赤色ボタンを押して起動。</div></div>
-            <div class="step-item"><div class="step-num">2</div><div><b>ゼロ設定:</b> 平らな所に押し当てて ZERO ボタンを押す。</div></div>
-            <div class="step-item"><div class="step-num">3</div><div><b>測定:</b> 溝に針を刺し、本体をタイヤ面に密着させる。</div></div>
+        <div class="gauge-box">
+            <span class="gauge-label">【タイプA】アナログカード型</span>
+            <img src="card_gauge.png" alt="カード型ゲージの使い方" class="gauge-img">
+            <ul class="step-list">
+                <li class="step-item"><div class="step-num">1</div><div>オレンジのスライダーを上へ押し、針を出します。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div>タイヤの溝に針を垂直に刺します。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div>カード本体がタイヤのゴム面に当たるまでスライダーを下げます。</div></li>
+                <li class="step-item"><div class="step-num">4</div><div><b>左上の白い矢印</b>が指している数字（mm）を読み取ります。</div></li>
+            </ul>
         </div>
-    </div>
 
-    <div class="gauge-card">
-        <span class="gauge-name">B：アナログカード型（軽量）</span>
-        <img src="card_gauge.png" alt="カード型ゲージ" class="gauge-img">
-        <div class="step-list">
-            <div class="step-item"><div class="step-num">1</div><div><b>準備:</b> オレンジのスライダーを上に上げ、針を出す。</div></div>
-            <div class="step-item"><div class="step-num">2</div><div><b>刺す:</b> オレンジの針を溝の底に垂直に当てる。</div></div>
-            <div class="step-item"><div class="step-num">3</div><div><b>スライド:</b> カード本体をタイヤ面に付くまで下げる。</div></div>
-            <div class="step-item"><div class="step-num">4</div><div><b>確認:</b> 左上の白い矢印が指す目盛りを読む。</div></div>
+        <div class="gauge-box">
+            <span class="gauge-label">【タイプB】デジタル型</span>
+            <img src="digital_gauge.png" alt="デジタルゲージ" class="gauge-img">
+            <ul class="step-list">
+                <li class="step-item"><div class="step-num">1</div><div><b>ONボタン</b>（赤）で電源を入れます。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div>平らな場所で<b>ZEROボタン</b>（黄）を押し、0.00にします。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div>溝に針を刺し、本体を押し当てて数値を読みます。</div></li>
+            </ul>
         </div>
-    </div>
 
-    <div class="gauge-card">
-        <span class="gauge-name">C：金属ノギス型（高耐久）</span>
-        <img src="metal_gauge.png" alt="金属製ゲージ" class="gauge-img">
-        <div class="step-list">
-            <div class="step-item"><div class="step-num">1</div><div><b>測定:</b> 飛び出している細い金属の棒を溝に刺す。</div></div>
-            <div class="step-item"><div class="step-num">2</div><div><b>密着:</b> 本体の横に長い底面をタイヤ面にしっかり当てる。</div></div>
-            <div class="step-item"><div class="step-num">3</div><div><b>読取:</b> 中央の目盛りが重なっている部分の数字を確認。</div></div>
+        <div class="gauge-box">
+            <span class="gauge-label">【タイプC】金属ノギス型</span>
+            <img src="metal_gauge.png" alt="金属製ゲージ" class="gauge-img">
+            <ul class="step-list">
+                <li class="step-item"><div class="step-num">1</div><div>先端の細い棒をタイヤの溝に刺します。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div>横に長い土台部分をタイヤ面にしっかり密着させます。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div>真ん中の目盛りが重なった部分の数字を読み取ります。</div></li>
+            </ul>
         </div>
-    </div>
+    </section>
 
-    <div style="text-align: center; margin: 20px 0;">
-        <p style="font-size: 0.8rem; color: #777;">※1箇所でも基準値以下の場合は速やかに報告してください。</p>
-        <a href="index.html" style="color: var(--text-gray); font-size: 0.9rem;">トップページへ戻る</a>
+    <div class="footer-nav">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">← マニュアル TOP へ戻る</a>
     </div>
 </div>
 
