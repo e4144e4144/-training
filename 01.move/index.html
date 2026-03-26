@@ -141,6 +141,24 @@
             color: var(--main-blue);
             font-size: 1.1rem;
         }
+
+        /* 画像再現用のスタイル追加 */
+        .image-reproduce-header {
+            background-color: #4285F4;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .image-reproduce-alert {
+            background-color: #fff4f4;
+            border: 1px solid #fadad7;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -201,6 +219,21 @@
         <h2>タイヤ溝の点検（週に1回必須）</h2>
         <div class="weekly-header">🚨 安全運行のため、タイヤの点検は「週に1回」確実に実施してください</div>
 
+        <div style="margin-bottom: 40px;">
+            <div class="image-reproduce-header">
+                振替協力の目安
+            </div>
+            <p style="margin: 0 0 15px 5px; font-size: 1.05rem;">
+                雨天中止や進捗遅延が発生した場合の<b>振替協力（土日祝・予備日での稼働）</b>をお願いしております。
+            </p>
+
+            <div class="image-reproduce-alert">
+                <span style="color: #d93025; font-weight: bold; display: block; margin-bottom: 10px; font-size: 1.1rem;">※継続不適格の基準</span>
+                <p style="margin: 0; font-size: 1rem; line-height: 1.8;">
+                    撮影プランの完遂に向け、<strong>振替への協力が極端に少ない場合</strong>は、チームでのデータ収集が困難と判断され、<strong>継続が難しくなる場合があります。</strong>
+                </p>
+            </div>
+        </div>
         <div class="info-box">
             <b>タイヤ溝チェックは運転開始前におこない、もし異常があればOpsLに報告して指示を仰いでください。</b>
         </div>
