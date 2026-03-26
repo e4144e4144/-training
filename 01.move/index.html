@@ -74,7 +74,6 @@
             font-size: 0.95rem;
         }
 
-        /* ゲージ解説スタイル */
         .gauge-section {
             border: 1px solid #eee;
             padding: 15px;
@@ -115,6 +114,16 @@
             font-weight: bold;
             color: white;
         }
+        .weekly-alert {
+            background: #e8f0fe;
+            border: 2px solid var(--main-blue);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--main-blue);
+        }
     </style>
 </head>
 <body>
@@ -127,8 +136,7 @@
 
     <section>
         <h2>1. 出発前の天候確認</h2>
-        <h3>天候・雨雲のリアルタイムチェック</h3>
-        <p>撮影プランのあるエリアの状況を必ず事前に確認してください。</p>
+        <p>撮影エリアの状況を必ず事前に確認してください。</p>
         <div class="btn-group">
             <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーを確認</a>
             <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 ライブカメラを確認</a>
@@ -137,66 +145,71 @@
         <h3>朝から天気が悪い時の開始時間</h3>
         <div class="info-box">
             <b>▼ 勤務時間の計算ルール</b><br>
-            当日の「日の入り1時間前」を終業時間とし、そこから休憩1時間を含む「9時間前」が勤務開始（待機開始）となります。
+            当日の「日の入り1時間前」を終業時間とし、そこから休憩1時間を含む「9時間前」が勤務開始となります。
             <br><br>
             <b>計算例：17時が日の入りの場合</b><br>
-            ・終業時間：16時（日の入り1時間前）<br>
-            ・開始時間：<b>朝07時</b>（16時から9時間逆算）
+            ・終業時間：16時<br>
+            ・開始時間：<b>朝07時</b>
             <br><br>
-            ※朝から晴れている場合は、日の出から45分経過し、撮影可能になった時点で開始して問題ありません。
+            ※朝から晴れている場合は、日の出から45分経過後に撮影を開始して問題ありません。
         </div>
     </section>
 
     <section>
         <h2>2. 移動中の厳守事項</h2>
         <div class="important-card">
-            <b>▼ プラン外での撮影は一切行いません</b><br>
-            自宅から撮影エリアへの移動中、および帰路においては、必ず以下の状態を維持してください：
+            <b>▼ プラン外での撮影禁止</b><br>
+            自宅から撮影エリアへの移動中（往復）は、必ず以下の状態を維持してください：
             <ul>
                 <li><b>システム：常時オフ</b></li>
                 <li><b>カメラカバー：常時装着</b></li>
             </ul>
         </div>
         <div class="info-box">
-            <b>▼ 給油のタイミング</b><br>
-            私有地撮影（自宅周辺など）を防ぐため、給油は必ず<b>「通勤途中（移動経路内）」</b>のガソリンスタンドで行ってください。
+            <b>▼ 給油について</b><br>
+            私有地撮影を防ぐため、給油は必ず<b>「通勤途中」</b>に行ってください。
         </div>
-        <p style="font-size: 0.9rem;">※自宅駐車場を出る前に、向かうべきプランを確認するためにシステムを立ち上げるのはOKですが、道中は必ずオフにしてください。</p>
+        <p style="font-size: 0.9rem;">※自宅駐車場を出るまでのシステム確認はOKですが、道中は必ずオフにしてください。</p>
     </section>
 
     <section>
         <h2>3. タイヤ溝の点検方法</h2>
+        
+        <div class="weekly-alert">
+            🚨 タイヤチェックは「週に1回」必ず実施してください
+        </div>
+
         <div class="important-card">
-            <b>【SV独自の判定基準】</b><br>
-            ・<b>2.5mm 未満</b>：直ちにOpsLへ報告し、交換を依頼してください。<br>
-            ・1.6mm 未満：法律違反（車検NG）の状態です。
+            <b>【SV判定基準】</b><br>
+            ・<b>2.5mm 未満</b>：直ちに交換依頼（要報告）<br>
+            ・1.6mm 未満：使用限界（法律違反）
         </div>
 
         <div class="gauge-section">
             <h3>タイプA：アナログカード型</h3>
-            <img src="card_gauge.png" class="gauge-img" alt="カード型">
+            <img src="card_gauge.png" class="gauge-img">
             <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div>オレンジのスライダーを上へ押し、測定針を完全に出します。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div>溝の底に針を垂直に当て、カード本体がタイヤ面に当たるまでスライダーを下げます。</div></div>
-                <div class="step-item"><div class="step-num">3</div><div><b>左上の白い矢印</b>が指す数値が現在の溝の深さです。</div></div>
+                <div class="step-item"><div class="step-num">1</div><div>スライダーを上げ針を出します。</div></div>
+                <div class="step-item"><div class="step-num">2</div><div>溝に針を刺し、本体をタイヤに押し当てます。</div></div>
+                <div class="step-item"><div class="step-num">3</div><div><b>左上の白い矢印</b>が指す数値を読みます。</div></div>
             </div>
         </div>
 
         <div class="gauge-section">
             <h3>タイプB：デジタル型</h3>
-            <img src="digital_gauge.png" class="gauge-img" alt="デジタル型">
+            <img src="digital_gauge.png" class="gauge-img">
             <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div><b>ONボタン</b>で起動。平らな場所に押し当てて<b>ZEROボタン</b>を押し、0.00にセットします。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div>溝に針を刺し、本体をしっかり押し当てて液晶の数値を読み取ります。</div></div>
+                <div class="step-item"><div class="step-num">1</div><div>ONボタンで起動し、ZEROボタンで0.00に合わせます。</div></div>
+                <div class="step-item"><div class="step-num">2</div><div>溝に針を刺し、数値を読み取ります。</div></div>
             </div>
         </div>
 
         <div class="gauge-section">
             <h3>タイプC：金属ノギス型</h3>
-            <img src="metal_gauge.png" class="gauge-img" alt="ノギス型">
+            <img src="metal_gauge.png" class="gauge-img">
             <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div>中央の金属棒を溝に刺し、土台をタイヤ面に密着させます。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div>固定された目盛りを確認します。読み方が不安な場合は写真を撮って送ってください。</div></div>
+                <div class="step-item"><div class="step-num">1</div><div>金属棒を溝に刺し、土台を密着させます。</div></div>
+                <div class="step-item"><div class="step-num">2</div><div>目盛りが重なる箇所を確認します。</div></div>
             </div>
         </div>
     </section>
