@@ -1,1 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03. 休憩時間 | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --marker-blue: #1A73E8;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --warning-orange: #fbbc04;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-top: 6px solid var(--main-blue);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.85rem; font-weight: bold; }
+        .page-title { font-size: 1.25rem; font-weight: bold; margin-top: 5px; }
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.15rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 8px; margin-top: 0; }
+        h3 { font-size: 1.05rem; margin-top: 20px; color: var(--text-dark); display: flex; align-items: flex-start; }
+        h3::before { content: "▼"; font-size: 0.7rem; margin-right: 6px; margin-top: 4px; color: var(--main-blue); }
+        .important-card { background: #fff4f4; border: 1px solid #fadad7; padding: 15px; border-radius: 8px; margin: 15px 0; font-size: 0.95rem; }
+        .info-box { background: #f1f3f4; border-left: 4px solid #dadce0; padding: 12px; margin: 15px 0; font-size: 0.9rem; border-radius: 0 4px 4px 0; }
+        .alert-red { color: var(--alert-red); font-weight: bold; }
+        .step-number { background: var(--main-blue); color: white; border-radius: 50%; width: 22px; height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: 0.8rem; margin-right: 8px; vertical-align: middle; }
+        .step-item { margin-bottom: 15px; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">03. 休憩時間</div>
+    </header>
+
+    <section>
+        <h2>休憩時間の考え方</h2>
+        <p>小休憩（業務時間内）と昼休憩（業務時間外）の違いを正しく理解し、運用してください。</p>
+        
+        <div class="info-box">
+            <b>小休憩のモデルケース</b><br>
+            終日晴天の場合、業務時間内に<b>最大3回の10分休憩</b>が可能です（合計30分）。
+        </div>
+
+        <div class="important-card">
+            <b>【厳守】合計休憩時間は90分以内</b><br>
+            昼休憩（60分）＋ 小休憩（30分）あわせて<b>90分</b>を超えないよう時間管理を徹底してください。
+        </div>
+
+        <p>※昼休憩を短縮して小休憩に充てる等の調整は可能ですが、必ず事前にOpsLへ相談してください。<br>
+        ※スマートドライブアプリで休憩の記録を確実につけることが最も重要です。</p>
+    </section>
+
+    <section>
+        <h2>休憩後の撮影再開手順</h2>
+        <p>クオリティ維持のため、<b>90分に一度</b>は小休憩を取り、以下の手順で再開してください。</p>
+
+        <div class="step-item">
+            <b><span class="step-number">1</span>レンズ拭き</b><br>
+            <small>マイクロファイバークロスを用い、全レンズを清掃してください。</small>
+        </div>
+
+        <div class="step-item">
+            <b><span class="step-number">2</span>画像の目視確認</b><br>
+            <small>車載モニターで汚れがないか確認してください。汚れがある場合は直ちにOpsLへ連絡してください。</small>
+        </div>
+
+        <div class="step-item">
+            <b><span class="step-number">3</span>撮影開始</b><br>
+            <small>メニューバーの「データ収集を開始」を選択してください。</small>
+        </div>
+
+        <div class="step-item">
+            <b><span class="step-number">4</span>撮影終了（10分〜90分以内）</b><br>
+            <small>一時停止時も必ず「データ収集を終了」を選択してください。</small>
+        </div>
+    </section>
+
+    <section>
+        <h2>【重要】私有地への進入防止</h2>
+        <div class="important-card">
+            <b>カメラを回したまま駐車場・店舗に入らない</b><br>
+            コンビニやGS、飲食店に入る際は、必ず<b>手前で</b>撮影を停止してください。
+        </div>
+        <h3>安全な停止タイミング</h3>
+        <p>運転中にモニター操作をするのは大変危険です。必ず手前の信号待ちや完全停車時に「データ収集を終了」を押し、オフを確認してから敷地内へ入ってください。</p>
+        <div class="info-box" style="border-left-color: var(--alert-red);">
+            私有地撮影のミスが目立つ場合は、継続不適格の判断対象となります。
+        </div>
+    </section>
+
+    <section>
+        <h2>雨天・曇天時の報告</h2>
+        <h3>報告のタイミング</h3>
+        <p><b>9時、12時、15時</b>の時点で悪天候待機をしている場合は、必ずOpsLに空の写真を送ってください。</p>
+        
+        <div class="important-card">
+            <b>無理な撮影は絶対にNG</b><br>
+            わずかな雨粒でもレンズに付着すれば映像はボツになります。
+        </div>
+
+        <div class="info-box">
+            判断に迷う場合は必ずOpsLに空の写真（または付近のライブカメラ画像）を送り、指示を仰いでください。
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 0.85rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
