@@ -12,7 +12,7 @@
             --bg-gray: #f8f9fa;
             --text-dark: #202124;
             --text-gray: #5f6368;
-            --rain-blue: #005CAF; /* 雨雲レーダー用 */
+            --rain-blue: #005CAF;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -64,7 +64,6 @@
         }
         .sub-info::before { content: "→"; position: absolute; left: 0; color: #aaa; }
 
-        /* ボタンデザインの調整 */
         .btn-group { display: flex; flex-direction: column; gap: 10px; margin: 15px 0; }
         .btn {
             display: block;
@@ -104,17 +103,16 @@
             flex-shrink: 0;
             margin-right: 10px;
         }
-        .media-placeholder {
-            background: #ddd;
-            width: 100%;
-            height: 180px;
+        .gauge-standard {
+            margin-top: 10px;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+        .standard-item {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-            margin: 15px 0;
-            color: #777;
-            font-size: 0.8rem;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
         }
     </style>
 </head>
@@ -206,31 +204,43 @@
         <div class="item">
             <span class="main-task">タイヤ点検（週1回必須）</span>
             <span class="sub-info">溝・亀裂を確認。1箇所でも<b>2.5mm未満（夏タイヤ）</b>なら交換。</span>
-            <div class="media-placeholder">【タイヤゲージ写真 準備中】</div>
         </div>
     </section>
 
     <section>
         <h2>デジタルタイヤゲージ使用方法</h2>
-        <div class="step-list">
-            <div class="step-item">
-                <div class="step-num">1</div>
-                <div>針が出ていたら、平らな所に押し当てて引っ込める。</div>
-            </div>
-            <div class="step-item">
-                <div class="step-num">2</div>
-                <div>右側にプランジャーが出てきます。（自動表示）</div>
-            </div>
-            <div class="step-item">
-                <div class="step-num">3</div>
-                <div>黄色ボタンで「ゼロ」にし、溝に針をあてる。（単位：mm）</div>
-            </div>
-            <div class="step-item">
-                <div class="step-num">4</div>
-                <div>プランジャーを底面まで差し込み測定。</div>
+        <div class="item">
+            <span class="main-task">正しい操作手順</span>
+            <div class="step-list">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div><b>電源を入れる:</b> ONボタン（赤色）を押します。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div><b>ゼロ点調整:</b> 平らな場所に底面を押し当て、プローブが完全に引っ込んだ状態で ZERO ボタン（黄色）を押し「0.00」に合わせます。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div><b>測定:</b> タイヤの溝にプローブを差し込み、本体の底面をタイヤのゴム面にしっかり押し当てます。</div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div><b>読み取り:</b> 液晶に表示された数値（mm）を確認します。</div>
+                </div>
             </div>
         </div>
-        <span class="sub-info" style="margin-top:10px;">※反応しない場合は赤色ボタンでオンにしてから測定。</span>
+
+        <div class="item">
+            <span class="main-task">摩耗状態の判定目安</span>
+            <div class="important-card">
+                <div class="standard-item"><span>新品時:</span><span>約 8.0mm 前後</span></div>
+                <div class="standard-item"><span>注意（交換検討）:</span><span>4.0mm 以下</span></div>
+                <div class="standard-item" style="color:var(--alert-red); font-weight:bold;"><span>SV交換基準:</span><span>2.5mm 未満</span></div>
+                <div class="standard-item" style="border-top: 1px solid #fadad7; margin-top:5px; padding-top:5px;"><b>車検NG（スリップサイン）:</b><b>1.6mm 未満</b></div>
+            </div>
+            <span class="sub-info">4.0mm以下になると雨の日の制動距離が伸び始め、安全性が低下します。</span>
+        </div>
     </section>
 </div>
 
