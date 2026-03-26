@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01. 移動・点検 完全ガイド | SV Driver 2026</title>
+    <title>02. 撮影とマーキング | SV Driver 2026</title>
     <style>
         :root {
             --main-blue: #4285F4;
             --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --marker-blue: #1A73E8;
             --bg-gray: #f8f9fa;
             --text-dark: #202124;
             --text-gray: #5f6368;
-            --rain-blue: #005CAF;
-            --sunset-orange: #fb8c00;
+            --success-green: #34a853;
+            --warning-orange: #fbbc04;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7; /* 行間を少し詰めつつ読みやすく */
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--bg-gray);
             margin: 0;
-            padding: 10px; /* 全体の余白をスマホ向けに */
+            padding: 10px;
             -webkit-text-size-adjust: 100%;
         }
         .container { max-width: 600px; margin: 0 auto; }
@@ -50,7 +52,7 @@
 
         section {
             background: white;
-            padding: 20px 15px; /* 横余白をスマホ用に調整 */
+            padding: 20px 15px;
             border-radius: 12px;
             margin-bottom: 15px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -60,15 +62,14 @@
             color: var(--main-blue);
             border-bottom: 2px solid var(--main-blue);
             padding-bottom: 8px;
-            margin-top: 0;
-            margin-bottom: 15px;
+            margin: 0 0 15px 0;
         }
         h3 {
             font-size: 1.05rem;
             margin: 20px 0 10px 0;
             color: var(--text-dark);
             display: flex;
-            align-items: flex-start; /* 折り返し対応 */
+            align-items: flex-start;
         }
         h3::before {
             content: "▼";
@@ -78,8 +79,6 @@
             color: var(--main-blue);
             flex-shrink: 0;
         }
-
-        p { margin: 12px 0; font-size: 0.95rem; }
 
         .info-box {
             background: #f1f3f4;
@@ -98,88 +97,64 @@
             font-size: 0.95rem;
         }
         .alert-red { color: var(--alert-red); font-weight: bold; }
+        
+        /* GAP Indicator */
+        .gap-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        .color-chip {
+            width: 40px;
+            height: 20px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
 
-        .btn-group { display: flex; flex-direction: column; gap: 10px; margin: 15px 0; }
-        .btn {
-            display: block;
-            text-align: center;
-            padding: 16px 10px;
-            text-decoration: none;
+        /* Marker UI */
+        .marker-tool {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px;
             border-radius: 8px;
-            font-weight: bold;
-            color: white !important;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            font-size: 1rem;
-        }
-        .btn-sunset {
-            background: linear-gradient(135deg, #ff9800, #f44336);
-            margin-bottom: 10px;
-        }
-
-        .gauge-item {
-            background: #fff;
+            margin-bottom: 12px;
             border: 1px solid #eee;
-            border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
         }
-        .gauge-img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: 6px;
-            display: block;
-            margin: 0 auto 15px;
-        }
-        .step-list { padding-left: 0; list-style: none; margin: 0; }
-        .step-item { display: flex; margin-bottom: 15px; align-items: flex-start; }
-        .step-num {
-            background: var(--main-blue);
-            color: white;
-            width: 24px;
-            height: 24px;
+        .marker-icon {
+            width: 40px;
+            height: 40px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-            margin-right: 12px;
-            margin-top: 3px;
-            font-weight: bold;
-        }
-        .step-content { flex: 1; font-size: 0.9rem; }
-        .step-bold { font-weight: bold; display: block; margin-bottom: 4px; color: var(--text-dark); font-size: 1rem; }
-
-        .weekly-header {
-            background: #e8f0fe;
-            border: 2px solid var(--main-blue);
-            padding: 12px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: var(--main-blue);
-            font-size: 0.95rem;
-            line-height: 1.4;
-        }
-
-        .image-reproduce-header {
-            background-color: #4285F4;
             color: white;
-            padding: 10px 15px;
-            border-radius: 6px;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
+            flex-shrink: 0;
         }
-        .image-reproduce-alert {
-            background-color: #fff4f4;
-            border: 1px solid #fadad7;
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        .stat-card {
+            background: #e8f0fe;
             padding: 15px;
             border-radius: 8px;
-            margin-top: 15px;
+            text-align: center;
         }
+        .stat-value {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--main-blue);
+        }
+        .stat-label { font-size: 0.75rem; color: var(--text-gray); }
+
     </style>
 </head>
 <body>
@@ -187,176 +162,116 @@
 <div class="container">
     <header>
         <a href="../" class="back-link">← メインメニューへ戻る</a>
-        <div class="page-title">01. 自宅から撮影エリアへの移動・点検</div>
+        <div class="page-title">02. 撮影とマーキング</div>
     </header>
 
-    <section style="padding-top: 10px; border-top: 8px solid var(--sunset-orange);">
-        <a href="https://www.motohasi.net/SunriseSunset/PLSST.php" target="_blank" class="btn btn-sunset">☀️ 日の出・日の入り時刻を確認する</a>
+    <section>
+        <h2>勤務時間の考え方</h2>
+        <div class="important-card">
+            <b>勤務時間（8時間）＝ プラン内での稼働時間</b><br>
+            <span class="alert-red">※駐車場を出発〜帰着までの時間ではないためご注意ください。</span>
+        </div>
+
+        <h3>通勤時間が1時間（片道）を超える場合</h3>
+        <p>事前にOpsLへ相談してください。超過分を勤務時間として扱い、現地撮影時間を調整します。</p>
         <div class="info-box">
-            ※日の出、日の入りの時間は定期的にチェックするように心がけてください。<br>
-            <b>光量が十分にある状態での撮影を行うため、日の出から45分後、日の入り45分前までの間しか撮影できません。</b>
+            <b>例：片道90分かかる場合</b><br>
+            超過した30分＋30分（往復1時間）を勤務時間に充当。<br>
+            → 撮影エリア内での撮影時間は<b>7時間</b>でOKとなります。
+        </div>
+
+        <div class="info-box">
+            ☀️ 日の出・日の入り時間は毎日変化します。<br>
+            <a href="https://www.motohasi.net/SunriseSunset/JapanSunMap.php?" target="_blank" style="color:var(--main-blue);">日の出・日の入りマップ（外部サイト）</a>で日々のチェックを徹底してください。
         </div>
     </section>
 
     <section>
-        <h2>天候・勤務時間の対応</h2>
+        <h2>連続撮影時間の遵守</h2>
+        <div class="important-card">
+            <b>【厳守】10分以上 〜 90分未満</b><br>
+            短すぎても長すぎてもデータ加工ができずボツになる可能性があります。
+        </div>
+
+        <h3>タイマーの活用</h3>
+        <p>携帯電話のタイマーを<b>「85分」</b>等に設定し、90分を超えないよう細心の注意を払ってください。</p>
+
+        <h3>10分未満の録画停止はNG</h3>
+        <p>録画開始から停止までが1つの記録です。やむを得ない理由（急な雨、対人対応等）を除き、10分以内の停止は厳禁です。</p>
         
-        <h3>朝から天気が悪い場合の対応</h3>
+        <div class="info-box" style="border-left-color: var(--warning-orange);">
+            <b>急な雨やトラブルで10分未満で止めた場合</b><br>
+            速やかにOpsLに報告し、その後の指示を仰いでください。
+        </div>
+    </section>
+
+    <section>
+        <h2>撮影対象の道（GAP）</h2>
+        <p>ドライバーの主要な仕事は<b>「GAPを撮影すること」</b>と、不可箇所への<b>「マーキング」</b>です。</p>
+        
+        <div class="gap-status">
+            <div class="color-chip" style="background: #FF0000; border: 1px solid #ccc;"></div>
+            <span><b>赤色：</b>未撮影のGAP（撮影すべき道）</span>
+        </div>
+        <div class="gap-status">
+            <div class="color-chip" style="background: #00008B;"></div>
+            <span><b>濃い青色：</b>走行直後のGAP（当日撮影済み）</span>
+        </div>
+        <div class="gap-status">
+            <div class="color-chip" style="background: #87CEEB;"></div>
+            <span><b>薄い青色：</b>翌日以降のGAP（2週間残ります）</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>撮影不可時のマーキング</h2>
+        <p>GAPの約10％は撮影に適さない道です。その場合、以下の<b>2種類のみ</b>を使用して記録を残します。</p>
+
+        <div class="marker-tool">
+            <div class="marker-icon" style="background: var(--marker-red);">🚩</div>
+            <div>
+                <b style="color: var(--marker-red);">① 問題のある画像（赤）</b><br>
+                <small>一般公開に不適切なものを撮影してしまった場合</small><br>
+                <span style="font-size: 0.85rem;">例：事故、死骸、火事、露出、私有地等</span>
+            </div>
+        </div>
+
+        <div class="marker-tool">
+            <div class="marker-icon" style="background: var(--marker-blue);">🚩</div>
+            <div>
+                <b style="color: var(--marker-blue);">② SV通行不可（青）</b><br>
+                <small>物理的・安全上の理由で撮影できない場合</small><br>
+                <span style="font-size: 0.85rem;">例：狭小、私道、未舗装路、歩行者専用等</span>
+            </div>
+        </div>
+
+        <h3>マーキングの落とし方</h3>
+        <p>対象の道の上でボタンを押します。ピンポイントが理想ですが、安全上難しい場合は<b>半径5m以内</b>を目安に落としてください。</p>
+        <div class="info-box">
+            幹線道路などで停車・減速が危険な場合は、<b>安全を最優先し、マーキングしなくて大丈夫です。</b>
+        </div>
+    </section>
+
+    <section>
+        <h2>撮影距離の目安</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">総走行距離</span>
+                <span class="stat-value">120km+</span>
+                <span class="stat-label">(終日天候良)</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">GAP撮影距離</span>
+                <span class="stat-value">60km</span>
+                <span class="stat-label">(平均値)</span>
+            </div>
+        </div>
+
         <div class="important-card">
-            <b>【重要：振替のお願い】</b><br>
-            朝から天気が悪い場合は、可能な範囲で<b>週末への振替</b>を検討し、OpsLへ相談してください。積極的な撮影時間確保をお願いします。
-        </div>
-
-        <p><b>朝から天気が悪い場合は、当日の「日の入り10時間前」を始業時間とし、その時間から勤務開始（待機開始）となります。</b></p>
-        <div class="info-box">
-            → 例えば18時が日の入りの日は、その10時間前の8時を始業時間とし、そこから９時後の17時が終了時間となります。
-        </div>
-        <p>→ 朝から晴れている場合はこの開始時間にとらわれず、撮影可能な時間（日の出から45分経過）になったら撮影を始めてもらっても大丈夫です。</p>
-
-        <h3>リアルタイムの天候確認</h3>
-        <p>出発前の確認として、撮影プランのあるエリアの状況を必ず確認してください。</p>
-        <div class="btn-group">
-            <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーをチェックする</a>
-            <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 全国のライブカメラを確認する</a>
-        </div>
-    </section>
-
-    <section>
-        <h2>自宅から撮影エリアへの移動</h2>
-        <div class="important-card">
-            <span class="alert-red">▼ プラン外で撮影は行いません。</span><br>
-            必ずシステムオフ、カメラカバーをした状態で移動（自宅 ⇄ 撮影プラン）をしてください。
-        </div>
-        <p>▼ 自宅駐車場を出るまでにシステムを立ち上げて向かうべきプランを確認するのはOKですが、プランへ向かうまでの道中は必ずシステムオフ、カメラカバーをした状態で移動してください。</p>
-        <p>→ 撮影地から自宅への移動（帰路）も同様です。</p>
-
-        <div class="info-box">
-            <b>▼ 給油は通勤途中で行うようにしてください（私有地撮影を防ぐため）。</b><br>
-            → 撮影地から自宅への移動（帰路も同様です）。
-        </div>
-    </section>
-
-    <section>
-        <div class="image-reproduce-header">
-            振替協力の目安
-        </div>
-        <p style="margin: 0 0 15px 5px; font-size: 0.95rem;">
-            雨天中止や進捗遅延が発生した場合の<b>振替協力（土日祝・予備日での稼働）</b>をお願いしております。
-        </p>
-
-        <div class="image-reproduce-alert">
-            <span style="color: #d93025; font-weight: bold; display: block; margin-bottom: 8px; font-size: 1rem;">※継続不適格の基準</span>
-            <p style="margin: 0; font-size: 0.9rem; line-height: 1.6;">
-                撮影プランの完遂に向け、<strong>振替への協力が極端に少ない場合</strong>は、チームでのデータ収集が困難と判断され、<strong>継続が難しくなる場合があります。</strong>
-            </p>
-        </div>
-    </section>
-
-    <section>
-        <h2>タイヤ溝の点検（週に1回必須）</h2>
-        <div class="weekly-header">🚨 安全運行のため、タイヤの点検は「週に1回」確実に実施してください</div>
-
-        <div class="info-box">
-            <b>タイヤ溝チェックは運転開始前におこない、もし異常があればOpsLに報告して指示を仰いでください。</b>
-        </div>
-
-        <div class="important-card" style="background: white; border-color: #eee;">
-            <b>【判定基準】</b><br>
-            ・新品時の目安：約 8.0mm<br>
-            ・注意（雨天時の性能低下）：4.0mm 以下<br>
-            <span class="alert-red">・SV交換基準（要報告）：2.5mm 未満</span><br>
-            ・車検NG（使用限界）：1.6mm 未満
-        </div>
-
-        <div class="gauge-item">
-            <h3>タイプ：アナログカード型</h3>
-            <img src="card_gauge.png" class="gauge-img" alt="カード型">
-            <ul class="step-list">
-                <li class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-content">
-                        <span class="step-bold">準備</span>
-                        中央にあるオレンジ色のスライダーを、目盛りの数字が大きい方（上）へ指で押し上げて、先端のオレンジ色の針（プローブ）をしっかり出します。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-content">
-                        <span class="step-bold">測定</span>
-                        タイヤのトレッド面で、最も溝が浅くなっている（摩耗している）と思われる箇所に、オレンジ色の針を垂直に刺し込みます。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-content">
-                        <span class="step-bold">密着</span>
-                        カード本体の底面がタイヤのゴム面（ブロック面）に完全に当たるまで、本体をゆっくり、かつ確実に押し下げます。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">4</div>
-                    <div class="step-content">
-                        <span class="step-bold">確認</span>
-                        オレンジ色のスライダーの<b>左上にある小さな白い矢印</b>が指し示している目盛りの数字（mm）を読み取ります。
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="gauge-item">
-            <h3>タイプ：デジタル型</h3>
-            <img src="digital_gauge.png" class="gauge-img" alt="デジタル型">
-            <ul class="step-list">
-                <li class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-content">
-                        <span class="step-bold">起動</span>
-                        本体にある赤いボタン（ON/OFF）を押して、デジタル表示の電源を入れます。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-content">
-                        <span class="step-bold">リセット（0点調整）</span>
-                        平らな面に本体底面を押し当てて、測定用の針を完全に引っ込めた状態にします。その状態で黄色いボタン（ZERO）を押し、表示を「0.00」にリセットします。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-content">
-                        <span class="step-bold">測定</span>
-                        タイヤの溝に針を刺し、本体の底面をタイヤのゴム面にしっかり押し当てて、液晶パネルに表示された数値（mm）を確認します。
-                    </div>
-                </li>
-            </ul>
-        </div>
-
-        <div class="gauge-item" style="margin-bottom: 10px;">
-            <h3>タイプ：金属ノギス型</h3>
-            <img src="metal_gauge.png" class="gauge-img" alt="ノギス型">
-            <ul class="step-list">
-                <li class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-content">
-                        <span class="step-bold">測定準備</span>
-                        中央部分から伸びている細い金属の棒（プローブ）を、タイヤの最も深い溝の底にしっかりと当てます。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-content">
-                        <span class="step-bold">本体の固定</span>
-                        横に広く作られている金属の土台（ベース）部分を、タイヤのゴム面にしっかりと水平に密着させます。
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-content">
-                        <span class="step-bold">目盛りの読取</span>
-                        本体に刻まれている固定目盛りと移動目盛りの数字を確認します。読み方に迷う場合は、計測した状態のまま写真を撮り、OpsLへ報告してください。
-                    </div>
-                </li>
-            </ul>
+            <span class="alert-red">▼ 継続不適格の基準</span><br>
+            ・効率（GAP距離 ÷ 総距離）が30％を切る<br>
+            ・1日のGAP撮影距離が30kmに満たない<br>
+            <p style="font-size: 0.85rem; margin-top: 5px;">上記が続く場合、稼働の継続を検討させていただく場合があります。</p>
         </div>
     </section>
 
