@@ -203,28 +203,37 @@
             <b>急な雨やトラブルで10分未満で止めた場合</b><br>
             速やかにOpsLに報告し、その後の指示を仰いでください。
         </div>
-    </section>
+<section style="font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', sans-serif; max-width: 100%; padding: 15px; line-height: 1.6; color: #333; background-color: #ffffff;">
+    
+    <h2 style="font-size: 1.25rem; border-left: 6px solid #d00; padding-left: 12px; margin: 0 0 15px 0; color: #000;">撮影対象の道（GAP）</h2>
+    
+    <div style="background-color: #fef4f4; border-radius: 8px; padding: 12px; margin-bottom: 20px; border: 1px solid #ffebeb;">
+        <p style="margin: 0; font-weight: bold; font-size: 1rem; color: #d00;">
+            車載モニターの地図上に撮影すべきGAPは赤く表示され、そこを走ると青くなります。
+        </p>
+    </div>
 
-    <section style="font-family: sans-serif; max-width: 500px; line-height: 1.6;">
-    <h2 style="border-left: 4px solid #333; padding-left: 10px; margin-bottom: 15px;">撮影対象の道（GAP）</h2>
-    <p style="margin-bottom: 20px;">
+    <p style="margin-bottom: 20px; font-size: 0.95rem;">
         ドライバーの主要な仕事は<b>「GAPを撮影すること」</b>と、映像にできない箇所への<b>「マーキング」</b>です。
     </p>
     
-    <div class="gap-status" style="display: flex; align-items: center; margin-bottom: 10px;">
-        <div class="color-chip" style="width: 30px; height: 15px; background: #FF0000; border: 1px solid #ccc; margin-right: 10px;"></div>
-        <span><b>赤色：</b>未撮影のGAP（撮影すべき道）</span>
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 6px;">
+            <div style="width: 45px; height: 12px; background: #FF0000; border-radius: 10px; margin-right: 15px; flex-shrink: 0; box-shadow: 0 1px 3px rgba(0,0,0,0.2);"></div>
+            <span style="font-size: 0.95rem;"><b>赤色：</b>未撮影のGAP<br><small style="color: #666;">（撮影すべき道）</small></span>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 6px;">
+            <div style="width: 45px; height: 12px; background: #00008B; border-radius: 10px; margin-right: 15px; flex-shrink: 0;"></div>
+            <span style="font-size: 0.95rem;"><b>濃い青色：</b>当日撮影済み<br><small style="color: #666;">（走行直後のGAP）</small></span>
+        </div>
+
+        <div style="display: flex; align-items: center; background: #f9f9f9; padding: 10px; border-radius: 6px;">
+            <div style="width: 45px; height: 12px; background: #87CEEB; border-radius: 10px; margin-right: 15px; flex-shrink: 0;"></div>
+            <span style="font-size: 0.95rem;"><b>薄い青色：</b>翌日以降のGAP<br><small style="color: #666;">（2週間残ります）</small></span>
+        </div>
     </div>
 
-    <div class="gap-status" style="display: flex; align-items: center; margin-bottom: 10px;">
-        <div class="color-chip" style="width: 30px; height: 15px; background: #00008B; border: 1px solid #00008B; margin-right: 10px;"></div>
-        <span><b>濃い青色：</b>走行直後のGAP（当日撮影済み）</span>
-    </div>
-
-    <div class="gap-status" style="display: flex; align-items: center; margin-bottom: 10px;">
-        <div class="color-chip" style="width: 30px; height: 15px; background: #87CEEB; border: 1px solid #87CEEB; margin-right: 10px;"></div>
-        <span><b>薄い青色：</b>翌日以降のGAP（2週間残ります）</span>
-    </div>
 </section>
 
     <section>
