@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01. 移動・点検詳細ガイド | SV Driver 2026</title>
+    <title>01. 移動・点検 完全ガイド | SV Driver 2026</title>
     <style>
         :root {
             --main-blue: #4285F4;
@@ -31,32 +31,45 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.9rem; font-weight: bold; }
-        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; color: var(--text-dark); }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
 
         section {
             background: white;
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
             margin-bottom: 20px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         h2 {
-            font-size: 1.2rem;
-            color: white;
-            background: var(--main-blue);
-            padding: 10px 15px;
-            border-radius: 8px;
+            font-size: 1.25rem;
+            color: var(--main-blue);
+            border-bottom: 2px solid var(--main-blue);
+            padding-bottom: 10px;
             margin-top: 0;
             margin-bottom: 20px;
         }
         h3 {
-            font-size: 1.05rem;
-            border-left: 4px solid var(--main-blue);
-            padding-left: 10px;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            margin: 20px 0 10px 0;
             color: var(--text-dark);
+            display: flex;
+            align-items: center;
+        }
+        h3::before {
+            content: "▼";
+            font-size: 0.8rem;
+            margin-right: 8px;
+            color: var(--main-blue);
         }
 
+        p { margin: 10px 0; }
+        .info-box {
+            background: #f8f9fa;
+            border-left: 4px solid #dadce0;
+            padding: 15px;
+            margin: 15px 0;
+            font-size: 0.95rem;
+        }
         .important-card {
             background: #fff4f4;
             border: 1px solid #fadad7;
@@ -64,65 +77,50 @@
             border-radius: 8px;
             margin: 15px 0;
         }
-        .important-card b { color: var(--alert-red); }
+        .alert-red { color: var(--alert-red); font-weight: bold; }
 
-        .info-box {
-            background: #f1f3f4;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-
-        .gauge-section {
-            border: 1px solid #eee;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-        .gauge-img {
-            width: 100%;
-            max-width: 280px;
-            height: auto;
-            border-radius: 8px;
-            display: block;
-            margin: 0 auto 15px;
-        }
-        .step-list { padding-left: 0; list-style: none; }
-        .step-item { display: flex; margin-bottom: 12px; align-items: flex-start; }
-        .step-num {
-            background: var(--main-blue);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-            margin-right: 12px;
-            margin-top: 2px;
-        }
-        .btn-group { display: flex; flex-direction: column; gap: 10px; margin: 15px 0; }
+        .btn-group { display: flex; flex-direction: column; gap: 12px; margin: 20px 0; }
         .btn {
             display: block;
             text-align: center;
-            padding: 12px;
+            padding: 15px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .weekly-alert {
-            background: #e8f0fe;
-            border: 2px solid var(--main-blue);
-            padding: 12px;
+
+        /* ゲージセクション */
+        .gauge-item {
+            background: white;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .gauge-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
             border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            margin-bottom: 15px;
-            color: var(--main-blue);
+            display: block;
+            margin: 0 auto 20px;
+        }
+        .step-list { padding-left: 0; list-style: none; margin: 0; }
+        .step-item { display: flex; margin-bottom: 15px; align-items: flex-start; }
+        .step-num {
+            background: var(--main-blue);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-right: 12px;
         }
     </style>
 </head>
@@ -135,87 +133,86 @@
     </header>
 
     <section>
-        <h2>1. 出発前の天候確認</h2>
-        <p>撮影エリアの状況を必ず事前に確認してください。</p>
+        <h2>天候・雨雲のチェック</h2>
+        <p>出発前のリアルタイム確認として、撮影プランのあるエリアの状況を必ず確認してください。</p>
         <div class="btn-group">
-            <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーを確認</a>
-            <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 ライブカメラを確認</a>
+            <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーをチェックする</a>
+            <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 全国のライブカメラを確認する</a>
         </div>
+        <p style="font-size: 0.9rem; color: var(--text-gray);">※ライブカメラは地域名＋ライブカメラでの検索も有効です。</p>
 
-        <h3>朝から天気が悪い時の開始時間</h3>
+        <h3>朝から天気が悪い時の業務開始時間</h3>
+        <p><b>朝から天気が悪い場合は、当日の日の入り1時間前を終業時間とし、そこから逆算し、勤務開始（待機開始）となります。</b></p>
         <div class="info-box">
-            <b>▼ 勤務時間の計算ルール</b><br>
-            当日の「日の入り1時間前」を終業時間とし、そこから休憩1時間を含む「9時間前」が勤務開始となります。
-            <br><br>
-            <b>計算例：17時が日の入りの場合</b><br>
-            ・終業時間：16時<br>
-            ・開始時間：<b>朝07時</b>
-            <br><br>
-            ※朝から晴れている場合は、日の出から45分経過後に撮影を開始して問題ありません。
+            → 例えば17時が日の入りの日は、その1時間前の16時を終業時間とし、そこから9時間前（昼休憩1時間含む）の07時をその日の業務時間とします。<br>
+            → 日の出、日の入りの時間は定期的にチェックするように心がけてください（以下のテーブルを参照ください）。
+        </div>
+        <p>→ 朝から晴れている場合はこの開始時間にとらわれず、撮影可能な時間（日の出から45分経過）になったら撮影を始めてもらっても大丈夫です。</p>
+    </section>
+
+    <section>
+        <h2>自宅から撮影エリアへの移動</h2>
+        <div class="important-card">
+            <span class="alert-red">▼ プラン外で撮影は行いません。</span><br>
+            必ずシステムオフ、カメラカバーをした状態で移動（自宅 ⇄ 撮影プラン）をしてください。
+        </div>
+        <p>→ 撮影地から自宅への移動（帰路）も同様です。</p>
+
+        <p>▼ 自宅駐車場を出るまでにシステムを立ち上げて向かうべきプランを確認するのはOKですが、プランへ向かうまでの道中は必ずシステムオフ、カメラカバーをした状態で移動してください。</p>
+        <p>→ 撮影地から自宅への移動（帰路も同様です）。</p>
+
+        <div class="info-box">
+            <b>▼ 給油は通勤途中で行うようにしてください（私有地撮影を防ぐため）。</b><br>
+            → 撮影地から自宅への移動（帰路も同様です）。
         </div>
     </section>
 
     <section>
-        <h2>2. 移動中の厳守事項</h2>
-        <div class="important-card">
-            <b>▼ プラン外での撮影禁止</b><br>
-            自宅から撮影エリアへの移動中（往復）は、必ず以下の状態を維持してください：
-            <ul>
-                <li><b>システム：常時オフ</b></li>
-                <li><b>カメラカバー：常時装着</b></li>
+        <h2>タイヤ溝の点検（週に1回必須）</h2>
+        <p>安全運行のため、タイヤの点検は<b>週に1回</b>必ず実施してください。測定器の種類に合わせて正しく計測してください。</p>
+        
+        <div class="important-card" style="background: white; border-color: #eee;">
+            <b>【判定基準】</b><br>
+            ・新品時の目安：約 8.0mm<br>
+            ・注意（雨天時の性能低下）：4.0mm 以下<br>
+            <span class="alert-red">・SV交換基準（要報告）：2.5mm 未満</span><br>
+            ・車検NG（使用限界）：1.6mm 未満
+        </div>
+
+        <div class="gauge-item">
+            <h3>タイプ：アナログカード型</h3>
+            <img src="card_gauge.png" class="gauge-img" alt="カード型ゲージ">
+            <ul class="step-list">
+                <li class="step-item"><div class="step-num">1</div><div><b>準備：</b>中央のオレンジ色のスライダーを、目盛りの数字が大きい方へ押し上げて、先端のオレンジ色の針（プローブ）をしっかり出します。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div><b>測定：</b>タイヤの溝の中で、最も摩耗していると思われる箇所にオレンジ色の針を垂直に刺します。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div><b>密着：</b>カード本体の底面がタイヤのゴム面に完全に当たるまで、本体をゆっくり押し下げます。</div></li>
+                <li class="step-item"><div class="step-num">4</div><div><b>確認：</b>スライダーの左上にある<b>小さな白い矢印</b>が指している数字を読み取ります。それが現在の溝の深さ（mm）です。</div></li>
             </ul>
         </div>
-        <div class="info-box">
-            <b>▼ 給油について</b><br>
-            私有地撮影を防ぐため、給油は必ず<b>「通勤途中」</b>に行ってください。
-        </div>
-        <p style="font-size: 0.9rem;">※自宅駐車場を出るまでのシステム確認はOKですが、道中は必ずオフにしてください。</p>
-    </section>
 
-    <section>
-        <h2>3. タイヤ溝の点検方法</h2>
-        
-        <div class="weekly-alert">
-            🚨 タイヤチェックは「週に1回」必ず実施してください
+        <div class="gauge-item">
+            <h3>タイプ：デジタル型</h3>
+            <img src="digital_gauge.png" class="gauge-img" alt="デジタル型ゲージ">
+            <ul class="step-list">
+                <li class="step-item"><div class="step-num">1</div><div><b>起動：</b>赤いボタン（ON/OFF）を押して電源を入れます。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div><b>リセット：</b>平らな面に押し当てて針を引っ込めた状態で、黄色いボタン（ZERO）を押し、「0.00」を表示させます。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div><b>測定：</b>溝に針を刺し、本体をタイヤ面に密着させて数値を読み取ります。</div></li>
+            </ul>
         </div>
 
-        <div class="important-card">
-            <b>【SV判定基準】</b><br>
-            ・<b>2.5mm 未満</b>：直ちに交換依頼（要報告）<br>
-            ・1.6mm 未満：使用限界（法律違反）
-        </div>
-
-        <div class="gauge-section">
-            <h3>タイプA：アナログカード型</h3>
-            <img src="card_gauge.png" class="gauge-img">
-            <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div>スライダーを上げ針を出します。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div>溝に針を刺し、本体をタイヤに押し当てます。</div></div>
-                <div class="step-item"><div class="step-num">3</div><div><b>左上の白い矢印</b>が指す数値を読みます。</div></div>
-            </div>
-        </div>
-
-        <div class="gauge-section">
-            <h3>タイプB：デジタル型</h3>
-            <img src="digital_gauge.png" class="gauge-img">
-            <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div>ONボタンで起動し、ZEROボタンで0.00に合わせます。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div>溝に針を刺し、数値を読み取ります。</div></div>
-            </div>
-        </div>
-
-        <div class="gauge-section">
-            <h3>タイプC：金属ノギス型</h3>
-            <img src="metal_gauge.png" class="gauge-img">
-            <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div>金属棒を溝に刺し、土台を密着させます。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div>目盛りが重なる箇所を確認します。</div></div>
-            </div>
+        <div class="gauge-item" style="margin-bottom: 10px;">
+            <h3>タイプ：金属ノギス型</h3>
+            <img src="metal_gauge.png" class="gauge-img" alt="金属製ゲージ">
+            <ul class="step-list">
+                <li class="step-item"><div class="step-num">1</div><div><b>測定：</b>中央から伸びている細い金属の棒をタイヤの溝の底に当てます。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div><b>固定：</b>横に広い金属の土台部分を、タイヤのゴム面にしっかりと水平に密着させます。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div><b>読取：</b>重なり合った目盛りの数字を読みます。読み方が難しい場合は、この状態で写真を撮って報告してください。</div></li>
+            </ul>
         </div>
     </section>
 
-    <div style="text-align: center; margin-bottom: 40px;">
-        <a href="../" style="color: var(--text-gray); text-decoration: none;">← マニュアル TOP へ戻る</a>
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">← マニュアル TOP へ戻る</a>
     </div>
 </div>
 
