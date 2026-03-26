@@ -6,119 +6,221 @@
     <title>01. 自宅から撮影エリアへの移動 | SV Driver 2026</title>
     <style>
         :root {
-            --google-blue: #4285F4;
-            --google-red: #EA4335;
-            --google-yellow: #FBBC05;
-            --google-green: #34A853;
-            --bg-gray: #f1f3f4;
+            --main-blue: #4285F4;
+            --sub-blue: #e8f0fe;
+            --alert-red: #d93025;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
         }
         body {
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-            line-height: 1.6;
-            color: #3c4043;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
             background-color: var(--bg-gray);
             margin: 0;
-            padding: 10px;
+            padding: 12px;
         }
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        .header {
+        .container { max-width: 600px; margin: 0 auto; }
+        
+        header {
             background: white;
             padding: 20px;
             border-radius: 12px;
             margin-bottom: 15px;
-            border-top: 8px solid var(--google-blue);
+            border-top: 6px solid var(--main-blue);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        h1 { font-size: 1.3rem; margin: 0; color: #202124; }
-        
-        .card {
+        h1 { font-size: 1.1rem; margin: 0; color: var(--text-gray); font-weight: normal; }
+        .page-title { font-size: 1.4rem; font-weight: bold; color: var(--text-dark); margin-top: 5px; }
+
+        section {
             background: white;
-            padding: 18px;
+            padding: 20px;
             border-radius: 12px;
             margin-bottom: 15px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         h2 {
-            font-size: 1.1rem;
-            color: var(--google-blue);
-            border-bottom: 2px solid var(--bg-gray);
-            padding-bottom: 8px;
+            font-size: 1.15rem;
+            color: var(--main-blue);
             margin-top: 0;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .item { margin-bottom: 20px; }
+        .main-task { font-weight: bold; display: block; margin-bottom: 4px; }
+        .main-task::before { content: "▼ "; color: var(--main-blue); }
+        
+        .sub-info {
+            display: block;
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            padding-left: 1.2rem;
+            position: relative;
+        }
+        .sub-info::before { content: "→"; position: absolute; left: 0; color: #aaa; }
+
+        .btn {
+            display: inline-block;
+            background: var(--main-blue);
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .important-card {
+            background: #fff4f4;
+            border: 1px solid #fadad7;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .important-card b { color: var(--alert-red); }
+
+        .step-list { background: #f1f3f4; padding: 15px; border-radius: 8px; }
+        .step-item { display: flex; margin-bottom: 10px; align-items: flex-start; }
+        .step-num {
+            background: var(--main-blue);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-right: 10px;
         }
-        h2::before { content: "●"; margin-right: 8px; font-size: 0.8rem; }
-
-        .note {
-            background: #fff8e1;
-            border-left: 4px solid var(--google-yellow);
-            padding: 12px;
-            margin: 10px 0;
-            font-size: 0.95rem;
-        }
-        .alert {
-            background: #fce8e6;
-            border-left: 4px solid var(--google-red);
-            padding: 12px;
-            margin: 10px 0;
-            font-size: 0.95rem;
-        }
-        ul { padding-left: 18px; margin: 0; }
-        li { margin-bottom: 12px; list-style-type: none; position: relative; }
-        li::before { content: "▼"; position: absolute; left: -18px; font-size: 0.7rem; top: 4px; color: #70757a; }
-        
-        .sub-text {
-            display: block;
-            font-size: 0.9rem;
-            color: #5f6368;
-            margin-top: 4px;
-            padding-left: 10px;
-            border-left: 2px solid #dadce0;
-        }
-        .btn-link {
-            display: inline-block;
-            background: var(--google-blue);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 25px;
-            margin: 10px 0;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-        .step-box {
-            background: #e8f0fe;
-            padding: 10px;
+        .media-placeholder {
+            background: #ddd;
+            width: 100%;
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             border-radius: 8px;
-            margin: 5px 0;
-            font-weight: bold;
+            margin: 15px 0;
+            color: #777;
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <h1>SV Driver Japan 2026<br>01. 自宅から撮影エリアへの移動</h1>
-    </div>
+    <header>
+        <h1>SV Driver Japan in 2026</h1>
+        <div class="page-title">01. 自宅から撮影エリアへの移動</div>
+    </header>
 
-    <div class="card">
+    <section>
         <h2>ライブカメラでの天気チェック</h2>
-        <ul>
-            <li>ネットで「地域名 ライブカメラ」と入力し、実際の空模様を確認してください。
-                <a href="#" class="btn-link">全国のライブカメラ（まとめ）</a>
-            </li>
-            <li>必ず撮影プランのあるエリアを確認してください。</li>
-        </ul>
-    </div>
+        <div class="item">
+            <span class="main-task">地域名＋ライブカメラで検索</span>
+            <span class="sub-info">日本のほぼ全域で実際の空模様が確認できます。</span>
+            <a href="https://www.live-cam.pref.fukui.jp/" target="_blank" class="btn">全国のライブカメラを確認する</a>
+            <span class="sub-info">必ず撮影プランのあるエリアを確認してください。</span>
+        </div>
+    </section>
 
-    <div class="card">
+    <section>
         <h2>自宅を出る前</h2>
-        <ul>
-            <li>終日天気が悪そうな場合、週末への振替をOpsLへ連絡。
-                <span class="sub-text">※平日雨天待機でも給与100%保証。積極的に振替を。</span>
-            </li>
-            <li>体調不良・発熱・私
+        <div class="item">
+            <span class="main-task">悪天候時の振替確認</span>
+            <span class="sub-info">終日悪そうな場合、週末への振替をOpsLに相談。</span>
+            <span class="sub-info">平日雨天待機でも給与100％保証ですが、積極的な撮影時間確保をお願いします。</span>
+        </div>
+        <div class="item">
+            <span class="main-task">体調不良・急な休みの連絡</span>
+            <span class="sub-info">直ちにOpsLに連絡し、指示を仰いでください。</span>
+            <span class="sub-info">私用欠勤の振替は、週末が晴れる場合のみ可能です。</span>
+        </div>
+        <div class="item">
+            <span class="main-task">スマートドライブアプリの起動</span>
+            <span class="sub-info">アプリを立ち上げ、出発準備を完了させてください。</span>
+        </div>
+        <div class="item">
+            <span class="main-task">アルコールチェックの実施</span>
+            <span class="sub-info">数値をアプリにアップロード。</span>
+            <div class="important-card">
+                <b>⚠️ アルコール 0.01以上の場合</b><br>
+                ・機器誤作動の疑い：直ちにOpsLへ連絡。<br>
+                ・飲酒の影響：当日はお休みとなります。
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>朝から天気が悪い時の勤務開始</h2>
+        <div class="item">
+            <span class="main-task">日没から逆算した勤務シフト</span>
+            <span class="sub-info">日没1時間前を終業とし、そこから9時間前（休憩込）を開始時間とします。</span>
+            <div class="step-list">
+                例：17時日没の場合<br>
+                16時（終業）← <b>7時（待機開始）</b>
+            </div>
+            <span class="sub-info">日の出・日没時間は定期的にチェックしてください。</span>
+            <span class="sub-info">晴天時は「日の出45分後」から撮影開始可能です。</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>移動中の厳守事項</h2>
+        <div class="important-card">
+            <b>移動中（自宅 ⇄ 撮影プラン）は必ず：</b><br>
+            ・システムオフ<br>
+            ・カメラカバー装着
+        </div>
+        <div class="item">
+            <span class="main-task">給油について</span>
+            <span class="sub-info">私有地撮影を防ぐため、必ず「通勤途中」に行うようにしてください。</span>
+        </div>
+    </section>
+
+    <section>
+        <h2>撮影エリア到着時</h2>
+        <div class="item">
+            <span class="main-task">カメラ・レンズ点検</span>
+            <span class="sub-info">カバーを外し、レンズの汚れや傷をチェック。</span>
+            <span class="sub-info">異変があれば直ちにOpsLへ。</span>
+        </div>
+        <div class="item">
+            <span class="main-task">タイヤ点検（週1回必須）</span>
+            <span class="sub-info">溝・亀裂を確認。1箇所でも<b>2.5mm未満</b>なら交換。</span>
+            <div class="media-placeholder">【タイヤゲージ写真 準備中】</div>
+        </div>
+    </section>
+
+    <section>
+        <h2>デジタルタイヤゲージ使用方法</h2>
+        <div class="step-list">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div>針が出ていたら、平らな所に押し当てて引っ込める。</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div>右側にプランジャーが出てきます。（自動表示）</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div>黄色ボタンで「ゼロ」にし、溝に針をあてる。（単位：mm）</div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <div>プランジャーを底面まで差し込み測定。</div>
+            </div>
+        </div>
+        <span class="sub-info" style="margin-top:10px;">※反応しない場合は赤色ボタンでオンにしてから測定。</span>
+    </section>
+</div>
+
+</body>
+</html>
