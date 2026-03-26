@@ -1,1 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07. エラー対応 | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --marker-blue: #1A73E8;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --warning-orange: #fbbc04;
+            --error-blue-bg: #e8f0fe;
+            --error-red-bg: #fce8e6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white;
+            padding: 20px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-top: 6px solid var(--main-blue);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 1rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
+        
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.25rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 8px; margin-top: 0; }
+        h3 { font-size: 1.1rem; margin-top: 20px; display: flex; align-items: center; }
+        
+        .error-card-red { background: var(--error-red-bg); border: 2px solid var(--alert-red); padding: 15px; border-radius: 8px; margin: 15px 0; }
+        .error-card-blue { background: var(--error-blue-bg); border: 2px solid var(--main-blue); padding: 15px; border-radius: 8px; margin: 15px 0; }
+        
+        .important-card { background: #fff4f4; border: 1px solid #fadad7; padding: 18px; border-radius: 8px; margin: 15px 0; font-size: 1rem; }
+        .info-box { background: #f1f3f4; border-left: 4px solid #dadce0; padding: 15px; margin: 15px 0; font-size: 1rem; border-radius: 0 4px 4px 0; }
+        
+        .alert-badge-red { background: var(--alert-red); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-right: 8px; }
+        .alert-badge-blue { background: var(--main-blue); color: white; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; margin-right: 8px; }
+        
+        .action-step { font-weight: bold; color: var(--text-dark); display: block; margin-top: 10px; }
+        .action-step::before { content: "➜ "; color: var(--main-blue); }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">07. エラー対応</div>
+    </header>
+
+    <section>
+        <h2>🔴 赤色エラー（システム不具合）</h2>
+        <div class="error-card-red">
+            <b>状況：画面全体が赤くなる</b><br>
+            <small>原因：システムやケーブル機材の不具合</small>
+        </div>
+        
+        <p>立ち上げ直後や撮影中に急に発生します。以下の手順で対応してください。</p>
+
+        <span class="action-step">スマートドライブアプリで「エラー発生」を登録</span>
+        <span class="action-step">駐車場など安全な場所に停車する</span>
+        <span class="action-step">「06. パワーサイクル」の手順でリセットを行う</span>
+
+        <div class="info-box">
+            ほとんどの赤エラーは、パワーサイクル（システムリセット）を実行することで解消されます。
+        </div>
+    </section>
+
+    <section>
+        <h2>🔵 青色エラー（メッセージ・警告）</h2>
+        <div class="error-card-blue">
+            <b>状況：青色のメッセージが表示される</b><br>
+            <small>原因：光量不足の検知、レンズの遮蔽など</small>
+        </div>
+
+        <h3><span class="alert-badge-blue">警告</span>光量不足のアラート</h3>
+        <p>システムが10分間隔で自動検知し、暗すぎる場合に表示されます。</p>
+        <div class="important-card" style="background: #fff9e6; border-color: #ffe58f;">
+            <b>目視確認が最優先</b><br>
+            システム検知はあくまで参考です。立て続けに表示された場合は、必ず目視で空を確認してください。<br>
+            <span style="color: var(--alert-red); font-weight: bold;">※光量不足で強行すると、全データ撮り直し（無給）になるリスクがあります。</span>
+        </div>
+
+        <h3><span class="alert-badge-blue">重要</span>特に注意すべきメッセージ</h3>
+        
+        <div class="info-box" style="border-left-color: var(--warning-orange);">
+            <b>「上カメラが暗すぎます」</b><br>
+            実際に上空が暗い可能性が高いです。目視で確認し、問題があればアプリで「待機報告」を入れてください。
+        </div>
+
+        <div class="info-box" style="border-left-color: var(--alert-red);">
+            <b>「カメラが何かに覆われています」</b><br>
+            カメラカバーを外していない可能性が非常に高いです。直ちに確認し、OpsLに報告して指示を仰いでください。
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 1rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
