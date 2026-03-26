@@ -51,7 +51,7 @@
         }
         h3 {
             font-size: 1.1rem;
-            margin: 20px 0 10px 0;
+            margin: 25px 0 10px 0;
             color: var(--text-dark);
             display: flex;
             align-items: center;
@@ -83,18 +83,17 @@
         .btn {
             display: block;
             text-align: center;
-            padding: 15px;
+            padding: 18px;
             text-decoration: none;
             border-radius: 8px;
             font-weight: bold;
             color: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
         }
         .btn-sunset {
             background: linear-gradient(135deg, #ff9800, #f44336);
-            border: none;
-            font-size: 1.1rem;
-            margin: 10px 0;
+            margin-bottom: 25px;
         }
 
         .gauge-item {
@@ -106,36 +105,41 @@
         }
         .gauge-img {
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             height: auto;
             border-radius: 8px;
             display: block;
             margin: 0 auto 20px;
         }
         .step-list { padding-left: 0; list-style: none; margin: 0; }
-        .step-item { display: flex; margin-bottom: 15px; align-items: flex-start; }
+        .step-item { display: flex; margin-bottom: 20px; align-items: flex-start; }
         .step-num {
             background: var(--main-blue);
             color: white;
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             flex-shrink: 0;
-            margin-right: 12px;
+            margin-right: 15px;
+            margin-top: 2px;
         }
-        .weekly-alert {
+        .step-content { flex: 1; }
+        .step-bold { font-weight: bold; display: block; margin-bottom: 6px; color: var(--text-dark); font-size: 1.05rem; }
+
+        .weekly-header {
             background: #e8f0fe;
             border: 2px solid var(--main-blue);
-            padding: 12px;
+            padding: 15px;
             border-radius: 8px;
             text-align: center;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             color: var(--main-blue);
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -147,31 +151,32 @@
         <div class="page-title">01. 自宅から撮影エリアへの移動・点検</div>
     </header>
 
-    <section>
-        <h2>天候・雨雲のチェック</h2>
-        <p>出発前のリアルタイム確認として、撮影プランのあるエリアの状況を必ず確認してください。</p>
-        <div class="btn-group">
-            <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーをチェック</a>
-            <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 全国のライブカメラを確認</a>
-        </div>
+    <section style="padding-top: 10px; border-top: 8px solid var(--sunset-orange);">
+        <a href="https://www.motohasi.net/SunriseSunset/PLSST.php" target="_blank" class="btn btn-sunset">☀️ 日の出・日の入り時刻を確認する</a>
+        <p style="text-align: center; font-size: 0.9rem; color: var(--text-gray);">※日の出、日の入りの時間は定期的にチェックするように心がけてください。</p>
+    </section>
 
+    <section>
+        <h2>天候・勤務時間の対応</h2>
+        
         <h3>朝から天気が悪い場合の対応</h3>
         <div class="important-card">
-            <b>【振替のお願い】</b><br>
-            朝から天気が悪い場合は、可能な範囲で<b>週末への振替</b>を検討し、OpsLへ相談してください。
+            <b>【重要：振替のお願い】</b><br>
+            朝から天気が悪い場合は、可能な範囲で<b>週末への振替</b>を検討し、OpsLへ相談してください。積極的な撮影時間確保をお願いします。
         </div>
 
-        <h3>業務開始時間の計算ルール</h3>
-        <p><b>天気が悪く待機となる場合は、当日の「日の入り1時間前」を終業時間とし、そこから逆算して勤務開始（待機開始）となります。</b></p>
-        
-        <a href="https://www.motohasi.net/SunriseSunset/PLSST.php" target="_blank" class="btn btn-sunset">☀️ 日の出・日の入り時刻を確認する</a>
-
+        <p><b>朝から天気が悪い場合は、当日の「日の入り1時間前」を終業時間とし、そこから逆算し、勤務開始（待機開始）となります。</b></p>
         <div class="info-box">
-            <b>計算例：17時が日の入りの日</b><br>
-            ・終業時間：16時（日の入り1時間前）<br>
-            ・開始時間：<b>朝07時</b>（16時から休憩含む9時間逆算）
+            → 例えば17時が日の入りの日は、その1時間前の16時を終業時間とし、そこから9時間前（昼休憩1時間含む）の07時をその日の業務時間とします。
         </div>
-        <p>※朝から晴れている場合はこの開始時間にとらわれず、撮影可能な時間（日の出から45分経過）になったら撮影を開始してください。</p>
+        <p>→ 朝から晴れている場合はこの開始時間にとらわれず、撮影可能な時間（日の出から45分経過）になったら撮影を始めてもらっても大丈夫です。</p>
+
+        <h3>リアルタイムの天候確認</h3>
+        <p>出発前の確認として、撮影プランのあるエリアの状況を必ず確認してください。</p>
+        <div class="btn-group">
+            <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーをチェックする</a>
+            <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 全国のライブカメラを確認する</a>
+        </div>
     </section>
 
     <section>
@@ -180,51 +185,115 @@
             <span class="alert-red">▼ プラン外で撮影は行いません。</span><br>
             必ずシステムオフ、カメラカバーをした状態で移動（自宅 ⇄ 撮影プラン）をしてください。
         </div>
-        <p>▼ 自宅駐車場を出るまでにシステムを立ち上げて向かうべきプランを確認するのはOKですが、道中は必ずシステムオフ、カメラカバーをした状態で移動してください（帰路も同様です）。</p>
+        <p>▼ 自宅駐車場を出るまでにシステムを立ち上げて向かうべきプランを確認するのはOKですが、プランへ向かうまでの道中は必ずシステムオフ、カメラカバーをした状態で移動してください。</p>
+        <p>→ 撮影地から自宅への移動（帰路）も同様です。</p>
 
         <div class="info-box">
-            <b>▼ 給油は通勤途中で行うようにしてください。</b><br>
-            私有地撮影を防ぐため、必ず「通勤途中（移動経路内）」のガソリンスタンドを利用してください。
+            <b>▼ 給油は通勤途中で行うようにしてください（私有地撮影を防ぐため）。</b><br>
+            → 撮影地から自宅への移動（帰路も同様です）。
         </div>
     </section>
 
     <section>
         <h2>タイヤ溝の点検（週に1回必須）</h2>
-        <div class="weekly-alert">🚨 週に1回、確実に実施してください</div>
-        
+        <div class="weekly-header">🚨 安全運行のため、タイヤの点検は「週に1回」確実に実施してください</div>
+
         <div class="important-card" style="background: white; border-color: #eee;">
             <b>【判定基準】</b><br>
-            ・新品目安：約 8.0mm / 注意：4.0mm 以下<br>
-            <span class="alert-red">・SV交換基準：2.5mm 未満（直ちに報告）</span><br>
-            ・車検NG：1.6mm 未満
+            ・新品時の目安：約 8.0mm<br>
+            ・注意（雨天時の性能低下）：4.0mm 以下<br>
+            <span class="alert-red">・SV交換基準（要報告）：2.5mm 未満</span><br>
+            ・車検NG（使用限界）：1.6mm 未満
         </div>
 
         <div class="gauge-item">
             <h3>タイプ：アナログカード型</h3>
-            <img src="card_gauge.png" class="gauge-img">
+            <img src="card_gauge.png" class="gauge-img" alt="カード型">
             <ul class="step-list">
-                <li class="step-item"><div class="step-num">1</div><div><b>準備：</b>オレンジのスライダーを上へ押し、針を完全に出します。</div></li>
-                <li class="step-item"><div class="step-num">2</div><div><b>測定：</b>最も摩耗している溝に針を垂直に刺します。</div></li>
-                <li class="step-item"><div class="step-num">3</div><div><b>密着：</b>本体底面がタイヤ面に当たるまでスライダーを下げます。</div></li>
-                <li class="step-item"><div class="step-num">4</div><div><b>確認：</b>左上の<b>白い矢印</b>が指す数字（mm）を読み取ります。</div></li>
+                <li class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <span class="step-bold">準備</span>
+                        中央にあるオレンジ色のスライダーを、目盛りの数字が大きい方（上）へ指で押し上げて、先端のオレンジ色の針（プローブ）をしっかり出します。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <span class="step-bold">測定</span>
+                        タイヤのトレッド面で、最も溝が浅くなっている（摩耗している）と思われる箇所に、オレンジ色の針を垂直に刺し込みます。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <span class="step-bold">密着</span>
+                        カード本体の底面がタイヤのゴム面（ブロック面）に完全に当たるまで、本体をゆっくり、かつ確実に押し下げます。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-content">
+                        <span class="step-bold">確認</span>
+                        オレンジ色のスライダーの<b>左上にある小さな白い矢印</b>が指し示している目盛りの数字（mm）を読み取ります。
+                    </div>
+                </li>
             </ul>
         </div>
 
         <div class="gauge-item">
             <h3>タイプ：デジタル型</h3>
-            <img src="digital_gauge.png" class="gauge-img">
+            <img src="digital_gauge.png" class="gauge-img" alt="デジタル型">
             <ul class="step-list">
-                <li class="step-item"><div class="step-num">1</div><div><b>起動：</b>赤ボタンでON。平らな所で黄ボタン（ZERO）を押し0.00にします。</div></li>
-                <li class="step-item"><div class="step-num">2</div><div><b>測定：</b>溝に針を刺し、本体を密着させて数値を読みます。</div></li>
+                <li class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <span class="step-bold">起動</span>
+                        本体にある赤いボタン（ON/OFF）を押して、デジタル表示の電源を入れます。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <span class="step-bold">リセット（0点調整）</span>
+                        平らな面に本体底面を押し当てて、測定用の針を完全に引っ込めた状態にします。その状態で黄色いボタン（ZERO）を押し、表示を「0.00」にリセットします。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <span class="step-bold">測定</span>
+                        タイヤの溝に針を刺し、本体の底面をタイヤのゴム面にしっかり押し当てて、液晶パネルに表示された数値（mm）を確認します。
+                    </div>
+                </li>
             </ul>
         </div>
 
-        <div class="gauge-item">
+        <div class="gauge-item" style="margin-bottom: 10px;">
             <h3>タイプ：金属ノギス型</h3>
-            <img src="metal_gauge.png" class="gauge-img">
+            <img src="metal_gauge.png" class="gauge-img" alt="ノギス型">
             <ul class="step-list">
-                <li class="step-item"><div class="step-num">1</div><div><b>測定：</b>金属の棒を溝に刺し、土台をタイヤ面に水平に密着させます。</div></li>
-                <li class="step-item"><div class="step-num">2</div><div><b>読取：</b>重なった目盛りを読みます。不安なら写真を撮って報告してください。</div></li>
+                <li class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-content">
+                        <span class="step-bold">測定準備</span>
+                        中央部分から伸びている細い金属の棒（プローブ）を、タイヤの最も深い溝の底にしっかりと当てます。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-content">
+                        <span class="step-bold">本体の固定</span>
+                        横に広く作られている金属の土台（ベース）部分を、タイヤのゴム面に沿ってしっかりと水平に密着させます。
+                    </div>
+                </li>
+                <li class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-content">
+                        <span class="step-bold">目盛りの読取</span>
+                        本体に刻まれている固定目盛りと移動目盛りの数字を確認します。読み方に迷う場合は、計測した状態のまま写真を撮り、OpsLへ報告してください。
+                    </div>
+                </li>
             </ul>
         </div>
     </section>
