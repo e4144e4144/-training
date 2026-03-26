@@ -53,6 +53,21 @@
         
         .action-step { font-weight: bold; color: var(--text-dark); display: block; margin-top: 10px; }
         .action-step::before { content: "➜ "; color: var(--main-blue); }
+
+        /* 追加：リンクボタンのスタイル */
+        .link-button {
+            display: block;
+            background: var(--main-blue);
+            color: white;
+            text-decoration: none;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin-top: 15px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .link-button:active { background: #3367d6; transform: translateY(1px); }
     </style>
 </head>
 <body>
@@ -66,7 +81,7 @@
     <section>
         <h2>🔴 赤色エラー（システム不具合）</h2>
         <div class="error-card-red">
-            <b>状況：画面全体が赤くなる</b><br>
+            <b>状況：車載モニターに赤色のメッセージが表示される</b><br>
             <small>原因：システムやケーブル機材の不具合</small>
         </div>
         
@@ -76,15 +91,18 @@
         <span class="action-step">駐車場など安全な場所に停車する</span>
         <span class="action-step">「06. パワーサイクル」の手順でリセットを行う</span>
 
-        <div class="info-box">
-            ほとんどの赤エラーは、パワーサイクル（システムリセット）を実行することで解消されます。
+        <a href="page06.html" class="link-button">06. パワーサイクルの手順を確認する</a>
+
+        <div class="info-box" style="border-left-color: var(--alert-red);">
+            <b>【重要】</b><br>
+            ほとんどの赤エラーはパワーサイクルで解消されますが、<b>連続して赤色メッセージが出る場合は直ちにOpsLに連絡して指示を仰いでください。</b>
         </div>
     </section>
 
     <section>
         <h2>🔵 青色エラー（メッセージ・警告）</h2>
         <div class="error-card-blue">
-            <b>状況：青色のメッセージが表示される</b><br>
+            <b>状況：車載モニターに青色のメッセージが表示される</b><br>
             <small>原因：光量不足の検知、レンズの遮蔽など</small>
         </div>
 
