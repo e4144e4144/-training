@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>01. 自宅から撮影エリアへの移動 | SV Driver 2026</title>
+    <title>01. タイヤ点検ガイド | SV Driver 2026</title>
     <style>
         :root {
             --main-blue: #4285F4;
@@ -12,28 +12,27 @@
             --bg-gray: #f8f9fa;
             --text-dark: #202124;
             --text-gray: #5f6368;
-            --rain-blue: #005CAF;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
             color: var(--text-dark);
             background-color: var(--bg-gray);
             margin: 0;
-            padding: 12px;
+            padding: 10px;
         }
         .container { max-width: 600px; margin: 0 auto; }
         
         header {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 12px;
             margin-bottom: 15px;
             border-top: 6px solid var(--main-blue);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        h1 { font-size: 1.1rem; margin: 0; color: var(--text-gray); font-weight: normal; }
-        .page-title { font-size: 1.4rem; font-weight: bold; color: var(--text-dark); margin-top: 5px; }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.9rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 5px; }
 
         section {
             background: white;
@@ -43,169 +42,125 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         h2 {
-            font-size: 1.15rem;
-            color: var(--main-blue);
+            font-size: 1.1rem;
+            color: white;
+            background: var(--main-blue);
+            padding: 8px 15px;
+            border-radius: 6px;
             margin-top: 0;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
         }
-        
-        .item { margin-bottom: 20px; }
-        .main-task { font-weight: bold; display: block; margin-bottom: 4px; }
-        .main-task::before { content: "▼ "; color: var(--main-blue); }
-        
-        .sub-info {
-            display: block;
-            font-size: 0.95rem;
-            color: var(--text-gray);
-            padding-left: 1.2rem;
-            position: relative;
-        }
-        .sub-info::before { content: "→"; position: absolute; left: 0; color: #aaa; }
 
-        .btn-group { display: flex; flex-direction: column; gap: 10px; margin: 15px 0; }
-        .btn {
+        .gauge-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background: #fff;
+        }
+        .gauge-img {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+            margin: 0 auto 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .gauge-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--main-blue);
             display: block;
             text-align: center;
-            padding: 12px 18px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 0.95rem;
-            transition: opacity 0.2s;
+            margin-bottom: 10px;
+            border-bottom: 2px solid var(--sub-blue);
         }
-        .btn-blue { background: var(--main-blue); color: white; }
-        .btn-rain { background: var(--rain-blue); color: white; }
-        .btn:active { opacity: 0.7; }
+
+        .step-list { padding-left: 0; list-style: none; }
+        .step-item { display: flex; margin-bottom: 10px; font-size: 0.95rem; }
+        .step-num {
+            background: var(--main-blue);
+            color: white;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            flex-shrink: 0;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
 
         .important-card {
             background: #fff4f4;
             border: 1px solid #fadad7;
             padding: 15px;
             border-radius: 8px;
-            margin: 10px 0;
         }
-        .important-card b { color: var(--alert-red); }
-
-        .step-list { background: #f1f3f4; padding: 15px; border-radius: 8px; }
-        .step-item { display: flex; margin-bottom: 10px; align-items: flex-start; }
-        .step-num {
-            background: var(--main-blue);
-            color: white;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-            margin-right: 10px;
-        }
-        .gauge-type { margin-top: 25px; padding-top: 15px; border-top: 2px solid var(--bg-gray); }
-        .standard-item {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.9rem;
-            margin-bottom: 4px;
-        }
+        .standard-table { width: 100%; font-size: 0.9rem; border-collapse: collapse; }
+        .standard-table td { padding: 5px 0; border-bottom: 1px solid #eee; }
+        .red-bold { color: var(--alert-red); font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>SV Driver Japan in 2026</h1>
-        <div class="page-title">01. 自宅から撮影エリアへの移動</div>
+        <a href="index.html" class="back-link">← メインメニューに戻る</a>
+        <div class="page-title">タイヤ溝の測定方法</div>
     </header>
 
     <section>
-        <h2>天候・雨雲のチェック</h2>
-        <div class="item">
-            <span class="main-task">出発前のリアルタイム確認</span>
-            <span class="sub-info">撮影プランのあるエリアの状況を必ず確認してください。</span>
-            
-            <div class="btn-group">
-                <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn btn-rain">🌧️ 雨雲レーダーをチェックする</a>
-                <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn btn-blue">📷 全国のライブカメラを確認する</a>
-            </div>
-            
-            <span class="sub-info">ライブカメラは地域名＋ライブカメラでの検索も有効です。</span>
-        </div>
-    </section>
-
-    <section>
-        <h2>自宅を出る前</h2>
-        <div class="item">
-            <span class="main-task">悪天候時の振替確認</span>
-            <span class="sub-info">終日悪そうな場合、週末への振替をOpsLに相談。</span>
-            <span class="sub-info">平日雨天待機でも給与100％保証ですが、積極的な撮影時間確保をお願いします。</span>
-        </div>
-        <div class="item">
-            <span class="main-task">体調不良・急な休みの連絡</span>
-            <span class="sub-info">直ちにOpsLに連絡し、指示を仰いでください。</span>
-        </div>
-        <div class="item">
-            <span class="main-task">スマートドライブアプリの起動</span>
-            <span class="sub-info">アプリを立ち上げ、出発準備を完了させてください。</span>
-        </div>
-        <div class="item">
-            <span class="main-task">アルコールチェックの実施</span>
-            <div class="important-card">
-                <b>⚠️ アルコール 0.01以上の場合</b><br>
-                ・機器誤作動の疑い：直ちにOpsLへ連絡。<br>
-                ・飲酒の影響：当日はお休みとなります。<br>
-                　※アプリに0.0以外の数値を入れるとその日は出勤停止。
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>移動中の厳守事項</h2>
         <div class="important-card">
-            <b>移動中（自宅 ⇄ 撮影プラン）は必ず：</b><br>
-            ・システム<b>オフ</b><br>
-            ・カメラカバー<b>装着</b><br>
-        </div>
-        <div class="item">
-            <span class="main-task">給油について</span>
-            <span class="sub-info">必ず「通勤途中」に行うようにしてください。</span>
-        </div>
-    </section>
-
-    <section>
-        <h2>タイヤゲージ使用方法（2タイプ対応）</h2>
-        
-        <div class="item">
-            <span class="main-task">共通：摩耗状態の判定目安</span>
-            <div class="important-card">
-                <div class="standard-item"><span>新品時:</span><span>約 8.0mm 前後</span></div>
-                <div class="standard-item"><span>注意（交換検討）:</span><span>4.0mm 以下</span></div>
-                <div class="standard-item" style="color:var(--alert-red); font-weight:bold;"><span>SV交換基準:</span><span>2.5mm 未満</span></div>
-                <div class="standard-item" style="border-top: 1px solid #fadad7; margin-top:5px; padding-top:5px;"><b>車検NG:</b><b>1.6mm 未満（スリップサイン）</b></div>
-            </div>
-        </div>
-
-        <div class="gauge-type">
-            <span class="main-task">タイプA：デジタルタイヤゲージ</span>
-            <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div><b>電源オン:</b> ONボタン（赤色）を押す。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div><b>ゼロ点:</b> 平らな場所に押し当て ZERO ボタン（黄色）を押し「0.00」に。</div></div>
-                <div class="step-item"><div class="step-num">3</div><div><b>測定:</b> 溝にプローブを差し込み、底面をタイヤに押し当てる。</div></div>
-            </div>
-        </div>
-
-        <div class="gauge-type">
-            <span class="main-task">タイプB：アナログゲージ（カード型）</span>
-            <div class="step-list">
-                <div class="step-item"><div class="step-num">1</div><div><b>準備:</b> 中央のオレンジのスライダーを上げ、針を出す。</div></div>
-                <div class="step-item"><div class="step-num">2</div><div><b>測定:</b> タイヤの溝にオレンジの針を差し込む。</div></div>
-                <div class="step-item"><div class="step-num">3</div><div><b>押し当て:</b> スライダーを下げ、カード底面をタイヤに密着させる。</div></div>
-                <div class="step-item"><div class="step-num">4</div><div><b>読み取り:</b> 左上の白い矢印が指す数値を読む。</div></div>
-            </div>
+            <b style="color:var(--alert-red);">【判定基準】</b>
+            <table class="standard-table">
+                <tr><td>新品時</td><td>約 8.0mm</td></tr>
+                <tr><td>注意（雨の日の性能低下）</td><td>4.0mm 以下</td></tr>
+                <tr><td class="red-bold">SV交換基準（即報告！）</td><td class="red-bold">2.5mm 未満</td></tr>
+                <tr><td>車検NG（スリップサイン）</td><td>1.6mm 未満</td></tr>
+            </table>
         </div>
     </section>
+
+    <h2>支給タイプ別・使い方の説明</h2>
+
+    <div class="gauge-card">
+        <span class="gauge-name">A：デジタル型（高精度）</span>
+        <img src="digital_gauge.png" alt="デジタルタイヤゲージ" class="gauge-img">
+        <div class="step-list">
+            <div class="step-item"><div class="step-num">1</div><div><b>電源ON:</b> 赤色ボタンを押して起動。</div></div>
+            <div class="step-item"><div class="step-num">2</div><div><b>ゼロ設定:</b> 平らな所に押し当てて ZERO ボタンを押す。</div></div>
+            <div class="step-item"><div class="step-num">3</div><div><b>測定:</b> 溝に針を刺し、本体をタイヤ面に密着させる。</div></div>
+        </div>
+    </div>
+
+    <div class="gauge-card">
+        <span class="gauge-name">B：アナログカード型（軽量）</span>
+        <img src="card_gauge.png" alt="カード型ゲージ" class="gauge-img">
+        <div class="step-list">
+            <div class="step-item"><div class="step-num">1</div><div><b>準備:</b> オレンジのスライダーを上に上げ、針を出す。</div></div>
+            <div class="step-item"><div class="step-num">2</div><div><b>刺す:</b> オレンジの針を溝の底に垂直に当てる。</div></div>
+            <div class="step-item"><div class="step-num">3</div><div><b>スライド:</b> カード本体をタイヤ面に付くまで下げる。</div></div>
+            <div class="step-item"><div class="step-num">4</div><div><b>確認:</b> 左上の白い矢印が指す目盛りを読む。</div></div>
+        </div>
+    </div>
+
+    <div class="gauge-card">
+        <span class="gauge-name">C：金属ノギス型（高耐久）</span>
+        <img src="metal_gauge.png" alt="金属製ゲージ" class="gauge-img">
+        <div class="step-list">
+            <div class="step-item"><div class="step-num">1</div><div><b>測定:</b> 飛び出している細い金属の棒を溝に刺す。</div></div>
+            <div class="step-item"><div class="step-num">2</div><div><b>密着:</b> 本体の横に長い底面をタイヤ面にしっかり当てる。</div></div>
+            <div class="step-item"><div class="step-num">3</div><div><b>読取:</b> 中央の目盛りが重なっている部分の数字を確認。</div></div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <p style="font-size: 0.8rem; color: #777;">※1箇所でも基準値以下の場合は速やかに報告してください。</p>
+        <a href="index.html" style="color: var(--text-gray); font-size: 0.9rem;">トップページへ戻る</a>
+    </div>
 </div>
 
 </body>
