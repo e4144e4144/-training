@@ -7,7 +7,6 @@
     <style>
         :root {
             --main-blue: #4285F4;
-            --sub-blue: #e8f0fe;
             --alert-red: #d93025;
             --bg-gray: #f8f9fa;
             --text-dark: #202124;
@@ -23,7 +22,6 @@
             padding: 12px;
         }
         .container { max-width: 600px; margin: 0 auto; }
-        
         header {
             background: white;
             padding: 15px;
@@ -32,8 +30,8 @@
             border-top: 6px solid var(--main-blue);
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.9rem; font-weight: bold; display: inline-block; margin-bottom: 5px; }
-        .page-title { font-size: 1.3rem; font-weight: bold; margin-top: 0; }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 0.9rem; font-weight: bold; }
+        .page-title { font-size: 1.3rem; font-weight: bold; margin-top: 5px; }
 
         section {
             background: white;
@@ -50,7 +48,6 @@
             padding-bottom: 8px;
             margin-bottom: 15px;
         }
-        
         .item { margin-bottom: 20px; }
         .main-task { font-weight: bold; display: block; margin-bottom: 4px; }
         .main-task::before { content: "▼ "; color: var(--main-blue); }
@@ -61,6 +58,7 @@
             color: var(--text-gray);
             padding-left: 1.2rem;
             position: relative;
+            margin-bottom: 4px;
         }
         .sub-info::before { content: "→"; position: absolute; left: 0; color: #aaa; }
 
@@ -86,56 +84,45 @@
         }
         .important-card b { color: var(--alert-red); }
 
-        .standard-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; margin-top: 10px; }
-        .standard-table td { padding: 8px 0; border-bottom: 1px solid #eee; }
-
-        /* ゲージ解説用 */
         .gauge-box {
             border: 1px solid #eee;
             border-radius: 10px;
             padding: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             background: #fff;
         }
         .gauge-img {
             width: 100%;
-            max-width: 280px;
+            max-width: 250px;
             height: auto;
             border-radius: 8px;
             display: block;
             margin: 0 auto 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
         .gauge-label {
             display: block;
             text-align: center;
             font-weight: bold;
-            font-size: 1.1rem;
             color: var(--main-blue);
-            margin-bottom: 15px;
-            border-bottom: 2px solid var(--sub-blue);
-            padding-bottom: 5px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #e8f0fe;
         }
-
         .step-list { padding-left: 0; list-style: none; margin: 0; }
-        .step-item { display: flex; margin-bottom: 12px; font-size: 0.95rem; align-items: flex-start; }
+        .step-item { display: flex; margin-bottom: 10px; font-size: 0.9rem; align-items: flex-start; }
         .step-num {
             background: var(--main-blue);
             color: white;
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             flex-shrink: 0;
-            margin-right: 10px;
-            margin-top: 3px;
+            margin-right: 8px;
+            margin-top: 2px;
         }
-        .step-detail { flex: 1; }
-        .step-title { font-weight: bold; display: block; margin-bottom: 2px; }
-        .step-text { color: var(--text-gray); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -150,167 +137,73 @@
         <h2>天候・雨雲のチェック</h2>
         <div class="item">
             <span class="main-task">出発前のリアルタイム確認</span>
-            <span class="sub-info">撮影プランのあるエリアの状況を必ず確認してください。</span>
-            
             <div class="btn-group">
-                <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn btn-rain">🌧️ 雨雲レーダーをチェックする</a>
-                <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn btn-blue">📷 全国のライブカメラを確認する</a>
+                <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn btn-rain">🌧️ 雨雲レーダーをチェック</a>
+                <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn btn-blue">📷 全国ライブカメラを確認</a>
             </div>
-            
-            <span class="sub-info">ライブカメラは地域名＋ライブカメラでの検索も有効です。</span>
+        </div>
+
+        <div class="item">
+            <span class="main-task">朝から天気が悪い時の業務開始時間</span>
+            <span class="sub-info"><b>日の入り1時間前</b>を終業時間とし、そこから9時間前（休憩含む）を勤務開始とします。</span>
+            <span class="sub-info">例：17時日の入りなら、16時終業。逆算して07時が業務開始となります。</span>
+            <span class="sub-info">朝から晴れている場合は、撮影可能時間（日の出45分経過）から開始可能です。</span>
         </div>
     </section>
 
     <section>
-        <h2>自宅を出る前</h2>
+        <h2>自宅を出る前・移動中の厳守事項</h2>
         <div class="item">
-            <span class="main-task">悪天候時の振替確認</span>
-            <span class="sub-info">終日悪そうな場合、週末への振替をOpsLに相談。</span>
-            <span class="sub-info">平日雨天待機でも給与100％保証ですが、積極的な撮影時間確保をお願いします。</span>
-        </div>
-        <div class="item">
-            <span class="main-task">体調不良・急な休みの連絡</span>
-            <span class="sub-info">直ちにOpsLに連絡し、指示を仰いでください。</span>
-        </div>
-        <div class="item">
-            <span class="main-task">スマートドライブアプリの起動</span>
-            <span class="sub-info">アプリを立ち上げ、出発準備を完了させてください。</span>
-        </div>
-        <div class="item">
-            <span class="main-task">アルコールチェックの実施</span>
+            <span class="main-task">プラン外での撮影禁止</span>
             <div class="important-card">
-                <b>⚠️ アルコール 0.01以上の場合</b><br>
-                ・機器誤作動の疑い：直ちにOpsLへ連絡。<br>
-                ・飲酒の影響：当日はお休みとなります。<br>
-                　※アプリに0.0以外の数値を入れるとその日は出勤停止。
+                <b>自宅 ⇄ 撮影プラン間の移動中は必ず：</b><br>
+                ・システム<b>オフ</b><br>
+                ・カメラカバー<b>装着</b>
             </div>
-        </div>
-    </section>
-
-    <section>
-        <h2>移動中の厳守事項</h2>
-        <div class="important-card">
-            <b>移動中（自宅 ⇄ 撮影プラン）は必ず：</b><br>
-            ・システム<b>オフ</b><br>
-            ・カメラカバー<b>装着</b><br>
+            <span class="sub-info">自宅駐車場を出るまでのシステム起動はOKですが、道中は必ずオフにしてください。</span>
         </div>
         <div class="item">
             <span class="main-task">給油について</span>
-            <span class="sub-info">必ず「通勤途中」に行うようにしてください。</span>
+            <span class="sub-info">私有地撮影を防ぐため、必ず<b>「通勤途中」</b>に行ってください。</span>
         </div>
     </section>
 
     <section>
-        <h2>タイヤ溝の判定基準（全ゲージ共通）</h2>
-        <div class="important-card" style="background:white; border:1px solid #eee;">
-            <table class="standard-table">
-                <tr><td>新品時の目安</td><td>約 8.0mm</td></tr>
-                <tr><td>注意（雨天滑りやすい）</td><td>4.0mm 以下</td></tr>
-                <tr style="color:var(--alert-red); font-weight:bold;"><td>SV交換基準（要報告）</td><td>2.5mm 未満</td></tr>
-                <tr><td>車検NG（使用限界）</td><td>1.6mm 未満</td></tr>
-            </table>
+        <h2>タイヤ溝の点検（3タイプ対応）</h2>
+        <div class="important-card">
+            <b>【判定基準】</b><br>
+            ・SV交換基準：<b>2.5mm 未満</b>（直ちに報告！）<br>
+            ・車検NG限界：1.6mm（スリップサイン）
         </div>
-        <span class="sub-info">※1箇所でも基準値以下の場合は速やかにOpsLへ報告してください。</span>
-    </section>
-
-    <section>
-        <h2>タイプ別：ゲージの詳しい使い方</h2>
 
         <div class="gauge-box">
-            <span class="gauge-label">【タイプA】アナログカード型</span>
-            <img src="card_gauge.png" alt="カード型ゲージの使い方" class="gauge-img">
+            <span class="gauge-label">タイプA：アナログカード型</span>
+            <img src="card_gauge.png" class="gauge-img">
             <ul class="step-list">
-                <li class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-detail">
-                        <span class="step-title">準備</span>
-                        <span class="step-text">中央のオレンジ色のスライダーを、目盛りの大きい方（上）へ指で押し上げ、先端の測定針（プローブ）を露出させます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-detail">
-                        <span class="step-title">刺す</span>
-                        <span class="step-text">タイヤのトレッド面で、最も深いと思われる溝にオレンジ色の測定針（プローブ）を垂直に差し込みます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-detail">
-                        <span class="step-title">押し当て</span>
-                        <span class="step-text">オレンジ色のスライダーを指で下へ押し込み、カード本体の底面がタイヤのゴム面（ブロック）に完全に接触するまで押し下げます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">4</div>
-                    <div class="step-detail">
-                        <span class="step-title">読み取り</span>
-                        <span class="step-text">オレンジ色のスライダーの<b>左上にある小さな白い矢印</b>が指し示す、目盛りの数値（mm）を読み取ります。</span>
-                    </div>
-                </li>
+                <li class="step-item"><div class="step-num">1</div><div>オレンジのスライダーを上へ押し、針を出します。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div>溝に針を刺し、本体をタイヤ面に押し当てます。</div></li>
+                <li class="step-item"><div class="step-num">3</div><div>左上の<b>白い矢印</b>が指す数値（mm）を読み取ります。</div></li>
             </ul>
         </div>
 
         <div class="gauge-box">
-            <span class="gauge-label">【タイプB】デジタル型</span>
-            <img src="digital_gauge.png" alt="デジタルゲージ" class="gauge-img">
+            <span class="gauge-label">タイプB：デジタル型</span>
+            <img src="digital_gauge.png" class="gauge-img">
             <ul class="step-list">
-                <li class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-detail">
-                        <span class="step-title">電源オン</span>
-                        <span class="step-text"><b>ONボタン</b>（赤色）を押し、電源を入れます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-detail">
-                        <span class="step-title">ゼロ点調整</span>
-                        <span class="step-text">平らな場所に底面を押し当て、プローブが完全に引っ込んだ状態で<b>ZEROボタン</b>（黄色）を押し「0.00」に合わせます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-detail">
-                        <span class="step-title">測定</span>
-                        <span class="step-text">タイヤの溝にプローブを差し込み、本体の底面をタイヤのゴム面にしっかり押し当てて、液晶パネルに表示された数値（mm）を確認します。</span>
-                    </div>
-                </li>
+                <li class="step-item"><div class="step-num">1</div><div><b>ONボタン</b>（赤）で起動し、平らな所で<b>ZEROボタン</b>（黄）を押し0.00にします。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div>溝に針を刺し、本体を押し当てて数値を読みます。</div></li>
             </ul>
         </div>
 
         <div class="gauge-box">
-            <span class="gauge-label">【タイプC】金属ノギス型</span>
-            <img src="metal_gauge.png" alt="金属製ゲージ" class="gauge-img">
+            <span class="gauge-label">タイプC：金属ノギス型</span>
+            <img src="metal_gauge.png" class="gauge-img">
             <ul class="step-list">
-                <li class="step-item">
-                    <div class="step-num">1</div>
-                    <div class="step-detail">
-                        <span class="step-title">測定</span>
-                        <span class="step-text">飛び出している細い金属の棒（プローブ）を、タイヤの最も深い溝に差し込みます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">2</div>
-                    <div class="step-detail">
-                        <span class="step-title">密着</span>
-                        <span class="step-text">本体の横に長い底面をタイヤ面にしっかり密着させます。</span>
-                    </div>
-                </li>
-                <li class="step-item">
-                    <div class="step-num">3</div>
-                    <div class="step-detail">
-                        <span class="step-title">読み取り</span>
-                        <span class="step-text">真ん中の目盛りが重なっている部分の数字を確認します。もしわからなければ、そのまま目盛りの写真を撮ってOpsLへ送信してください。</span>
-                    </div>
-                </li>
+                <li class="step-item"><div class="step-num">1</div><div>細い棒を溝に刺し、土台をタイヤ面に密着させます。</div></li>
+                <li class="step-item"><div class="step-num">2</div><div>目盛りが重なった箇所の数字を確認します。</div></li>
             </ul>
         </div>
     </section>
-
-    <div style="text-align: center; margin: 30px 0; border-top: 1px solid #ddd; padding-top: 20px;">
-        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 0.9rem;">← マニュアル TOP へ戻る</a>
-    </div>
 </div>
 
 </body>
