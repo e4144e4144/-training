@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>16. 実車研修の流れ | 現場対応ガイド</title>
+    <title>16. 実車研修の流れ</title>
     <style>
         :root {
             --google-blue: #4285F4;
@@ -35,152 +35,183 @@
         .back-link { text-decoration: none; color: var(--google-blue); font-size: 0.9rem; font-weight: bold; }
         h1 { font-size: 1.1rem; margin: 5px 0 0 0; color: var(--text-main); }
         
-        .intro-card { background: #fff; padding: 15px; margin-bottom: 10px; border-bottom: 1px solid #dadce0; }
-        .intro-card p { margin: 0; font-size: 0.9rem; color: var(--text-sub); }
+        .container { padding: 10px; }
 
-        .category-title {
-            background: #5f6368;
-            color: #fff;
-            padding: 10px 15px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            letter-spacing: 1px;
+        .intro-card { background: #fff; padding: 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #dadce0; }
+        .intro-card p { margin: 0; font-size: 0.85rem; color: var(--text-sub); }
+
+        /* セクションスタイル */
+        .section-card {
+            background: #fff;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #dadce0;
+            overflow: hidden;
         }
-
-        details { background: #fff; border-bottom: 1px solid #f1f3f4; }
-        summary {
-            padding: 16px 15px;
-            font-size: 0.95rem;
-            font-weight: bold;
+        .section-header {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
             display: flex;
-            justify-content: space-between;
             align-items: center;
-            outline: none;
-            list-style: none;
-            cursor: pointer;
         }
-        summary::-webkit-details-marker { display: none; }
-        summary::after {
-            content: '+';
-            font-size: 1.2rem;
-            color: var(--google-green);
-            transition: transform 0.2s;
-        }
-        details[open] summary::after { content: '−'; transform: rotate(180deg); }
-        details[open] summary { background: #f8fbff; color: var(--google-green); }
-
-        .answer-content { padding: 15px; font-size: 0.95rem; background: #fff; border-top: 1px solid #f1f3f4; }
-        .ans-tag {
-            display: inline-block;
+        .step-num {
             background: var(--google-green);
             color: #fff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             font-weight: bold;
-            margin-bottom: 8px;
+            margin-right: 10px;
+            font-size: 0.8rem;
         }
+        .step-title { font-weight: bold; font-size: 1rem; }
+
+        .section-body { padding: 15px; font-size: 0.95rem; }
+        
+        /* フォームボタン */
+        .form-btn {
+            display: block;
+            background: var(--google-blue);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(66,133,244,0.3);
+        }
+        .form-btn:active { background: #3367d6; transform: translateY(1px); }
 
         .action-point {
             background: #fff8e1;
             border-left: 4px solid var(--google-yellow);
             padding: 12px;
-            margin: 10px 0;
+            margin: 12px 0;
+            font-size: 0.9rem;
+        }
+
+        .important-box {
+            background: #fce8e6;
+            border: 1px solid var(--google-red);
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 10px;
             font-size: 0.9rem;
         }
 
         .important { color: var(--google-red); font-weight: bold; }
-        
-        footer { text-align: center; padding: 40px 15px; background: var(--bg-gray); color: var(--text-sub); font-size: 0.8rem; }
+        ul { padding-left: 20px; margin: 10px 0; }
+        li { margin-bottom: 8px; }
+
+        footer { text-align: center; padding: 40px 15px; color: var(--text-sub); font-size: 0.8rem; }
     </style>
 </head>
 <body>
 
 <header>
     <a href="../" class="back-link">← メインメニューへ戻る</a>
-    <h1>16. 実車研修の流れ（保存版）</h1>
+    <h1>16. 実車研修の流れ</h1>
 </header>
 
-<div class="intro-card">
-    <p>新人ドライバーへの指導項目と手順です。現場で各項目を展開して確認してください。</p>
+<div class="container">
+    <div class="intro-card">
+        <p>新人ドライバーへの指導項目です。現場で各ステップを上から順に確認しながら進めてください。</p>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="step-num">1</div>
+            <div class="step-title">集合・事前準備</div>
+        </div>
+        <div class="section-body">
+            <p><strong>車両撮影と報告：</strong><br>車両の4方向（前後左右）を撮影し、OpsLチャットに直接送信してもらってください。</p>
+            
+            <a href="https://forms.gle/ttKFMwKkudSXSCgA8" class="form-btn" target="_blank">📋 車両受け取りフォーム</a>
+            
+            <div class="action-point">
+                <strong>フォームの要否：</strong><br>
+                ・基地受取 → <strong>提出が必要</strong><br>
+                ・他ドライバーから受取 → <strong>提出不要</strong>
+            </div>
+            <p><strong>スマートドライブ：</strong><br>「実車研修」の理由で一時停止登録を忘れずに行ってください。</p>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="step-num">2</div>
+            <div class="step-title">ハードウェア概要の説明</div>
+        </div>
+        <div class="section-body">
+            <p><strong>車外・車内の解説：</strong><br>屋根上のカメラ、車内モニター、各ボックスの役割を教えます。</p>
+            <ul>
+                <li>正しいレンズの拭き方をレクチャー。</li>
+                <li><strong class="important">ディスク着脱は必ず「エンジン停止」の状態で行う</strong>ことを徹底してください。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="step-num">3</div>
+            <div class="step-title">システム立ち上げ・通信確認</div>
+        </div>
+        <div class="section-body">
+            <p><strong>実演と反復：</strong><br>手本を見せた後、新人に数回繰り返し操作させて覚えさせます。</p>
+            <div class="action-point">
+                <strong>確認ポイント：</strong><br>
+                ・右上の三角マークで通信状態を判断<br>
+                ・運転計画（プラン）のダウンロード確認<br>
+                ・ディスク残量等の画面情報の見方
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="step-num">4</div>
+            <div class="step-title">終了操作とトラブル対応</div>
+        </div>
+        <div class="section-body">
+            <p><strong>シャットダウンと再起動：</strong><br>正常な終了手順と、パワーサイクルの手順を習得させます。</p>
+            <div class="important-box">
+                <strong class="important">【即時報告ルール】</strong><br>
+                ・再起動直後に「赤エラー」が再発した<br>
+                ・30分以内に複数回連続で発生した
+            </div>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="step-num">5</div>
+            <div class="step-title">実車指導（路上トレーニング）</div>
+        </div>
+        <div class="section-body">
+            <p><strong>最初の30分は手本を見せ、その後は交代して新人に撮影を行わせて下さい。</strong></p>
+            <ul>
+                <li><strong class="important">ショートラン禁止：</strong>10分未満の終了は避ける。</li>
+                <li><strong class="important">私有地厳禁：</strong>コンビニ等の敷地に入らないよう早めに切る。</li>
+                <li>走行中のマーカー操作の実践。</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <div class="section-header">
+            <div class="step-num">6</div>
+            <div class="step-title">解散</div>
+        </div>
+        <div class="section-body">
+            <p>忘れ物（ディスク、スマホ、私物）がないか、車両の施錠が確実かを確認して終了です。</p>
+        </div>
+    </div>
 </div>
-
-<div class="category-title">研修カリキュラム</div>
-
-<details>
-    <summary>1. 集合・事前準備</summary>
-    <div class="answer-content">
-        <span class="ans-tag">手順</span>
-        <p><strong>車両の4方向（前後左右）を撮影し、OpsLチャットへ直接送信</strong>してください。</p>
-        <div class="action-point">
-            <strong>受取フォームの要否：</strong><br>
-            ・車両基地から受け取る場合 → <strong>提出が必要</strong><br>
-            ・他ドライバーから受け取る場合 → <strong>提出不要</strong>
-        </div>
-        <p><strong>スマートドライブ設定：</strong>「実車研修」の理由で一時停止登録を忘れずに行ってください。</p>
-    </div>
-</details>
-
-<details>
-    <summary>2. ハードウェア概要の説明</summary>
-    <div class="answer-content">
-        <span class="ans-tag">手順</span>
-        <p><strong>車外のカメラ・レンズ</strong>と、<strong>車内のモニター・各ボックス</strong>の役割を解説してください。</p>
-        <ul>
-            <li>正しいレンズの拭き方を実演。</li>
-            <li><strong class="important">ディスク着脱は必ず「エンジン停止」の状態で行う</strong>ことを徹底指導してください。</li>
-        </ul>
-    </div>
-</details>
-
-<details>
-    <summary>3. システムの立ち上げ・通信確認</summary>
-    <div class="answer-content">
-        <span class="ans-tag">手順</span>
-        <p><strong>手本を見せた後、新人に数回繰り返し操作させて覚えさせてください。</strong></p>
-        <div class="action-point">
-            <strong>確認ポイント：</strong><br>
-            ・モニター右上の三角マークで通信状態を判断<br>
-            ・テザリング後のプランダウンロード確認<br>
-            ・ディスク残量などの画面情報の見方
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary>4. 終了操作とトラブル対応</summary>
-    <div class="answer-content">
-        <span class="ans-tag">手順</span>
-        <p><strong>シャットダウン操作の実演</strong>と、<strong>パワーサイクルの手順</strong>を習得させてください。</p>
-        <div class="important">
-            【即時報告のケース】<br>
-            ・パワーサイクル直後に「赤エラー」が再発した場合<br>
-            ・30分以内に複数回連続して表示された場合
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary>5. 実車指導（路上トレーニング）</summary>
-    <div class="answer-content">
-        <span class="ans-tag">手順</span>
-        <p><strong>最初の15分は手本を見せ、その後は新人に交代して撮影を行ってください。</strong></p>
-        <div class="action-point">
-            <strong>指導の重要ポイント：</strong><br>
-            ・<strong class="important">ショートラン禁止</strong>（10分未満の終了は避ける）<br>
-            ・<strong class="important">私有地撮影の厳禁</strong>（早めにシステムを切る）<br>
-            ・走行中のマーカー操作の実践指導
-        </div>
-    </div>
-</details>
-
-<details>
-    <summary>6. 解散</summary>
-    <div class="answer-content">
-        <span class="ans-tag">手順</span>
-        <p><strong>忘れ物（特にディスク、スマホ、私物）がないか確認し、解散してください。</strong></p>
-    </div>
-</details>
 
 <footer>
     <p>© 2026 SV Driver Japan Team<br>
