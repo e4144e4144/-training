@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. 注意すべき交通標識 | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --marker-blue: #1A73E8;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --warning-orange: #fbbc04;
+            --ok-green: #34a853;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white;
+            padding: 20px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-top: 6px solid var(--main-blue);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 1rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
+        
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.25rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 8px; margin-top: 0; }
+        
+        .sign-card { border: 1px solid #dadce0; border-radius: 8px; padding: 15px; margin-bottom: 20px; }
+        .sign-title { font-weight: bold; font-size: 1.1rem; color: var(--text-dark); border-left: 5px solid var(--main-blue); padding-left: 10px; margin-bottom: 10px; }
+        
+        .judgment-ok { color: var(--ok-green); font-weight: bold; border: 1px solid var(--ok-green); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+        .judgment-ng { color: var(--alert-red); font-weight: bold; border: 1px solid var(--alert-red); padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+        
+        .rule-detail { font-size: 0.95rem; margin-top: 5px; }
+        .gap-info { background: #fff9e6; padding: 8px; border-radius: 4px; font-size: 0.9rem; margin-top: 8px; border: 1px solid #ffe58f; }
+        .blue-marker-tip { color: var(--marker-blue); font-weight: bold; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">11. 注意すべき交通標識</div>
+    </header>
+
+    <section>
+        <h2>勘違いしやすい標識の判断基準</h2>
+        <p>走行中、判断に迷いやすい標識を例示します。安全運転と法令遵守を最優先にしてください。</p>
+
+        <div class="sign-card">
+            <div class="sign-title">歩行者専用道路</div>
+            <span class="judgment-ng">指定時間内：通行禁止</span>
+            <div class="rule-detail">
+                平日の <b>7:30 - 9:00 / 13:30 - 15:00</b> は通行できません。<br>
+                ※自転車（軽車両）を除き、車両の通行が制限されます。
+            </div>
+            <div class="gap-info">
+                💡 <b>GAP対応：</b>上記時間外であれば走行可能です。時間を改めて撮影に向かってください。
+            </div>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-title">歩行者専用道路（軽車両は除く）</div>
+            <span class="judgment-ng">指定時間内：通行禁止</span>
+            <div class="rule-detail">
+                平日の <b>7:00 - 8:00</b> は通行できません。<br>
+                「軽車両」は自転車・リヤカーを指し、<b>軽自動車は含まれません。</b>
+            </div>
+            <div class="gap-info">
+                💡 <b>GAP対応：</b>上記時間外であれば走行可能です。
+            </div>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-title">居住者車両専用道路</div>
+            <span class="judgment-ng">原則：通行禁止</span>
+            <div class="rule-detail">
+                居住者以外の車両は通行できません。最近は道単位ではなく、<b>町会単位</b>で設置されているケースが増えているため要注意です。
+            </div>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-title">左折禁止（軽車両は除く）</div>
+            <span class="judgment-ng">一般車両：左折禁止</span>
+            <div class="rule-detail">
+                自転車などの軽車両のみ左折可能です。ストビューカーは左折できません。
+            </div>
+        </div>
+
+        <div class="sign-card">
+            <div class="sign-title">「軽・小特を除く」</div>
+            <span class="judgment-ok">走行可能</span>
+            <div class="rule-detail">
+                「軽自動車および小特（フォークリフト等）を除く」という意味です。この場合の「軽」は軽自動車を指すため、<b>ストビューカー（軽）は走行可能</b>です。
+            </div>
+            <div class="gap-info" style="border-color: var(--marker-blue); background: #f0f7ff;">
+                ⚠️ <b>注意：</b>道が非常に狭い場合が多いです。無理はせず、危険を感じたら<span class="blue-marker-tip">青色マーカー</span>を遠慮なく落としてください。
+            </div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 1rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
