@@ -1,1 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13. 事故・違反発生時 | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --warning-orange: #fbbc04;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; border-top: 6px solid var(--alert-red); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 1rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; color: var(--alert-red); }
+        
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.2rem; color: var(--alert-red); border-bottom: 2px solid var(--alert-red); padding-bottom: 8px; margin-top: 0; }
+        
+        .emergency-step { list-style: none; padding: 0; counter-reset: step-counter; }
+        .emergency-step li { position: relative; padding-left: 45px; margin-bottom: 15px; min-height: 35px; }
+        .emergency-step li::before {
+            content: counter(step-counter); counter-increment: step-counter; position: absolute; left: 0; top: 0;
+            width: 30px; height: 30px; background: var(--alert-red); color: white; border-radius: 50%; text-align: center; line-height: 30px; font-weight: bold;
+        }
 
+        .accident-case { background: #fff9f9; border: 1px solid #fed7d7; border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .case-title { font-weight: bold; color: var(--text-dark); border-bottom: 1px dashed #feb2b2; margin-bottom: 8px; padding-bottom: 4px; }
+        .case-lesson { font-size: 0.9rem; color: #c53030; margin-top: 8px; font-weight: bold; }
+
+        .info-box { background: #f1f3f4; border-left: 4px solid #dadce0; padding: 12px; margin: 15px 0; font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">13. 事故・違反発生時</div>
+    </header>
+
+    <section>
+        <h2>緊急時の対応フロー</h2>
+        <p>万が一事故が発生した場合は、落ち着いて以下の順に対応してください。<b>現場から離れることは厳禁です。</b></p>
+        <ol class="emergency-step">
+            <li><b>安全な場所に停車する</b></li>
+            <li><b>現場の安全を確保する</b></li>
+            <li><b>負傷者の状態を確認する</b>（自分自身を含む）</li>
+            <li><b>救急・警察へ連絡する</b>（119番・110番）</li>
+            <li><b>OpsLへ即座に報告し、指示を仰ぐ</b></li>
+            <li><b>警察対応後、指示に従い各報告を行う</b></li>
+        </ol>
+        <div class="info-box">
+            ※交通違反時の罰金等は、自己負担となります。
+        </div>
+    </section>
+
+    <section>
+        <h2>事故を未然に防ぐために</h2>
+        <p>撮影車の事故の多くは<b>「左折時」</b>や<b>「後進（バック）時」</b>に集中しています。無理な運転は絶対に避け、迂回や遠回りを積極的に選択してください。</p>
+
+        <div class="accident-case">
+            <div class="case-title">事故例1：鋭角な左折での接触</div>
+            <div>無理に曲がろうとして壁に左ドアを接触。</div>
+            <div class="case-lesson">対策：一度右に抜けて大きく回り込む判断が必要でした。</div>
+        </div>
+
+        <div class="accident-case">
+            <div class="case-title">事故例2：内輪差の読み間違い</div>
+            <div>何気ないカーブで内側を擦り左ドア下を破損。</div>
+            <div class="case-lesson">対策：内輪差を意識し、余裕を持って大きく曲がるべきでした。</div>
+        </div>
+
+        <div class="accident-case">
+            <div class="case-title">事故例3：カメラ高の未確認</div>
+            <div>屋根付き駐車場で後進中、カメラカバーを屋根に接触。</div>
+            <div class="case-lesson">対策：常に「カメラを含めた車高」を意識する必要があります。</div>
+        </div>
+
+        <div class="accident-case">
+            <div class="case-title">事故例4：悪天候時の後進</div>
+            <div>雨で見通しが悪い中、後進して電柱に接触。</div>
+            <div class="case-lesson">対策：雨天時は特に視界が悪いため、より慎重な確認が必要です。</div>
+        </div>
+
+        <div class="accident-case">
+            <div class="case-title">事故例5：無理な離合・回避</div>
+            <div>鋭角な角を無理に曲がろうとして右ドアを接触。</div>
+            <div class="case-lesson">対策：慎重にバックして戻る、あるいは別ルートを探すべきでした。</div>
+        </div>
+
+        <div class="accident-case">
+            <div class="case-title">事故例6：右折時の脱輪</div>
+            <div>無理な右折で左側溝に脱輪し、フェンダーを破損。</div>
+            <div class="case-lesson">対策：無理せず直進や左折で迂回し、安全なルートで再進入すべきでした。</div>
+        </div>
+
+        <div class="accident-case">
+            <div class="case-title">事故例7：ぬかるみでのスタック</div>
+            <div>見通しの悪いぬかるみを進み、タイヤが動かなくなる。</div>
+            <div class="case-lesson">対策：無理をせず、天候の良い日に出直すか、マーカーを落として回避してください。</div>
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 1rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
