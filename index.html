@@ -1,1 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>SV Driver Manual 2026 | TOP</title>
+    <style>
+        :root {
+            --google-blue: #4285F4;
+            --google-red: #EA4335;
+            --google-yellow: #FBBC05;
+            --google-green: #34A853;
+            --text-main: #202124;
+            --bg-gray: #f8f9fa;
+        }
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+        }
+        header {
+            background: #fff;
+            padding: 20px 15px;
+            text-align: center;
+            border-bottom: 4px solid var(--google-blue);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        header h1 { font-size: 1.2rem; margin: 0; letter-spacing: 0.5px; }
+        header p { font-size: 0.8rem; color: #5f6368; margin: 5px 0 0 0; }
 
+        .container { padding: 15px; max-width: 600px; margin: 0 auto; }
+
+        /* メニューリストのスタイル */
+        .menu-list { list-style: none; padding: 0; margin: 0; }
+        .menu-item {
+            background: #fff;
+            margin-bottom: 8px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #dadce0;
+            transition: transform 0.1s, box-shadow 0.1s;
+        }
+        .menu-item:active { transform: scale(0.98); background: #f1f3f4; }
+        
+        .menu-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-main);
+            padding: 16px;
+        }
+        .num-circle {
+            min-width: 32px;
+            height: 32px;
+            background: var(--google-blue);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-right: 15px;
+        }
+        .menu-text { font-size: 1rem; font-weight: bold; flex-grow: 1; }
+        .arrow { color: #dadce0; font-size: 1.2rem; font-weight: bold; }
+
+        /* FAQ(15番)を強調 */
+        .menu-item.highlight { border: 2px solid var(--google-blue); background: #f8fbff; }
+        .menu-item.highlight .num-circle { background: var(--google-red); }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 0.75rem;
+            color: #70757a;
+        }
+        .status-badge {
+            display: inline-block;
+            background: #e8f0fe;
+            color: var(--google-blue);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Street View Driver Manual</h1>
+    <p>2026 Imagery Collection Project</p>
+</header>
+
+<div class="container">
+    <div style="text-align:center;">
+        <span class="status-badge">最新更新：2026/03/27</span>
+    </div>
+
+    <ul class="menu-list">
+        <li class="menu-item"><a href="page1.html" class="menu-link"><span class="num-circle">01</span><span class="menu-text">プロジェクト概要・心得</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page2.html" class="menu-link"><span class="num-circle">02</span><span class="menu-text">車両機材の確認・点検方法</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page3.html" class="menu-link"><span class="num-circle">03</span><span class="menu-text">システム立ち上げ手順</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page4.html" class="menu-link"><span class="num-circle">04</span><span class="menu-text">撮影前チェック（レンズ・外装）</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page5.html" class="menu-link"><span class="num-circle">05</span><span class="menu-text">スマートドライブアプリの操作</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page6.html" class="menu-link"><span class="num-circle">06</span><span class="menu-text">撮影開始と基本ルート走行</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page7.html" class="menu-link"><span class="num-circle">07</span><span class="menu-text">GAPの定義とマーカー操作</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page8.html" class="menu-link"><span class="num-circle">08</span><span class="menu-text">ディスク交換と管理方法</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page9.html" class="menu-link"><span class="num-circle">09</span><span class="menu-text">パワーサイクルとエラー復旧</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page10.html" class="menu-link"><span class="num-circle">10</span><span class="menu-text">雨天待機・天候判断基準</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page11.html" class="menu-link"><span class="num-circle">11</span><span class="menu-text">走行終了・データのアップロード</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page12.html" class="menu-link"><span class="num-circle">12</span><span class="menu-text">ディスク発送手順（佐川急便）</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page13.html" class="menu-link"><span class="num-circle">13</span><span class="menu-text">事故・トラブル発生時の緊急連絡</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="page14.html" class="menu-link"><span class="num-circle">14</span><span class="menu-text">経費精算・立替金報告</span><span class="arrow">›</span></a></li>
+        
+        <li class="menu-item highlight">
+            <a href="page15.html" class="menu-link">
+                <span class="num-circle">15</span>
+                <span class="menu-text">撮影中によくある質問(FAQ)</span>
+                <span class="arrow">›</span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<footer>
+    <p>© 2026 Godo Kaisha Aoi / Street View Ops Team<br>
+    機密情報につき、外部へのリンク共有は禁止します。</p>
+</footer>
+
+</body>
+</html>
