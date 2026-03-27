@@ -68,10 +68,9 @@
         .menu-item.training { border: 2px solid var(--google-green); background: #f6fff8; }
         .menu-item.training .num-circle { background: var(--google-green); }
 
-        /* 緊急連絡網：電話リンクを廃止し、テキストのみに */
         .emergency-box {
             background: #fff;
-            border: 2px solid #5f6368; /* 赤から落ち着いたグレーに変更 */
+            border: 2px solid #5f6368;
             border-radius: 12px;
             margin-top: 25px;
             padding: 15px;
@@ -87,11 +86,15 @@
         }
         .emergency-item { margin-bottom: 12px; font-size: 0.9rem; color: #202124; }
         .emergency-item strong { display: block; margin-bottom: 2px; }
-        .tel-number { 
-            font-weight: bold; 
-            font-size: 1.1rem; 
-            letter-spacing: 0.5px;
-        }
+        
+        /* 梅田様の番号用：標準テキスト */
+        .tel-text { font-size: 0.95rem; font-weight: normal; }
+        
+        /* 保険用：太字テキスト */
+        .tel-number { font-weight: bold; font-size: 1.1rem; letter-spacing: 0.5px; }
+        
+        /* メールリンク用 */
+        .mail-link { color: var(--google-blue); text-decoration: none; font-weight: bold; }
 
         footer {
             text-align: center;
@@ -150,8 +153,8 @@
         
         <div class="emergency-item">
             <strong>OpsL：梅田 圭一 (Keiichi Umeda)</strong>
-            <span class="tel-number">070-8314-3745</span><br>
-            <span style="font-size:0.8rem;">kumeda@google.com</span>
+            <span class="tel-text">070-8314-3745</span><br>
+            <a href="mailto:kumeda@google.com" class="mail-link">kumeda@google.com</a>
         </div>
 
         <div class="emergency-item">
