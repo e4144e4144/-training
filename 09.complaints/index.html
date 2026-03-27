@@ -48,6 +48,20 @@
         .check-list { list-style-type: none; padding-left: 0; }
         .check-list li { position: relative; padding-left: 25px; margin-bottom: 10px; }
         .check-list li::before { content: "✔"; position: absolute; left: 0; color: var(--main-blue); font-weight: bold; }
+
+        /* 追加：ボタン用スタイル */
+        .form-btn {
+            display: block;
+            background: var(--alert-red);
+            color: white !important;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(217,48,37,0.3);
+        }
     </style>
 </head>
 <body>
@@ -67,6 +81,8 @@
             <li>その他、一般公開に適さないシーンを撮影してしまった</li>
             <li>一般ユーザーからクレームを受けた</li>
         </ul>
+
+        <a href="https://forms.gle/LmfiCN7TsPhSh11W9" class="form-btn" target="_blank">🚨 イレギュラー発生報告</a>
 
         <div class="important-card">
             <b>報告が必要な理由</b><br>
