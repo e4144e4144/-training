@@ -41,6 +41,22 @@
         .nav-link { display: inline-block; background: var(--main-blue); color: white; text-decoration: none; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; margin-top: 5px; font-weight: bold; }
         .nav-link:active { opacity: 0.8; }
 
+        /* ディスクスクワッド専用ボタン */
+        .app-button {
+            display: block;
+            background: #fff;
+            color: var(--main-blue);
+            text-decoration: none;
+            padding: 12px;
+            border: 2px solid var(--main-blue);
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .app-button:active { background: #f0f7ff; }
+
         .step-list { padding-left: 20px; margin: 10px 0; }
         .step-list li { margin-bottom: 8px; }
         .caution-text { color: var(--alert-red); font-weight: bold; }
@@ -70,6 +86,10 @@
         <h2>管理アプリ「ディスクスクワッド」</h2>
         <p>ディスクの「受取・返送・注文」はすべて専用アプリで行います。貸与物であるディスクの紛失を防ぐため適切に記録をお願いします。</p>
 
+        <a href="https://disk-squad-drivers.web.app/home" target="_blank" class="app-button">
+            ディスクスクワッド アプリを開く
+        </a>
+
         <h3>① 新しいディスクの受取登録</h3>
         <div class="limit-box">
             受取後、必ず 12時間以内 に登録を完了してください
@@ -81,7 +101,7 @@
             使用済みディスクは、必ず 48時間以内 に発送を完了してください
         </div>
         <ul class="step-list">
-            <li>集荷依頼をかけてもいいですが電話で依頼してください。（オンライン依頼だと発送伝票が自動作成されるため）</li>
+            <li>集荷依頼も可能ですが必ず電話で依頼してください。（オンライン依頼だと伝票が自動作成されてしまうため）</li>
             <li>返送用伝票がない場合はOpsLへ連絡してください（着払いでの発送は絶対不可）。</li>
             <li>伝票には<b>日付指定・曜日指定を記入しない</b>でください。</li>
         </ul>
