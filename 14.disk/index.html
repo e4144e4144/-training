@@ -1,1 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>14. ディスク管理 | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --marker-blue: #1A73E8;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --warning-orange: #fbbc04;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; border-top: 6px solid var(--main-blue); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 1rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
+        
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.2rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 8px; margin-top: 0; }
+        h3 { font-size: 1.05rem; margin-top: 15px; color: var(--text-dark); font-weight: bold; background: #e8f0fe; padding: 5px 10px; border-radius: 4px; }
 
+        .limit-box { background: #fff5f5; border: 1px solid var(--alert-red); color: var(--alert-red); padding: 12px; border-radius: 8px; font-weight: bold; margin: 10px 0; font-size: 0.95rem; }
+        .info-box { background: #f1f3f4; border-left: 4px solid #dadce0; padding: 12px; margin: 10px 0; font-size: 0.9rem; }
+        
+        .nav-link { display: inline-block; background: var(--main-blue); color: white; text-decoration: none; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; margin-top: 5px; font-weight: bold; }
+        .nav-link:active { opacity: 0.8; }
+
+        .step-list { padding-left: 20px; margin: 10px 0; }
+        .step-list li { margin-bottom: 8px; }
+        .caution-text { color: var(--alert-red); font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">14. ディスク管理</div>
+    </header>
+
+    <section>
+        <h2>ディスク交換のルール</h2>
+        <p>ディスクは適切に管理し、絶対に紛失しないでください。</p>
+        
+        <div class="limit-box">
+            交換時期：使用量が 90％ を超えたら直ちに交換
+        </div>
+        <p class="rule-detail">
+            100％を超えると自動的に録画がストップします。モニター左上の使用量を常に確認してください。<br>
+            ※1枚（4TB）で約5〜7営業日が目安です。
+        </p>
+    </section>
+
+    <section>
+        <h2>管理アプリ「ディスクスクワッド」</h2>
+        <p>ディスクの「受取・返送・注文」はすべて専用アプリで行います。</p>
+
+        <h3>① 新しいディスクの受取登録</h3>
+        <div class="limit-box">
+            受取後、必ず 12時間以内 に登録を完了してください
+        </div>
+        <a href="#" class="nav-link">🔗 受取確認の流れを確認する</a>
+
+        <h3>② 使用済みディスクの返送登録</h3>
+        <div class="limit-box">
+            取外し後、必ず 48時間以内 に発送を完了してください
+        </div>
+        <ul class="step-list">
+            <li>金曜に外した場合は、必ず<b>その日のうち</b>に発送してください。</li>
+            <li>返送用伝票がない場合はOpsLへ連絡してください（通常の着払いは不可）。</li>
+            <li>伝票には<b>日付指定・曜日指定を記入しない</b>でください。</li>
+        </ul>
+        <a href="#" class="nav-link">🔗 返送登録の流れを確認する</a>
+
+        <h3>③ 新しいディスクの注文登録</h3>
+        <p>原則、手元に<b>常時3枚</b>を保管するように管理してください。</p>
+        <div class="info-box">
+            <b>発注のタイミング：残り2枚になった時</b><br>
+            （内訳：1枚使用中 [50%超] ＋ 予備1枚 の状態）
+        </div>
+        <p class="caution-text">※初期不良のリスクがあるため、ラスト1枚になってからの発注は厳禁です。</p>
+        <div class="info-box" style="border-left-color: var(--warning-orange);">
+            注文前に必ず <b>OpsLへ事前に連絡</b> して確認をとってください。
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 1rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
