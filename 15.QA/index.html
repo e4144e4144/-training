@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15. よくある質問まとめ | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --ok-green: #34a853;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --faq-q: #e8f0fe;
+            --faq-a: #ffffff;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; border-top: 6px solid var(--main-blue); box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 1rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
+        
+        .category-block { margin-bottom: 30px; }
+        .category-title { 
+            background: var(--main-blue); color: white; padding: 8px 15px; border-radius: 8px; font-weight: bold; margin-bottom: 15px; display: inline-block;
+        }
 
+        .faq-item { background: white; border-radius: 8px; margin-bottom: 15px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.1); border: 1px solid #dadce0; }
+        .faq-q { background: var(--faq-q); padding: 12px 15px; font-weight: bold; border-bottom: 1px solid #d2e3fc; display: flex; }
+        .faq-q::before { content: "Q."; color: var(--main-blue); margin-right: 10px; font-size: 1.2rem; }
+        .faq-a { padding: 15px; background: var(--faq-a); }
+        .faq-a::before { content: "A."; color: var(--alert-red); font-weight: bold; margin-right: 10px; display: block; float: left; font-size: 1.2rem; line-height: 1; }
+
+        .link-btn { display: inline-block; background: #fff; border: 1px solid var(--main-blue); color: var(--main-blue); padding: 5px 12px; border-radius: 4px; text-decoration: none; font-size: 0.9rem; margin-top: 10px; font-weight: bold; }
+        .highlight-red { color: var(--alert-red); font-weight: bold; }
+        .indent-box { border-left: 3px solid #dadce0; padding-left: 15px; margin-top: 10px; font-size: 0.95rem; color: var(--text-gray); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">15. 撮影中によくある質問（FAQ）</div>
+    </header>
+
+    <div class="category-block">
+        <div class="category-title">⚫ 撮影全般</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">晴れの日における撮影可能な時間帯を教えてください。</div>
+            <div class="faq-a">
+                原則、日の出から45分〜日の入り45分前まで可能です。最終的にはドライバー自身の目で見た明るさ（光量）が重要です。光量不足は再撮影の手間を生むため、無理な撮影は避けてください。
+                <a href="https://www.motohasi.net/SunriseSunset/JapanSunMap.php?" target="_blank" class="link-btn">🔗 日の出・日の入り確認サイト</a>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">一般ユーザーに車の写真を撮っていいか聞かれました。</div>
+            <div class="faq-a">
+                外観を遠目から撮る分には構いませんが、<span class="highlight-red">車内設備やカメラの近接撮影は厳禁</span>です。SNS拡散は大きな問題になります。離席時は必ず施錠・システムOFFを徹底してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">画像にモザイクをかけてほしいと言われました。</div>
+            <div class="faq-a">
+                トラブル回避のため、ユーザー自身でGoogleマップから申請するよう依頼してください。
+                <div class="indent-box">
+                    1. Googleマップで対象を表示<br>
+                    2. 右下「問題の報告」をクリック<br>
+                    3. エリアを指定し理由を選択して送信
+                </div>
+                ※一度モザイクをかけると元に戻せない点に注意が必要です。
+            </div>
+        </div>
+    </div>
+
+    <div class="category-block">
+        <div class="category-title">⚫ システムエラー対応</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">赤色エラーが消えません。どうしたらよいですか？</div>
+            <div class="faq-a">
+                まずは安全な場所に停め、アプリで中断登録をしてから<span class="highlight-red">パワーサイクル</span>を行ってください。それでも直らない場合や、30分以内に2回以上出る場合は直ちにOpsLへ報告してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">パワーサイクルって何ですか？</div>
+            <div class="faq-a">
+                システムキャッシュを消去する「完全リセット」です。単なる再起動ではなく、<span class="highlight-red">エンジンを切り、1分待ってから</span>再度始動してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">シガーソケットでスマホ充電してもいいですか？</div>
+            <div class="faq-a">
+                <span class="highlight-red">撮影中は禁止です。</span>電圧異常により赤色エラーを誘発します。USBポートへの目的外の接続も同様です。充電は休憩中に行ってください。
+            </div>
+        </div>
+    </div>
+
+    <div class="category-block">
+        <div class="category-title">⚫ 天候・雨天待機</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">終日雨の予報です。アプリはどう登録しますか？</div>
+            <div class="faq-a">
+                7:30に始業登録を行い、「スキャンポイント到着」まで進めたらすぐに「悪天候待機」へ切り替えてください。自宅待機で構いませんが、1時間に1度は状況を確認してください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">少しでも雨がパラついてきたら？</div>
+            <div class="faq-a">
+                即座に停車し、雨天待機にしてください。わずかな水滴でも画像はボツになります。再開時は必ずレンズを拭き、レンズチェックを行ってください。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">雨天報告用の写真は？</div>
+            <div class="faq-a">
+                <span class="highlight-red">「空と地面」が両方映るアングル</span>で撮影してください。空だけだと明るく写りすぎて判断を誤るためです。
+            </div>
+        </div>
+    </div>
+
+    <div class="category-block">
+        <div class="category-title">⚫ ディスク・通信</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">テザリングを刺すタイミングは？</div>
+            <div class="faq-a">
+                システムが立ち上がってから<span class="highlight-red">30秒ほど待って</span>接続してください。起動直後は電圧が不安定でエラーの原因になります。
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-q">ディスク交換時の注意点は？</div>
+            <div class="faq-a">
+                必ずシステムOFF、キルスイッチOFF、エンジンOFFの順で<span class="highlight-red">通電を完全に遮断</span>してから交換してください。通電中の交換はディスクが破損します。
+            </div>
+        </div>
+    </div>
+
+    <div class="category-block">
+        <div class="category-title">⚫ 勤務体系・アプリ</div>
+        
+        <div class="faq-item">
+            <div class="faq-q">10分程度の小休憩もアプリ記録が必要ですか？</div>
+            <div class="faq-a">
+                必要です。給油、トイレ休憩など5分以上停止する場合は必ず入力してください。活動記録の乖離は評価に影響し、改善されない場合は契約解除の対象となります。
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 1rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
