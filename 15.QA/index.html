@@ -23,8 +23,11 @@
             padding: 15px;
         }
         .container { max-width: 800px; margin: 0 auto; background: #fff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 20px; }
+        
         header { border-bottom: 2px solid var(--google-blue); margin-bottom: 25px; padding-bottom: 10px; }
-        h1 { font-size: 1.4rem; margin: 0; color: var(--google-blue); }
+        h1 { font-size: 1.4rem; margin: 10px 0 5px 0; color: var(--google-blue); }
+        .back-link { text-decoration: none; color: var(--google-blue); font-size: 0.9rem; font-weight: bold; }
+        
         .intro { font-size: 0.9rem; color: #5f6368; margin-bottom: 20px; }
         
         .category-title {
@@ -33,26 +36,28 @@
             padding: 10px 15px;
             border-radius: 4px;
             font-weight: bold;
-            margin: 30px 0 15px 0;
+            margin: 35px 0 15px 0;
             display: flex;
             align-items: center;
         }
-        .category-title::before { content: "●●●"; margin-right: 10px; font-size: 0.8rem; }
+        .category-title::before { content: "⚫⚫⚫"; margin-right: 10px; font-size: 0.8rem; }
 
-        .faq-block { margin-bottom: 20px; border-bottom: 1px solid var(--border-color); padding-bottom: 15px; }
-        .question { font-weight: bold; color: var(--text-main); display: flex; margin-bottom: 10px; font-size: 1rem; line-height: 1.4; }
+        .faq-block { margin-bottom: 25px; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; }
+        .question { font-weight: bold; color: var(--text-main); display: flex; margin-bottom: 12px; font-size: 1rem; line-height: 1.4; }
         .question::before { content: "Q."; color: var(--google-blue); margin-right: 10px; min-width: 20px; }
         .answer { padding-left: 30px; font-size: 0.95rem; position: relative; }
         .answer::before { content: "A."; font-weight: bold; color: var(--google-red); position: absolute; left: 0; }
         
-        .note-box { background: #fff8e1; border-left: 4px solid var(--google-yellow); padding: 12px; margin: 10px 0; font-size: 0.9rem; }
+        .note-box { background: #fff8e1; border: 1px solid #ffe082; padding: 12px; margin: 10px 0; font-size: 0.9rem; border-radius: 4px; }
         .alert-text { color: var(--google-red); font-weight: bold; }
         .step-list { margin: 10px 0; padding-left: 20px; }
-        .link-area { margin-top: 10px; }
+        .link-area { margin-top: 10px; padding: 10px; background: #f1f3f4; border-radius: 4px; }
         .link-button { display: inline-block; padding: 6px 12px; background: var(--google-blue); color: white; text-decoration: none; border-radius: 4px; font-size: 0.85rem; }
         
-        .label-ok { color: #137333; font-weight: bold; }
-        .label-ng { color: #c5221f; font-weight: bold; }
+        .label-ok { color: #137333; font-weight: bold; background: #e6f4ea; padding: 2px 6px; border-radius: 3px; }
+        .label-ng { color: #c5221f; font-weight: bold; background: #fce8e6; padding: 2px 6px; border-radius: 3px; }
+        
+        footer { text-align: center; margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-color); }
         
         @media (max-width: 600px) {
             body { padding: 10px; }
@@ -66,7 +71,7 @@
 <div class="container">
     <header>
         <a href="../" class="back-link">← メインメニューへ戻る</a>
-        <div style="font-size: 0.8rem; color: #5f6368; margin-bottom: 5px;">SV Driver Japan in 2026</div>
+        <div style="font-size: 0.8rem; color: #5f6368; margin-top: 10px;">SV Driver Japan in 2026</div>
         <h1>14. 撮影中によくある質問のまとめ</h1>
     </header>
     
@@ -81,7 +86,7 @@
             但し最終的にはドライバーの皆さんが実際に見た感じの明るさ（光量）が大事です。光量不足の映像はボツとなり再撮影が必要になり、再撮影は非常に手間になるのでそれを避けるため決して光量不足の状況で撮影をしないでください。
             <div class="link-area">
                 <a href="https://www.motohasi.net/SunriseSunset/JapanSunMap.php?" class="link-button" target="_blank">🔗 日の出日の入り確認サイト</a>
-                <p style="font-size: 0.8rem; margin-top: 5px;">→ お気に入りに入れるか、ホーム画面にショートカットして日々の変化に細心の注意を払ってください。</p>
+                <p style="font-size: 0.8rem; margin-top: 8px; color: #3c4043;">→ お気に入りに入れるか、ホーム画面にショートカットして日々の変化に細心の注意を払うようにしてください。</p>
             </div>
         </div>
     </div>
@@ -103,9 +108,9 @@
                 1. Google マップでストリートビューに映っている自宅を表示します。<br>
                 2. 右下に表示される「問題の報告」をクリックします。<br>
                 3. 画像のプレビューでぼかしたいエリアに枠をつけます。<br>
-                4. 「ぼかしのリクエスト」で理由（自宅、顔、表札、車など）を選択します。
+                4. 「ぼかしのリクエスト」で「自宅」「顔」「表札」「自分の車またはナンバープレート」などから理由を選択します。
             </div>
-            注意点としては、判断はGoogle側が行うため必ずしも対応されるとは限らない点、そして一度モザイクをかけると二度と元に戻せない点です。
+            注意点としては、申請したからと言って必ずしも対応してもらえるとは限らない点（判断はあくまでGoogle側が行うため）、そして一度モザイクをかけてしまうとその後、GoogleMapのサービスが続く限りずっとそのままになる点です。（映像処理上、後で元に戻してほしいと依頼しても絶対に不可となります）
         </div>
     </div>
 
@@ -114,8 +119,8 @@
     <div class="faq-block">
         <div class="question">撮影中、赤色エラーがモニターに表示され消えません。どうしたらよいですか？</div>
         <div class="answer">
-            その日初めて赤色エラーが出た場合は、安全な場所に停め、スマートドライブアプリに撮影中断の登録をした上で、まずは一度パワーサイクルをしてください（OpsLへの報告は不要です）。<br>
-            <span class="alert-text">但し、以下のケースは直ちにOpsLに赤色エラーの写真とあわせてチャットで報告をお願いします。</span>
+            その日初めて赤色エラーが出た場合はまずは安全な場所に停め、スマートドライブアプリに撮影中断の登録をした上でまずは一度パワーサイクルをしてください（OpsLへの報告は不要です）。その後エラーが消えたらアプリで撮影再開の登録をして撮影に戻ってください。<br>
+            <span class="alert-text">但し、以下のケースは直ちにOpsLに赤色エラーの写真とあわせてOpsLにチャットで報告をお願いします。</span>
             <ul class="step-list">
                 <li>パワーサイクルをしたけど直ぐに赤色エラーが表示される。</li>
                 <li>30分以内に赤色エラーが2回以上表示される。</li>
@@ -126,151 +131,148 @@
     <div class="faq-block">
         <div class="question">撮影中、赤色エラーがモニターに表示されましたがすぐに消えました。どうしたらよいですか？</div>
         <div class="answer">
-            すぐに消えた場合、そのほとんどは走行振動による一時的なケーブルのずれと考えられます。エラーが消えた場合は問題ないので撮影を続行してください。但し、再び直ぐ出た場合は直ぐに安全な場所に停め、OpsLまで連絡をください。
+            すぐに消えた場合、そのほとんどは走行により振動が発生し一時的にケーブルがずれて起きた赤色エラーと考えられます。そのエラーが消えた場合は問題ないので撮影を続行してください。<br>
+            但し、再び直ぐ出た場合は直ぐに安全な場所に停め、OpsLまで連絡をください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">赤色エラーが出る原因はなんですか？</div>
         <div class="answer">
-            走行中の振動によるケーブルの緩み、エラーディスク、システム不具合・誤作動などが主な原因です。多くはパワーサイクルで解消されますが、連続して出現する場合は物理的な故障が考えられますので必ずOpsLに連絡をください。
+            走行中の振動によるケーブルの緩み、エラーディスク、システム不具合・誤作動などが主な原因です。<br>
+            様々な要因がありますが、赤色エラーの多くはパワーサイクルを一度行うことにより解消されます。連続で出現する場合は上記に記したような物理的な理由が考えられますので必ずOpsLに連絡をください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">撮影中、シガーソケットで携帯の充電をしながら走ると赤色エラーが立て続けに出ます。</div>
+        <div class="question">撮影中、シガーソケットで携帯の充電をしながら走ると赤色エラーが立て続けにでます。どうしたらよいですか？</div>
         <div class="answer">
-            システムの電圧に影響を与えるため、<span class="alert-text">撮影中はシガーソケットを使用しないでください。</span>また、黄色ボックスのUSBポートにテザリング以外のケーブルを差し込むことも禁止です。業務用携帯の充電は、昼休憩時などシステムをOFFにしている間に行ってください。
+            システムの電圧に影響を与えるので<span class="alert-text">撮影中はシガーソケットは使用しないでください。</span>また同様の理由で黄色ボックスのUSBポートにテザリングケーブル以外のケーブルを差し込むことも禁止しています。<br>
+            電圧異常は赤色エラーを誘発しますので撮影中のシガーソケットの利用、黄色ボックスのUSBポートの目的外利用は禁止しています。もし業務用携帯の充電がどうしても必要な場合は、昼休憩時などシステムをonにしていない時にするようにしてください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">パワーサイクルってなんですか？</div>
         <div class="answer">
-            不必要なキャッシュ（データ）を消去するシステムリセット作業です。<br>
-            単なる再起動ではありません。<span class="alert-text">「エンジンを確実に切り、1分待ってからエンジンを入れ、システムを立ち上げ直す」</span>ことで正常にリセットされます。
+            システムに記録されている不必要なキャッシュ（データ）を消す作業の行程です。（システムリセット）<br>
+            単なるシステム再起動はパワーサイクルではありません。<span class="alert-text">エンジンまで確実に切り、1分待ちそれからエンジンを入れてシステムを再度立ち上げ直す</span>ことにより、不必要なデータを消すことができます。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">カメラ品質チェックをしたところ赤色エラーメッセージがでてきました。</div>
+        <div class="question">撮影中、カメラが気になったのでカメラ品質チェックをしたところ赤色エラーメッセージがでてきました。どうすればいいですか？</div>
         <div class="answer">
             パワーサイクルをした上で再度、カメラレンズチェックをしてください。<br>
-            品質チェックの直前には必ずパワーサイクルを行ってください。行わないとエラーが出やすくなり、かえって手間が増えます。「エンジンを切る → カメラレンズチェック」の流れを徹底してください。
+            カメラ品質チェックをする前は直前に必ず一度パワーサイクルをしてください。パワーサイクルをしないままカメラレンスチェックをすると不具合を引き起こして赤色エラーが出やすいです。結果、パワーサイクルをすることになり手間が一つ増えるので<span class="alert-text">「エンジンを切る→カメラレンズチェック」</span>の流れで行うようにしてください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">晴れているのに「上カメラが暗いです」等の青色メッセージ（光量不足アラート）が出ます。</div>
+        <div class="question">晴れているのに「上カメラが暗いです」などの青色メッセージ（光量不足アラート）が出てきます。どうすればいいですか？</div>
         <div class="answer">
-            安全な場所に停車し、パワーサイクル後にレンズチェックを行って再開してください。<br>
-            このアラートは10分間隔の自動チェックで光量差が大きい（トンネル通過、壁や草木が多い場所等）と表示されやすいです。パワーサイクルでキャッシュを消せば解消されることが多いですが、実際に汚れがある可能性もあるため必ずチェックは行ってください。
+            まずは安全な場所に停車し、パワーサイクルをしてください。その上でカメラレンズチェックをして問題がなければ撮影を再開してください。<br>
+            青色メッセージはリアルタイムの光量を検出しているわけではなく、システムが10分間隔で自動で光量をチェックして、光量の差が大きかった時に警告メッセージとしてモニターに表示されます。よってトンネルを通過したり、壁や草木が多い場所を通過した後は出やすいです。この場合、パワーサイクルをすることによって不必要なキャッシュ（データ）を消すことができます。もちろん実際に光量不足で暗い、レンズが汚れている等の理由で表示される場合もあるので必ずパワーサイクルをした上でカメラレンズチェックは行ってください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">撮影再開時、レンズに蜘蛛の巣（雨粒、鳥のフン等）がついていることに気づきました。</div>
+        <div class="question">休憩後、撮影を再開しようとしたところカメラレンズに蜘蛛の巣がついていることに気づきました。どうすればいいですか？</div>
         <div class="answer">
-            直ちにOpsLに報告してください。その上でレンズを拭き、カメラ品質チェックを行います。その後はOpsLの指示に従い再撮影を行います。<br>
-            影響があった区間を特定し、再撮影が必要になります。撮影前のチェックを徹底すれば防げるミスですので、細心の注意を払ってください。
+            直ちにOpsLに報告してください。その上でレンズを拭き、カメラ品質チェックを行ってください。その後、OpsLの指示に従い再撮影を行います。<br>
+            類似の原因（雨粒、鳥のフンなど）でレンズに汚れがあったケースでも同様の対応となります。影響があったと思われる箇所を特定し、再撮影をする必要があります。カメラカバーをして走ってしまったというケースもたまにありますが、撮影前には必ずカメラレンズチェックを行うことを徹底すれば防げるミスです。細心の注意を払って撮影準備をしていきましょう。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">車両交換後、モニターが真っ白でベース地図が出てきません。</div>
+        <div class="question">車両交換後、システムを立ち上げたところモニターが真っ白でベース地図が出てきません。どうすればいいですか？</div>
         <div class="answer">
-            まずOpsLに報告し、指示に従いテザリングでベース地図をダウンロードしてください。<br>
-            初めての地域ではデータが必要です。テザリングを5分ほど維持し、モニターをズームイン・アウトしていると徐々に表示されます。
+            とりあえずOpsLに報告してください。その後、指示に従い、テザリングをしてベース地図をダウンロードしてください。<br>
+            車両（内にあるシステム機材）が初めての地域にいった際はそのエリアのベース地図をダウンロードする必要があります。テザリングをキープして5分ほどたったら指でモニターをズームインズームアウトしていると半径500mくらいのベース地図が徐々にモニターに出てきます。
         </div>
     </div>
 
-    <div class="category-title">雨天・待機関係</div>
+    <div class="category-title">天候・雨天待機</div>
 
     <div class="faq-block">
-        <div class="question">終日雨模様な天気予報です。スマートドライブの登録はどうすればいいですか？</div>
+        <div class="question">終日雨模様な天気予報です。スマートドライブはどのように登録したらいいでしょうか？</div>
         <div class="answer">
-            朝から雨天待機の場合は、始業時間は<span class="alert-text">7時30分（固定）</span>になります。
-            <ul class="step-list">
-                <li>7:30にアプリで通常の始業登録を行う。</li>
-                <li>「スキャンポイントに到着する」まで進める。</li>
-                <li>黄色ボタンの「一時停止」を押し、すぐに「雨天待機」に切り替える。</li>
-            </ul>
-            天気が改善した場合は解除し、そのまま終業する場合は通常通り終業登録を行ってください。
-        </div>
-    </div>
-
-    <div class="faq-block">
-        <div class="question">終日雨の予報です。撮影プラン地まで行き待機が必要ですか？</div>
-        <div class="answer">
-            いいえ、<span class="alert-text">自宅待機で構いません。</span>但し、1時間に1度は外の様子やライブカメラをチェックし、回復しそうなら現地に向かってください。アプリでの悪天候登録は忘れずに行ってください。
-        </div>
-    </div>
-
-    <div class="faq-block">
-        <div class="question">雨は降っていませんが微妙な天気です。判断の目安は？</div>
-        <div class="answer">
-            迷う時は必ずOpsLに相談してください。
+            朝から雨天待機の場合は全員、始業時間は<span class="alert-text">7時30分（固定）</span>になります。時間になったらスマートドライブアプリを開き、定めされた流れ（以下詳細）を経て、悪天候待機登録をお願いします。
             <div class="note-box">
-                <span class="label-ok">OK集：</span>薄曇りなど、影がうっすら出る程度の明るさ<br>
-                <span class="label-ng">NG集：</span>明らかに暗い、今にも降り出しそうな黒い雲など
+                7時30分になったら、アプリを開き通常の流れ（運転できますか？はい→すべての確認項目をチェック）で始業登録を行います。そして「スキャンポイントに到着する」まで登録したら→黄色ボタンの一時停止を押し、すぐに雨天待機に登録に切り替えてください。
             </div>
+            その後、天気が改善した場合、忘れずに悪天候待機を解除してください。そのまま終業時間になり、悪天候待機のまま業務を終える場合は通常の流れで終業登録を行なってください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">晴れているけど雨（雪）がパラパラ降ってきました。続行できますか？</div>
+        <div class="question">終日雨模様な天気予報です。撮影プランまで行き待機していたほうがいいですか？</div>
         <div class="answer">
-            即座に停車し「雨天待機」を登録してください。<span class="alert-text">わずかな水滴でもレンズに付くと画像はすべてボツ</span>になります。<br>
-            再開時はレンズを拭き、パワーサイクルとチェックを徹底してください。水滴が付いた可能性がある区間は、その日のうちに必ず再撮影を行ってください（再撮影分が採用されます）。
+            いいえ、<span class="alert-text">自宅待機で構いません。</span>但し、1時間に1度は外の模様やライブカメラをチェックして天候が回復しそうになったら現地に向かいましょう。終日撮影が厳しそうな天気の場合、わざわざ現地に行き待機する必要はありません。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">OpsLへの報告写真はどのように撮影したらよいですか？</div>
+        <div class="question">雨は降っていませんが微妙な天気です。撮影可能・不可の目安はあります？</div>
         <div class="answer">
-            必ず<span class="alert-text">「空と地面が両方映るアングル」</span>で撮影してください。空だけだと明るく写りすぎてしまうためです。現地が離れている場合はライブカメラのスクリーンショットを送ってください。
+            判断に迷う時は必ずOpsLに相談して判断を仰いでください。目安となる参考例（OK集/NG集）を別紙等で確認してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">朝から自宅待機の場合、アルコールチェックは必要ですか？</div>
+        <div class="question">晴れているけど雨（雪）が少しパラパラ降ってきました。撮影は続行できますか？</div>
         <div class="answer">
-            はい、必要です。アプリを「スキャンポイント到着」まで進める過程で必ずアルコールチェックを求められるため、実施してください。
+            すぐに安全な場所に停車し、雨天待機登録をしてください。<span class="alert-text">わずかな水滴でもカメラレンズについているとその撮影画像は全部ボツになります。</span><br>
+            撮影再開時にはレンズを丁寧に拭き取り、パワーサイクルをした上でカメラレンズチェックをしてレンズに問題がないことを確認した後、撮影を再開してください。尚、撮影はしたけど水滴がついていた可能性がある区間がある場合は、その日のうちに再度撮影しておいてください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">雨天待機の報告タイミングは？</div>
+        <div class="question">OpsLへの雨天待機報告用の写真はどのように撮影したらよいですか？</div>
         <div class="answer">
-            <span class="alert-text">7:30、9:00、12:00、15:00</span>の時点で待機している場合、現地の空（またはライブカメラ）の写真をチャットに送ってください。また、撮影中に不安な雲行きになった際も同様に報告し判断を仰いでください。
+            雨であっても曇りであっても、必ず<span class="alert-text">「空と地面が両方映るアングル」</span>の写真を送ってください。空だけを撮影してしまうとコントラストの関係でどうしても暗く写ってしまうためです。また撮影予定地が離れている場合は、ネットでライブカメラを検索し、そのスクショを送ってください。
+        </div>
+    </div>
+
+    <div class="faq-block">
+        <div class="question">朝から自宅で雨天待機をする場合、アルコールチェックの提出は必要ですか？</div>
+        <div class="answer">
+            はい、必要です。スマートドライビングアプリを立ち上げ、アプリ上で「スキャンポイントに到着」に設定する過程でアルコールチェックの実施を求められますので、必ず行ってください。
+        </div>
+    </div>
+
+    <div class="faq-block">
+        <div class="question">雨天待機をする旨の報告はどのタイミングで行えばいいですか？</div>
+        <div class="answer">
+            <span class="alert-text">7時30分、9時、12時、15時</span>の時点で雨天待機をしている場合は、待機場所の空の模様（または現地ライブカメラ映像）の写真をチャットに送ってください。それに限らず、撮影していて不安になるような空模様になった場合も同様に報告し、OpsLの判断を仰ぐようにしてください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">雨天待機時、カメラカバーはしたほうがいいですか？</div>
         <div class="answer">
-            はい、なるべく早くカバーをすることをお勧めします。雨滴は乾くとレンズ汚れになり落ちにくいため、すぐにカバーするか、屋根のある場所で拭き上げてからカバーをすると再開がスムーズです。
+            はい。必ずしもではないですが、雨の水滴は乾くとレンズ汚れになり取りにくいため、なるべくすぐにカバーをするか、立体駐車場などでレンズを拭き上げてからカバーをしておくと撮影再開がスムーズになります。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">雨天待機中の個人的な休憩はアプリ操作が必要ですか？</div>
+        <div class="question">雨天待機時の個人的な休憩はスマートドライブ上での操作は必要ですか？</div>
         <div class="answer">
-            はい、1時間の昼休憩は「雨天待機」から「個人的な休憩」へ切り替えてください。終了後はまた「雨天待機」に戻してください。
+            はい、1時間の昼休憩についてはアプリで「個人的な休憩」として登録が必要です。休憩終了後は忘れずに「雨天待機」に切り替え直してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">雨天待機中はシステムはシャットダウンしておくんですか？</div>
+        <div class="question">プラン内において雨天待機中はシステムはシャットダウンしておくんですか？</div>
         <div class="answer">
-            はい、必ずシステムは完全にシャットダウンしてください。シャットダウンしないとアプリ上の活動記録とシステム上の記録に差異が生まれ、ドライバー評価に影響が出る可能性があります。
+            はい、必ずシステムはシャットダウンしてください。シャットダウンをしないとアプリ上の記録とシステム上の記録に差異が生まれてしまいます。<span class="alert-text">正しい活動記録はドライバーの評価につながるため</span>、必ず「悪天候登録」後に「完全シャットダウン」をしてください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">プラン内は雲行きが怪しいですが、隣のプランは晴れてそうです。移動してもいい？</div>
+        <div class="question">今撮影中のプラン内は雲行きが怪しいですが、隣にあるプランのほうでは晴れてそうです。移動してもいいでしょうか？</div>
         <div class="answer">
-            はい、臨機応変に移動して構いません。ただしモニターの走行軌跡（青線）は2週間で消えるため、残した未撮影箇所（GAP）は2週間以内に再訪するよう心がけてください。
+            はい、問題ありません。天気や道路事情に応じ、プラン変更は臨機応変に対応してください。注意点として、モニター上の走行軌跡（青色の線）は2週間経過すると消えます。未撮影GAPがある場合は、2週間以内にはそのエリアを再訪することを心がけてください。
         </div>
     </div>
 
@@ -279,86 +281,86 @@
     <div class="faq-block">
         <div class="question">テザリングケーブルはどのタイミングで黄色ボックスにさせばいいですか？</div>
         <div class="answer">
-            必ずシステムが完全に立ち上がってから<span class="alert-text">30秒ほど経ってから</span>差し込み、通信をONにしてください。起動直後の操作は電圧の関係でエラーを誘発します。
+            テザリングケーブルは必ずシステムが最後まで立ち上がって<span class="alert-text">30秒位ほど経ってから</span>黄色ボックスにさし、USBテザリング通信をONにしてください。立ち上がった直後に行うと電圧の関係で赤色エラーを誘発することがあります。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">テザリングはどのタイミングで行えばいいですか？</div>
         <div class="answer">
-            原則、撮影中（カメラを回している時）は常にONにしてください。ただし、山間部などで通信が不安定で頻繁に途切れる場合は、ケーブルを外しておいても構いません。電波が安定したら再開してください。
+            原則、撮影中（カメラを回している時）はテザリングはONにしてください。ただし、通信が安定しない箇所で頻繁に途切れる場合は、ケーブル自体を外しておいてもらっても大丈夫です。電波が安定したら再開してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">プリペイドSIMカードのデータ使用量はどのように確認できますか？</div>
+        <div class="question">プリペイドSIMカードのデータ使用量はどのようにして確認できますか？</div>
         <div class="answer">
-            携帯の設定から確認できますが、1ヶ月でリセットされるため目安としてください。10GBのSIMなら、常時使用で1〜1.5ヶ月で消費されます。1ヶ月経っても交換していない場合はOpsLに相談してください。
+            業務用携帯の設定から確認できますが、1ヶ月でリセットされるため目安としてください。10ギガのSIMの場合、常時テザリングで1ヶ月〜1.5ヶ月で消費されることが多いです。SIM交換せず1ヶ月が経過した場合はOpsLに相談してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">新しく購入したプリペイドSIMカードを業務用携帯に入れましたがネットワークが繋がりません。どうしたらいいですか？</div>
+        <div class="question">新しく購入したプリペイドSIMカードを入れましたが繋がりません。</div>
         <div class="answer">
-            SIMによっては手動でアクセスポイント（APN）の設定が必要です。購入時の説明書（紙）を参考に設定を行ってください。
+            SIMカードの種類によっては、手動でAPN（アクセスポイント）の設定が必要な場合があります。配布された設定マニュアル、またはSIMに付属の説明書を確認して設定を行ってください。
         </div>
     </div>
 
     <div class="category-title">GAP（未撮影箇所）</div>
 
     <div class="faq-block">
-        <div class="question">トンネル通過後に走行軌跡がずれています。撮影し直した方がいい？</div>
+        <div class="question">トンネル通過した後にGAPと走行軌跡がずれていることに気づきました。撮影し直した方がいいですか？</div>
         <div class="answer">
-            GPS未取得による一時的な表示のずれなので、<span class="alert-text">再撮影の必要はありません。</span>映像は正しく記録されています。
+            いいえ、再撮影の必要はありません。トンネル内などでGPSを紛失した際の一時的な表示上のずれであり、システム内には正しく記録されています。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">大きい通りから横道に入る際、公道か私道か迷う時は？</div>
+        <div class="question">大きい通りから横道に入る際、公道か私道か迷う時があります。見分け方は？</div>
         <div class="answer">
-            歩道を挟む、舗装色が違う場合は私道の可能性が高いです。怪しいと思えばマーカーを落とすかOpsLへ確認してください。過去のSV画像があっても公道とは限りません。
+            舗装が違う、歩道を跨ぐ、門がある等は私道の可能性が高いです。無理に進まず、怪しい場合は青マーカーを落とすかOpsLへ確認してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">GAPがある道に辿り着くまでGAPがない未舗装道路が続いています。どこの時点でマーカーを落とせばいいですか？</div>
+        <div class="question">GAPがある道に辿り着くまでGAPがない未舗装道路が続いています。マーカーはどこで落としますか？</div>
         <div class="answer">
-            未舗装路に入った、あるいは路面状況が明らかに悪化した時点でマーカーを落とし、無理をせず引き返してください。
+            未舗装路に入った、あるいは路面状況が極端に悪くなった（草が生い茂っている等）時点で無理をせず、そこで青マーカーを落として引き返してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">プラン内ですが次のGAPまで20分ほどかかります。その道中にGAPがない場合は撮影はとめますか？</div>
+        <div class="question">次に撮影しようとするGAPまで20分ほどかかります。その道中にGAPがない場合は撮影はとめますか？</div>
         <div class="answer">
-            プラン内において天気が良く、公道上を走行している間は<span class="alert-text">常にカメラを回し続けてください。</span>
+            いいえ。プラン内において天気が良く、公道上を走行している間は<span class="alert-text">常にカメラを回し続けてください。</span>
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">狭い道にGAPが続きます。軽自動車なら入ってはいけますがどうすればいい？</div>
+        <div class="question">狭い道にGAPが続きます。軽自動車なら入ってはいけますがどうすればいいですか？</div>
         <div class="answer">
-            絶対に無理を通行せず、青マーカーを落として離脱してください。一般車がナビとして利用するため、普通車で狭く感じる道の撮影は厳禁です。
+            絶対に無理をしないでください。一般ユーザーがナビとして利用した際に通行困難になるような道は撮影禁止です。迷わず青マーカーを落としてください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">「行き止まり」の看板があります。看板のある場所で青マーカーを落とせばいいですか？</div>
+        <div class="question">「この先行き止まり」の看板があります。看板のある場所で青マーカーを落とせばいいですか？</div>
         <div class="answer">
-            看板の先が広く行けそうなら進み、行けるところまで行ってから落としてください。不安なら看板の場所でもOKです。
+            看板の先が広くまだ行けそうな場合は、行けるところまで行ってから落としてください。明らかに狭く困難な場合は看板の場所で落として問題ありません。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">間違ったマーカーを落としてしました。どうすればいいですか？</div>
         <div class="answer">
-            削除はできないので、重ねるように正しいマーカーを落としてください。後で別チームが映像を見て訂正します。
+            削除はできないので、正しい位置に改めてマーカーを落とし直してください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">数十メートルほどのGAPだけの場合、そこだけカメラを回せばいいですか？</div>
         <div class="answer">
-            いいえ、必ず<span class="alert-text">10分以上はカメラを回してください。</span>10分未満だと正しい位置情報が記録できず、ボツになります。
+            いいえ、必ず<span class="alert-text">最低10分以上</span>はカメラを回してください。短すぎると位置情報が記録されず、ほぼボツになります。
         </div>
     </div>
 
@@ -367,65 +369,65 @@
     <div class="faq-block">
         <div class="question">ディスク予備を複数枚もっていますが使う順番とかありますか？</div>
         <div class="answer">
-            古い順（先に届いた順）に使用していってください。
+            基本的には古い順（先に受け取ったもの）から使用してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">撮影用のディスクを70％ほど使用しました。90％にならないと交換してはいけませんか？</div>
+        <div class="question">撮影用のディスクを70％ほど使用しました。交換の目安は？</div>
         <div class="answer">
-            原則90％を目安に交換ですが、業務の区切りで交換しても構いません。100％を超えると停止しますので注意してください。
+            原則90％目安ですが、キリの良いタイミング（業務終了時など）で交換して構いません。100％を超えると強制停止するので注意してください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">ディスク交換をする際はエンジンまで切って行いますか？</div>
         <div class="answer">
-            はい。<span class="alert-text">システムOFF → キルスイッチOFF（12時方向） → エンジンOFF</span>。確実に通電を止めてから交換しないとディスクが破損します。
+            はい、必須です。<span class="alert-text">システムOFF → キルスイッチOFF → エンジンOFF</span>の順序を守り、完全に通電が止まってから交換してください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">ディスク発送は佐川急便に集荷依頼をかけてもいいですか？</div>
         <div class="answer">
-            はい、便利ですのでおすすめします。ただし、必ず配布済みの「元払い（Google支払）伝票」を使用してください。
+            はい。ただし、必ず配布済みの「元払い伝票」を使用してください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">ディスク発送時、日付指定をしたほうがいいですか？</div>
         <div class="answer">
-            いいえ、<span class="alert-text">絶対に指定しないでください。</span>指定すると倉庫不在時に受け取りができなくなります。
+            いいえ、<span class="alert-text">日付指定・時間指定は絶対にしないでください。</span>倉庫不在で受け取れず、返送されてしまうリスクがあるためです。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">ダッシュボードの中に見慣れない色のディスクがあります。使えますか？</div>
         <div class="answer">
-            いいえ、エンジニアのテスト用ですので絶対に使用・発送せず、そのまま入れておいてください。
+            いいえ。それはテスト用ディスクですので、撮影には絶対に使用せず、そのままにしておいてください。
         </div>
     </div>
 
     <div class="category-title">立替金</div>
 
     <div class="faq-block">
-        <div class="question">立替金報告にあるレシート番号とはどれですか？また記載がない場合は？</div>
+        <div class="question">立替金報告にあるレシート番号とはどれですか？</div>
         <div class="answer">
-            レシート固有の番号を記載してください。記載がない場合は空欄で構いません。
+            レシート下部等に印字されている固有の番号を入力してください。記載がない場合は空欄で構いません。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">出張時の食事手当のレシートは何枚に分かれてもいいですか？</div>
         <div class="answer">
-            はい、予算内であれば何枚になっても問題ありませんが、報告はそれぞれ分けて行ってください。できるだけ項目がわかる「レシート」を利用してください。
+            はい。1日分の規定額内であれば複数枚でも構いませんが、報告はまとめてではなく、それぞれのレシートごとに行ってください。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">レシートがいいですか？？それとも領収証のほうがいいですか？</div>
         <div class="answer">
-            出費項目が詳しくわかる「レシート」を推奨します。項目がわかるなら領収書でも可です。
+            支払内容（項目）が詳細にわかる「レシート」を推奨します。
         </div>
     </div>
 
@@ -434,43 +436,44 @@
     <div class="faq-block">
         <div class="question">週末への振替勤務はどのようなルールでおこなわれますか？</div>
         <div class="answer">
-            月曜〜日曜の1クール内で5日勤務（振替可）となります。天気を見ながら可能な限り良い日を選んで勤務してください。月跨ぎの振替は不可です。
+            月曜〜日曜の1週間（1クール）内で、天気の良い5日間を選んで勤務してください。月を跨いでの振替は不可となります。
         </div>
     </div>
 
     <div class="faq-block">
         <div class="question">平日に祝日がある場合、勤務日数はどうなりますか？</div>
         <div class="answer">
-            そのクール（月〜日）内で4日勤務となります。
+            そのクール内での目標勤務日数は4日となります。
         </div>
     </div>
 
     <div class="category-title">スマートドライブアプリ</div>
 
     <div class="faq-block">
-        <div class="question">朝イチ、アプリがログインできません。</div>
+        <div class="question">朝イチ、スマートドライブアプリがログインできません。</div>
         <div class="answer">
-            携帯電話を再起動、またはアプリの「キャッシュとストレージ消去」を試してください。
+            アプリの再起動、またはスマートフォンの再起動を試してください。解消しない場合はすぐにOpsLへ連絡してください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">運転しているのに停止アラートが届きます。</div>
+        <div class="question">運転しているのに、車両停止アラートが連続で届きます。どうしたらよいですか？</div>
         <div class="answer">
-            GPS紛失によるバグですので無視してください。理由を答える必要もありません。
+            GPSの精度や一時的な通信環境によるバグですので、無視して走行を続けてください。
         </div>
     </div>
 
     <div class="faq-block">
-        <div class="question">10分程度の小休憩でも記録する必要がありますか？</div>
+        <div class="question">スマートドライブアプリは10分程度の小休憩でも記録する必要がありますか？</div>
         <div class="answer">
-            はい。トイレ休憩等を含め<span class="alert-text">5分以上の停止はすべて記録してください。</span>差異が大きい場合は契約評価に関わります。
+            はい、<span class="alert-text">5分以上の停止（休憩、給油、ディスク発送等）はすべて記録が必要</span>です。記録がない停止時間が長いと評価に影響します。
         </div>
     </div>
 
-    <div style="text-align: center; margin-top: 40px; padding-bottom: 20px;">
-        <a href="#" style="color: var(--google-blue); text-decoration: none; font-size: 0.9rem;">↑ ページトップへ戻る</a>
-    </div>
+    <footer>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #9aa0a6;">© 2026 SV Driver Support Team</p>
+    </footer>
 </div>
 
 </body>
