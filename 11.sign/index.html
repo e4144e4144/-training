@@ -50,7 +50,6 @@
         .gap-info { background: #fff9e6; padding: 8px; border-radius: 4px; font-size: 0.9rem; margin-top: 8px; border: 1px solid #ffe58f; }
         .blue-marker-tip { color: var(--marker-blue); font-weight: bold; }
 
-        /* PDFリンク用ボタン */
         .pdf-button {
             display: block;
             background: #fff;
@@ -78,33 +77,29 @@
 
     <section>
         <h2>勘違いしやすい標識の判断基準</h2>
-        <p>走行中、判断に迷いやすい標識を例示します。安全運転と法令遵守を最優先にしてください。</p>
+        <p>走行中、特に判断を誤りやすい標識と補助標識の組み合わせをまとめました。</p>
 
         <a href="ichiran.pdf" target="_blank" class="pdf-button">
             道路交通標識一覧（PDF）を表示
         </a>
 
         <div class="sign-card">
-            <div class="sign-title">歩行者専用道路</div>
+            <div class="sign-title">歩行者専用道路（時間規制あり）</div>
             <span class="judgment-ng">指定時間内：通行禁止</span>
             <div class="rule-detail">
-                平日の <b>7:30 - 9:00 / 13:30 - 15:00</b> は通行できません [cite: 1, 154, 217]。<br>
-                ※自転車（軽車両）を除き、車両の通行が制限されます。
+                平日の <b>7:30 - 9:00 / 13:30 - 15:00</b> など、補助標識に記載された時間は通行できません [cite: 1, 154, 217]。<br>
+                ※「自転車を除く」とあっても、自動車（ストビューカー）は対象外です。
             </div>
             <div class="gap-info">
-                💡 <b>GAP対応：</b>上記時間外であれば走行可能です。時間を改めて撮影に向かってください。
+                💡 <b>GAP対応：</b>上記時間外であれば走行可能です。撮影できなかった区間は時間を改めて訪問してください。
             </div>
         </div>
 
         <div class="sign-card">
-            <div class="sign-title">歩行者専用道路（軽車両は除く）</div>
-            <span class="judgment-ng">指定時間内：通行禁止</span>
+            <div class="sign-title">歩行者専用道路（「軽車両」を除く）</div>
+            <span class="judgment-ng">終日または指定時間：通行禁止</span>
             <div class="rule-detail">
-                平日の <b>7:00 - 8:00</b> は通行できません [cite: 1, 154, 217]。<br>
-                「軽車両」は自転車・リヤカー等を指し、<b>軽自動車は含まれません</b> [cite: 1, 217]。
-            </div>
-            <div class="gap-info">
-                💡 <b>GAP対応：</b>上記時間外であれば走行可能です。
+                <b>間違いやすいポイント：</b>「軽車両」は自転車やリヤカーを指します [cite: 1, 217]。<b>「軽自動車」は含まれない</b>ため、ストビューカーは進入できません [cite: 1, 154]。
             </div>
         </div>
 
@@ -112,26 +107,27 @@
             <div class="sign-title">居住者車両専用道路</div>
             <span class="judgment-ng">原則：通行禁止</span>
             <div class="rule-detail">
-                居住者以外の車両は通行できません [cite: 1, 154]。道単位ではなく、<b>町会単位</b>での設置に注意してください。
+                許可を得た居住者以外の車両は通行禁止です [cite: 1, 154]。単発の道路だけでなく、<b>町会エリア全体</b>が指定されている場合があるため、入口の看板に注意してください。
             </div>
         </div>
 
         <div class="sign-card">
-            <div class="sign-title">左折禁止（軽車両は除く）</div>
+            <div class="sign-title">左折禁止（「軽車両」を除く）</div>
             <span class="judgment-ng">一般車両：左折禁止</span>
             <div class="rule-detail">
-                自転車等の軽車両のみ左折可能です [cite: 1, 154, 217]。ストビューカー（自動車）は左折できません。
+                自転車（軽車両）は左折できますが、自動車は禁止です [cite: 1, 154, 217]。ナビが指示しても標識が優先です。
             </div>
         </div>
 
         <div class="sign-card">
-            <div class="sign-title">「軽・小特を除く」</div>
-            <span class="judgment-ok">走行可能</span>
+            <div class="sign-title">「軽（軽自動車）・小特を除く」</div>
+            <span class="judgment-ok">制度上は走行可能</span>
             <div class="rule-detail">
-                「軽自動車および小特殊自動車を除く」という意味です [cite: 1, 213, 217]。ストビューカー（軽）は走行可能ですが間違いなく狭い道なので<b>絶対に進入しない</b>ようにしてください。
+                「軽自動車および小特殊自動車」は除外されるため、ストビューカー（軽）は走行可能です [cite: 1, 213, 217]。
             </div>
-            <div class="gap-info" style="border-color: var(--marker-blue); background: #f0f7ff;">
-                ⚠️ <b>注意：</b>道が非常に狭い場合が多いです。無理はせず、危険を感じたら<span class="blue-marker-tip">青色マーカー</span>を遠慮なく落としてください。
+            <div class="gap-info" style="border-color: var(--alert-red); background: #fce8e6;">
+                ⚠️ <b>実現場での判断：</b><br>
+                この標識がある道は<b>間違いなく極端に狭い道</b>です。対向車との離合不能や物理的な接触リスクが非常に高いため、基本的には<b>「進入しない」</b>ことを推奨します。無理をせず<span class="blue-marker-tip">青色マーカー</span>を活用してください。
             </div>
         </div>
     </section>
