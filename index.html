@@ -39,10 +39,7 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid #dadce0;
-            transition: transform 0.1s;
         }
-        .menu-item:active { transform: scale(0.98); background: #f1f3f4; }
-        
         .menu-link {
             display: flex;
             align-items: center;
@@ -64,19 +61,47 @@
             margin-right: 15px;
         }
         .menu-text { font-size: 1rem; font-weight: bold; flex-grow: 1; }
-        .arrow { color: #dadce0; font-size: 1.2rem; font-weight: bold; }
+        .arrow { color: #dadce0; font-size: 1.2rem; }
 
-        /* 特出し（ハイライト）設定 */
         .menu-item.highlight { border: 2px solid var(--google-blue); background: #f8fbff; }
         .menu-item.highlight .num-circle { background: var(--google-red); }
         .menu-item.training { border: 2px solid var(--google-green); background: #f6fff8; }
         .menu-item.training .num-circle { background: var(--google-green); }
+
+        /* 緊急連絡網：電話リンクを廃止し、テキストのみに */
+        .emergency-box {
+            background: #fff;
+            border: 2px solid #5f6368; /* 赤から落ち着いたグレーに変更 */
+            border-radius: 12px;
+            margin-top: 25px;
+            padding: 15px;
+        }
+        .emergency-title {
+            color: #202124;
+            font-weight: bold;
+            font-size: 1rem;
+            text-align: center;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        .emergency-item { margin-bottom: 12px; font-size: 0.9rem; color: #202124; }
+        .emergency-item strong { display: block; margin-bottom: 2px; }
+        .tel-number { 
+            font-weight: bold; 
+            font-size: 1.1rem; 
+            letter-spacing: 0.5px;
+        }
 
         footer {
             text-align: center;
             padding: 30px 15px;
             font-size: 0.75rem;
             color: #70757a;
+        }
+        .powered-by {
+            margin-top: 10px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -89,18 +114,18 @@
 
 <div class="container">
     <ul class="menu-list">
-        <li class="menu-item"><a href="./01.move/" class="menu-link"><span class="num-circle">01</span><span class="menu-text">自宅から撮影エリアへの移動・点検</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="./01.move/" class="menu-link"><span class="num-circle">01</span><span class="menu-text">自宅からエリアへの移動・点検</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./02.mapping/" class="menu-link"><span class="num-circle">02</span><span class="menu-text">撮影とマーキング</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./03.breaktime/" class="menu-link"><span class="num-circle">03</span><span class="menu-text">休憩時間</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./04.idle/" class="menu-link"><span class="num-circle">04</span><span class="menu-text">雨天曇天待機時間</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./05.lense/" class="menu-link"><span class="num-circle">05</span><span class="menu-text">カメラレンズ画像確認</span><span class="arrow">›</span></a></li>
-        <li class="menu-item"><a href="./06.powercycle/" class="menu-link"><span class="num-circle">06</span><span class="menu-text">パワーサイクル（システムリセット）</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="./06.powercycle/" class="menu-link"><span class="num-circle">06</span><span class="menu-text">パワーサイクル</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./07.error/" class="menu-link"><span class="num-circle">07</span><span class="menu-text">エラー対応</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./08.tethering/" class="menu-link"><span class="num-circle">08</span><span class="menu-text">テザリング</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./09.complaints/" class="menu-link"><span class="num-circle">09</span><span class="menu-text">不適切撮影時報告</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./10.complete/" class="menu-link"><span class="num-circle">10</span><span class="menu-text">プラン撮影完了報告</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./11.sign/" class="menu-link"><span class="num-circle">11</span><span class="menu-text">注意すべき交通標識</span><span class="arrow">›</span></a></li>
-        <li class="menu-item"><a href="./12.goinghome/" class="menu-link"><span class="num-circle">12</span><span class="menu-text">撮影エリアから自宅への移動</span><span class="arrow">›</span></a></li>
+        <li class="menu-item"><a href="./12.goinghome/" class="menu-link"><span class="num-circle">12</span><span class="menu-text">エリアから自宅への移動</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./13.accident/" class="menu-link"><span class="num-circle">13</span><span class="menu-text">事故・違反発生時</span><span class="arrow">›</span></a></li>
         <li class="menu-item"><a href="./14.disk/" class="menu-link"><span class="num-circle">14</span><span class="menu-text">ディスク管理</span><span class="arrow">›</span></a></li>
         
@@ -111,7 +136,6 @@
                 <span class="arrow">›</span>
             </a>
         </li>
-
         <li class="menu-item training">
             <a href="./16.training/" class="menu-link">
                 <span class="num-circle">16</span>
@@ -120,10 +144,31 @@
             </a>
         </li>
     </ul>
+
+    <div class="emergency-box">
+        <div class="emergency-title">連絡網</div>
+        
+        <div class="emergency-item">
+            <strong>OpsL：梅田 圭一 (Keiichi Umeda)</strong>
+            <span class="tel-number">070-8314-3745</span><br>
+            <span style="font-size:0.8rem;">kumeda@google.com</span>
+        </div>
+
+        <div class="emergency-item">
+            <strong>三井住友海上（事故受付）</strong>
+            <span class="tel-number">0120-258-365</span>
+        </div>
+
+        <div class="emergency-item" style="margin-bottom:0;">
+            <strong>三井住友海上（ロードサービス）</strong>
+            <span class="tel-number">0120-096-991</span>
+        </div>
+    </div>
 </div>
 
 <footer>
     <p>© 2026 Godo Kaisha Aoi / Street View Ops Team</p>
+    <p class="powered-by">Powered by Cognizant</p>
 </footer>
 
 </body>
