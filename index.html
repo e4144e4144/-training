@@ -66,8 +66,11 @@
         .menu-text { font-size: 1rem; font-weight: bold; flex-grow: 1; }
         .arrow { color: #dadce0; font-size: 1.2rem; font-weight: bold; }
 
+        /* 特出し（ハイライト）設定 */
         .menu-item.highlight { border: 2px solid var(--google-blue); background: #f8fbff; }
         .menu-item.highlight .num-circle { background: var(--google-red); }
+        .menu-item.training { border: 2px solid var(--google-green); background: #f6fff8; }
+        .menu-item.training .num-circle { background: var(--google-green); }
 
         footer {
             text-align: center;
@@ -105,6 +108,14 @@
             <a href="./15.QA/" class="menu-link">
                 <span class="num-circle">15</span>
                 <span class="menu-text">よくある質問 (FAQ)</span>
+                <span class="arrow">›</span>
+            </a>
+        </li>
+
+        <li class="menu-item training">
+            <a href="./16.training/" class="menu-link">
+                <span class="num-circle">16</span>
+                <span class="menu-text">実車研修の流れ</span>
                 <span class="arrow">›</span>
             </a>
         </li>
