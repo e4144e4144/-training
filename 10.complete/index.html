@@ -1,1 +1,97 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10. プラン撮影完了報告 | SV Driver 2026</title>
+    <style>
+        :root {
+            --main-blue: #4285F4;
+            --alert-red: #d93025;
+            --marker-red: #EA4335;
+            --marker-blue: #1A73E8;
+            --bg-gray: #f8f9fa;
+            --text-dark: #202124;
+            --text-gray: #5f6368;
+            --warning-orange: #fbbc04;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--bg-gray);
+            margin: 0;
+            padding: 10px;
+            font-size: 16px;
+        }
+        .container { max-width: 600px; margin: 0 auto; }
+        header {
+            background: white;
+            padding: 20px 15px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            border-top: 6px solid var(--main-blue);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        .back-link { text-decoration: none; color: var(--main-blue); font-size: 1rem; font-weight: bold; }
+        .page-title { font-size: 1.4rem; font-weight: bold; margin-top: 8px; }
+        
+        section { background: white; padding: 20px 15px; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h2 { font-size: 1.25rem; color: var(--main-blue); border-bottom: 2px solid var(--main-blue); padding-bottom: 8px; margin-top: 0; }
+        
+        .important-card { background: #e8f0fe; border: 1px solid #d2e3fc; padding: 18px; border-radius: 8px; margin: 15px 0; font-size: 1rem; line-height: 1.5; }
+        .info-box { background: #f1f3f4; border-left: 4px solid #dadce0; padding: 15px; margin: 15px 0; font-size: 1rem; border-radius: 0 4px 4px 0; }
+        
+        .finish-badge { background: var(--main-blue); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; display: inline-block; margin-bottom: 10px; }
+        
+        .warning-card { background: #fffdf0; border: 1px solid #ffe58f; padding: 18px; border-radius: 8px; margin: 15px 0; }
+        .alert-text { color: var(--alert-red); font-weight: bold; }
+        .tip-box { background: #fff; border: 1px dashed var(--main-blue); padding: 15px; border-radius: 8px; margin-top: 10px; }
+    </style>
+</head>
+<body>
 
+<div class="container">
+    <header>
+        <a href="../" class="back-link">← メインメニューへ戻る</a>
+        <div class="page-title">10. プラン撮影完了報告</div>
+    </header>
+
+    <section>
+        <div class="finish-badge">お疲れ様でした！</div>
+        <h2>プラン完了時の対応</h2>
+        <p>担当するプランの撮影がすべて完了したら、<b>その日のうちに</b>以下の報告を行ってください。</p>
+        
+        <div class="important-card">
+            <b>プラン完了報告フォームでの報告</b><br>
+            OpsLへ専用フォームを通じて報告を行ってください。この報告をもとに撮影データの最終チェックが行われます。
+        </div>
+    </section>
+
+    <section>
+        <h2>工事や道路封鎖がある場合の注意</h2>
+        <div class="warning-card">
+            <b>一時的な規制による「未撮影区間（GAP）」</b><br>
+            道路封鎖や工事などで通行できず、撮影が漏れている場所がある場合は、数日から数週間以内に規制が解除され取り残したGAPを撮影できるという場合を<b>撮影してから完了報告をあげるようにしてください。</b>
+        </div>
+
+        <div class="tip-box">
+            <b>💡 おすすめの管理方法</b><br>
+            取り残したGAPの位置は、<b>Google マップ上でその位置を保存（ピンを立てる）</b>しておくと、後々分かりやすく再訪しやすいため、非常におすすめです。
+        </div>
+    </section>
+
+    <section>
+        <div class="info-box" style="border-left-color: var(--warning-orange);">
+            <b>報告後の流れ</b><br>
+            OpsLが撮影状況（クオリティや漏れ）をチェックします。もし再撮影が必要になった場合は、個別に連絡が入ります。
+        </div>
+    </section>
+
+    <div style="text-align: center; padding: 20px 0;">
+        <a href="../" style="color: var(--text-gray); text-decoration: none; font-size: 1rem;">← マニュアル TOP へ戻る</a>
+    </div>
+</div>
+
+</body>
+</html>
