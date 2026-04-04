@@ -13,14 +13,15 @@
             --text-gray: #5f6368;
             --rain-blue: #005CAF;
             --sunset-orange: #fb8c00;
+            --success-green: #1e8e3e;
         }
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.7; /* 行間を少し詰めつつ読みやすく */
+            line-height: 1.7;
             color: var(--text-dark);
             background-color: var(--bg-gray);
             margin: 0;
-            padding: 10px; /* 全体の余白をスマホ向けに */
+            padding: 10px;
             -webkit-text-size-adjust: 100%;
         }
         .container { max-width: 600px; margin: 0 auto; }
@@ -50,7 +51,7 @@
 
         section {
             background: white;
-            padding: 20px 15px; /* 横余白をスマホ用に調整 */
+            padding: 20px 15px;
             border-radius: 12px;
             margin-bottom: 15px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -68,7 +69,7 @@
             margin: 20px 0 10px 0;
             color: var(--text-dark);
             display: flex;
-            align-items: flex-start; /* 折り返し対応 */
+            align-items: flex-start;
         }
         h3::before {
             content: "▼";
@@ -180,6 +181,25 @@
             border-radius: 8px;
             margin-top: 15px;
         }
+
+        /* 追加：振替ルールのカードデザイン */
+        .transfer-card {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #e0e0e0;
+        }
+        .transfer-rain { border-left: 6px solid var(--rain-blue); background: #f0f7ff; }
+        .transfer-private { border-left: 6px solid var(--text-gray); background: #ffffff; }
+        .transfer-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -218,6 +238,32 @@
         <div class="btn-group">
             <a href="https://e4144e4144.github.io/rainradar/" target="_blank" class="btn" style="background: var(--rain-blue);">🌧️ 雨雲レーダーをチェックする</a>
             <a href="https://weathernews.jp/onebox/livecam/" target="_blank" class="btn" style="background: var(--main-blue);">📷 全国のライブカメラを確認する</a>
+        </div>
+    </section>
+
+    <section>
+        <h2>土日祝への振替ルール</h2>
+        <p>平日に休んだ理由により、土日祝に振り替えた際の扱いが異なります。</p>
+
+        <div class="transfer-card transfer-rain">
+            <span class="transfer-tag" style="background: var(--rain-blue);">1. 平日が「雨天」の場合</span>
+            <p style="margin: 5px 0; font-weight: bold;">平日が終日雨で仕事ができなかった分を土日祝に振替</p>
+            <ul style="margin: 10px 0; padding-left: 20px; font-size: 0.9rem;">
+                <li><b>勤務時間：</b>固定で <strong>8時間勤務</strong> とみなされます。</li>
+                <li><b>土日の天候：</b>問いません（雨でも晴れでもOK）。</li>
+                <li><b>実労働時間：</b>問いません（短時間でも1日分と認定）。</li>
+            </ul>
+            <p style="font-size: 0.85rem; color: var(--rain-blue); margin-bottom: 0;"><b>優遇措置：</b>平日が雨で振替協力いただける場合は、稼働条件が大幅に緩和されます。</p>
+        </div>
+
+        <div class="transfer-card transfer-private">
+            <span class="transfer-tag" style="background: var(--text-gray);">2. 平日が「自己都合」の場合</span>
+            <p style="margin: 5px 0; font-weight: bold;">平日の晴れ間に私用や病欠で休んだ分を土日にリカバー</p>
+            <ul style="margin: 10px 0; padding-left: 20px; font-size: 0.9rem;">
+                <li><b>出勤条件：</b>土日が <strong>晴れ（撮影可能）</strong> の場合のみ。</li>
+                <li><b>勤務時間：</b>実際に撮影した <strong>実労働時間のみ</strong> カウント。</li>
+                <li><b>制限：</b>土日が終日雨だった場合は振替出勤ができません。</li>
+            </ul>
         </div>
     </section>
 
